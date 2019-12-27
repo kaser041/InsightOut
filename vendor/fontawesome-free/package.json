@@ -2,7 +2,7 @@
   "_args": [
     [
       "@fortawesome/fontawesome-free@5.9.0",
-      "C:\\Users\\admin\\Desktop\\InsightOut"
+      "C:\\Users\\Kaser\\Desktop\\InsightOut"
     ]
   ],
   "_from": "@fortawesome/fontawesome-free@5.9.0",
@@ -27,7 +27,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.9.0.tgz",
   "_spec": "5.9.0",
-  "_where": "C:\\Users\\admin\\Desktop\\InsightOut",
+  "_where": "C:\\Users\\Kaser\\Desktop\\InsightOut",
   "author": {
     "name": "Dave Gandy",
     "email": "dave@fontawesome.com",

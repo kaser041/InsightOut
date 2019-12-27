@@ -55,6 +55,9 @@ function modules() {
     // D3 JS
   var d3JS = gulp.src('./node_modules/d3/dist/*')
   .pipe(gulp.dest('./vendor/d3/js'));
+  // C3 JS
+  var c3JS = gulp.src('./node_modules/c3/*')
+  .pipe(gulp.dest('./vendor/c3/js'));
   // Bootstrap SCSS
   var bootstrapSCSS = gulp.src('./node_modules/bootstrap/scss/**/*')
     .pipe(gulp.dest('./vendor/bootstrap/scss'));
@@ -83,7 +86,7 @@ function modules() {
       '!./node_modules/jquery/dist/core.js'
     ])
     .pipe(gulp.dest('./vendor/jquery'));
-  return merge(d3JS,bootstrap,bootstrapJS, bootstrapSCSS, chartJS, dataTables, fontAwesome, jquery, jqueryEasing);
+  return merge(d3JS,c3JS,bootstrap,bootstrapJS, bootstrapSCSS, chartJS, dataTables, fontAwesome, jquery, jqueryEasing);
 }
 
 // CSS task
