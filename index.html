@@ -74,10 +74,10 @@
 
       <!-- div for all Sub Tabs -->
       <div class="tab-content" id="myTabContent">
-        
+
         <!-- div for Study Program Information -->
         <div class="tab-pane fade show active" id="quantitative" role="tabpanel" aria-labelledby="quantitative-tab">
-          
+
           <!-- Sub Tabs of Study Program Information -->
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
@@ -93,7 +93,7 @@
                 aria-selected="false">Admission Requirements</a>
             </li>
           </ul>
-          
+
           <!-- div for Study Content, Lecture Details, and Admission Requirements (charts will go here) -->
           <div class="tab-content" id="myTabContent2">
             <div class="tab-pane fade show active" id="exam" role="tabpanel" aria-labelledby="exam-tab">...</div>
@@ -101,10 +101,10 @@
             <div class="tab-pane fade" id="nc" role="tabpanel" aria-labelledby="nc-tab">...</div>
           </div>
         </div>
-        
+
         <!-- div for Survey Data -->
         <div class="tab-pane fade" id="qualitative" role="tabpanel" aria-labelledby="qualitative-tab">
-          
+
           <!-- Sub Tabs of Survey Data -->
           <ul class="nav nav-tabs" id="myTab2" role="tablist">
             <li class="nav-item">
@@ -120,13 +120,13 @@
                 aria-controls="graduation" aria-selected="false">Graduation</a>
             </li>
           </ul>
-          
+
           <!-- div for Demographics, Study rating, and Graduation -->
           <div class="tab-content" id="myTabContent3">
-            
+
             <!-- div for Demographics -->
             <div class="tab-pane fade show active" id="demographic" role="tabpanel" aria-labelledby="demographic-tab">
-              
+
               <!-- Sub Tabs of Demographics -->
               <ul class="nav nav-tabs" id="myTab3" role="tablist">
                 <li class="nav-item">
@@ -138,14 +138,14 @@
                     aria-selected="true">Age</a>
                 </li>
               </ul>
-              
+
               <!-- div for Gender and Age (charts will go here) -->
               <div class="tab-content" id="myTabContent4">
                 <div class="tab-pane fade" id="gender" role="tabpanel" aria-labelledby="gender-tab">
                   <div id="chartGenderKomedia">
                     <script src="js/chartGenderKomedia.js"></script>
                   </div>
-                  
+
                   <div id="chartGenderISE">
                     <script src="js/chartGenderISE.js"></script>
                   </div>
@@ -154,7 +154,7 @@
                     <script src="js/chartGenderAI.js"></script>
                   </div>
                 </div>
-                
+
                 <div class="tab-pane fade" id="age" role="tabpanel" aria-labelledby="age-tab">
                   <div id="chartAgeKomedia">
                     <script src="js/chartAgeKomedia.js"></script>
@@ -170,10 +170,10 @@
                 </div>
               </div>
             </div>
-            
+
             <!-- div for Study Rating -->
             <div class="tab-pane fade" id="studyRating" role="tabpanel" aria-labelledby="studyRating-tab">
-              
+
               <!-- Sub Tabs of Study Rating -->
               <ul class="nav nav-tabs" id="myTab4" role="tablist">
                 <li class="nav-item">
@@ -193,11 +193,57 @@
                     aria-controls="generalHappiness" aria-selected="true">General Happiness</a>
                 </li>
               </ul>
-              
+
+
               <!-- div for Organization, Content, Skills, and General Happiness -->
               <div class="tab-content" id="myTabContent5">
                 <div class="tab-pane fade" id="organization" role="tabpanel" aria-labelledby="organization-tab">
-                  ....
+
+                  <!-- Sub Tabs of Study Rating -->
+                  <ul class="nav nav-tabs" id="myTab4" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="timeCoordination-tab" data-toggle="tab" href="#timeCoordination"
+                        role="tab" aria-controls="timeCoordination" aria-selected="true">Time Coordination</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="comprehensibility-tab" data-toggle="tab" href="#comprehensibility"
+                        role="tab" aria-controls="comprehensibility" aria-selected="true">Comprehensibility</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="flexibelity-tab" data-toggle="tab" href="#flexibelity" role="tab"
+                        aria-controls="flexibelity" aria-selected="true">Flexibelity</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="askingForHelp-tab" data-toggle="tab" href="#askingForHelp" role="tab"
+                        aria-controls="askingForHelp" aria-selected="true">Asking For Help</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent5">
+                    <div class="tab-pane fade" id="timeCoordination" role="tabpanel"
+                      aria-labelledby="timeCoordination-tab">
+                      <div id="chartTimeCoordination">
+                        <script src="js/chartTimeCoordination.js"></script>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="comprehensibility" role="tabpanel"
+                    aria-labelledby="comprehensibility-tab">
+                    <div id="chartComprehensibility">
+                      <script src="js/chartComprehensibility.js"></script>
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="flexibelity" role="tabpanel"
+                    aria-labelledby="flexibelity-tab">
+                    <div id="chartFlexibility">
+                      <script src="js/chartFlexibility.js"></script>
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="askingForHelp" role="tabpanel"
+                    aria-labelledby="askingForHelp-tab">
+                    <div id="chartAskingForHelp">
+                      <script src="js/chartAskingForHelp.js"></script>
+                    </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
                   ....
@@ -205,7 +251,7 @@
                 <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
                   ....
                 </div>
-                
+
                 <div class="tab-pane fade" id="generalHappiness" role="tabpanel" aria-labelledby="generalHappiness-tab">
                   <div id="chartGeneralHappiness">
                     <script src="js/chartGeneralHappiness.js"></script>
@@ -214,7 +260,7 @@
 
               </div>
             </div>
-            
+
             <!-- div for Graduation -->
             <div class="tab-pane fade" id="graduation" role="tabpanel" aria-labelledby="graduation-tab">
               <div id="chartDifficulty">
@@ -231,27 +277,27 @@
       </div>
     </div>
   </div>
-    
-    <!-- /.container-fluid -->
-    <!-- Sticky Footer -->
-    <footer class="sticky-footer">
-      <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-          <span>Copyright © Your Website 2019</span>
-        </div>
+
+  <!-- /.container-fluid -->
+  <!-- Sticky Footer -->
+  <footer class="sticky-footer">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright © Your Website 2019</span>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
-    
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+
 </body>
 
 </html>
