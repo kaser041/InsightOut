@@ -42,7 +42,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fa fa-home"></i>
-          <span> Home</span>
+          <span> Compare</span>
         </a>
       </li>
       <li class="nav-item">
@@ -57,40 +57,55 @@
       </li>
     </ul>
 
+    <!-- div for all Tabs -->
     <div class="container-fluid">
+
+      <!-- Top Tabs -->
       <ul class="nav nav-tabs" id="parentTab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" id="quantitative-tab" data-toggle="tab" href="#quantitative" role="tab"
-            aria-controls="quantitative" aria-selected="true">Quantitive</a>
+            aria-controls="quantitative" aria-selected="true">Study Program Information</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="qualitative-tab" data-toggle="tab" href="#qualitative" role="tab"
-            aria-controls="qualitative" aria-selected="false">Qualitative</a>
+            aria-controls="qualitative" aria-selected="false">Survey Data</a>
         </li>
       </ul>
+
+      <!-- div for all Sub Tabs -->
       <div class="tab-content" id="myTabContent">
+        
+        <!-- div for Study Program Information -->
         <div class="tab-pane fade show active" id="quantitative" role="tabpanel" aria-labelledby="quantitative-tab">
+          
+          <!-- Sub Tabs of Study Program Information -->
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="exam-tab" data-toggle="tab" href="#exam" role="tab" aria-controls="exam"
-                aria-selected="true">Number of exams</a>
+                aria-selected="true">Study Content</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="aspects-tab" data-toggle="tab" href="#aspects" role="tab" aria-controls="aspects"
-                aria-selected="false">Course aspects</a>
+                aria-selected="false">Lecture Details</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="nc-tab" data-toggle="tab" href="#nc" role="tab" aria-controls="nc"
-                aria-selected="false">NC Values</a>
+                aria-selected="false">Admission Requirements</a>
             </li>
           </ul>
+          
+          <!-- div for Study Content, Lecture Details, and Admission Requirements (charts will go here) -->
           <div class="tab-content" id="myTabContent2">
             <div class="tab-pane fade show active" id="exam" role="tabpanel" aria-labelledby="exam-tab">...</div>
             <div class="tab-pane fade" id="aspects" role="tabpanel" aria-labelledby="aspects-tab">...</div>
             <div class="tab-pane fade" id="nc" role="tabpanel" aria-labelledby="nc-tab">...</div>
           </div>
         </div>
+        
+        <!-- div for Survey Data -->
         <div class="tab-pane fade" id="qualitative" role="tabpanel" aria-labelledby="qualitative-tab">
+          
+          <!-- Sub Tabs of Survey Data -->
           <ul class="nav nav-tabs" id="myTab2" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" id="demographic-tab" data-toggle="tab" href="#demographic" role="tab"
@@ -105,8 +120,14 @@
                 aria-controls="graduation" aria-selected="false">Graduation</a>
             </li>
           </ul>
+          
+          <!-- div for Demographics, Study rating, and Graduation -->
           <div class="tab-content" id="myTabContent3">
+            
+            <!-- div for Demographics -->
             <div class="tab-pane fade show active" id="demographic" role="tabpanel" aria-labelledby="demographic-tab">
+              
+              <!-- Sub Tabs of Demographics -->
               <ul class="nav nav-tabs" id="myTab3" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" id="gender-tab" data-toggle="tab" href="#gender" role="tab"
@@ -117,20 +138,43 @@
                     aria-selected="true">Age</a>
                 </li>
               </ul>
+              
+              <!-- div for Gender and Age (charts will go here) -->
               <div class="tab-content" id="myTabContent4">
                 <div class="tab-pane fade" id="gender" role="tabpanel" aria-labelledby="gender-tab">
-                  <div id="chart1">
-                    <script src="js/demographicChart.js"></script>
+                  <div id="chartGenderKomedia">
+                    <script src="js/chartGenderKomedia.js"></script>
+                  </div>
+                  
+                  <div id="chartGenderISE">
+                    <script src="js/chartGenderISE.js"></script>
+                  </div>
+
+                  <div id="chartGenderAI">
+                    <script src="js/chartGenderAI.js"></script>
                   </div>
                 </div>
+                
                 <div class="tab-pane fade" id="age" role="tabpanel" aria-labelledby="age-tab">
-                  <div id="chart">
-                    <script src="js/ageChart.js"></script>
+                  <div id="chartAgeKomedia">
+                    <script src="js/chartAgeKomedia.js"></script>
+                  </div>
+
+                  <div id="chartAgeISE">
+                    <script src="js/chartAgeISE.js"></script>
+                  </div>
+
+                  <div id="chartAgeAI">
+                    <script src="js/chartAgeAI.js"></script>
                   </div>
                 </div>
               </div>
             </div>
+            
+            <!-- div for Study Rating -->
             <div class="tab-pane fade" id="studyRating" role="tabpanel" aria-labelledby="studyRating-tab">
+              
+              <!-- Sub Tabs of Study Rating -->
               <ul class="nav nav-tabs" id="myTab4" role="tablist">
                 <li class="nav-item">
                   <a class="nav-link active" id="organization-tab" data-toggle="tab" href="#organization" role="tab"
@@ -149,6 +193,8 @@
                     aria-controls="generalHappiness" aria-selected="true">General Happiness</a>
                 </li>
               </ul>
+              
+              <!-- div for Organization, Content, Skills, and General Happiness -->
               <div class="tab-content" id="myTabContent5">
                 <div class="tab-pane fade" id="organization" role="tabpanel" aria-labelledby="organization-tab">
                   ....
@@ -159,16 +205,33 @@
                 <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
                   ....
                 </div>
+                
                 <div class="tab-pane fade" id="generalHappiness" role="tabpanel" aria-labelledby="generalHappiness-tab">
-                  ....
+                  <div id="chartGeneralHappiness">
+                    <script src="js/chartGeneralHappiness.js"></script>
+                  </div>
                 </div>
+
               </div>
             </div>
-            <div class="tab-pane fade" id="graduation" role="tabpanel" aria-labelledby="graduation-tab">...</div>
+            
+            <!-- div for Graduation -->
+            <div class="tab-pane fade" id="graduation" role="tabpanel" aria-labelledby="graduation-tab">
+              <div id="chartDifficulty">
+                <script src="js/chartDifficulty.js"></script>
+              </div>
+
+              <div id="chartNumberOfSemester">
+                <script src="js/chartNumberOfSemester.js"></script>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
     </div>
+  </div>
+    
     <!-- /.container-fluid -->
     <!-- Sticky Footer -->
     <footer class="sticky-footer">
@@ -188,7 +251,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
-
+    
 </body>
 
 </html>
