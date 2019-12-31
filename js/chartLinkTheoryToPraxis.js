@@ -2,7 +2,7 @@ d3.csv("static/data.csv", function (data) {
     return {
         // Required attributes
         studyProgram: data.studyProgram,
-        Time_coor: data.Time_coor
+        Link_theo_practi: data.Link_theo_practi
     };
 }).then(function (data) {
 
@@ -13,7 +13,7 @@ d3.csv("static/data.csv", function (data) {
             json: data,
             keys: {
                 x: 'studyProgram',
-                value: ['Time_coor']
+                value: ['Link_theo_practi']
             },
             type: 'bar'
         },
@@ -25,12 +25,12 @@ d3.csv("static/data.csv", function (data) {
             },
             y: {
                 max: 5,
-                label: { text: 'Time Coordination', position: 'outer-center' }
+                label: { text: 'Linking Theory To Praxis', position: 'outer-center' }
             }
         },
 
         title: {
-            text: 'Time Coordination in each Study Program'
+            text: 'Linking Theory To Praxis in each Study Program'
         },
 
         bar: {
@@ -39,6 +39,6 @@ d3.csv("static/data.csv", function (data) {
 
         legend: { show: false },
 
-        bindto: '#chartTimeCoordination'
+        bindto: '#chartLinkTheoryToPraxis'
     });
 });
