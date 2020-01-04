@@ -81,24 +81,44 @@
           <!-- Sub Tabs of Study Program Information -->
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="exam-tab" data-toggle="tab" href="#exam" role="tab" aria-controls="exam"
+              <a class="nav-link active" id="exam-tab" data-toggle="tab" href="#studyContent" role="tab" aria-controls="exam"
                 aria-selected="true">Study Content</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="aspects-tab" data-toggle="tab" href="#aspects" role="tab" aria-controls="aspects"
+              <a class="nav-link" id="aspects-tab" data-toggle="tab" href="#lectureDetails" role="tab" aria-controls="aspects"
                 aria-selected="false">Lecture Details</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="nc-tab" data-toggle="tab" href="#nc" role="tab" aria-controls="nc"
+              <a class="nav-link" id="nc-tab" data-toggle="tab" href="#admissionRequirements" role="tab" aria-controls="nc"
                 aria-selected="false">Admission Requirements</a>
             </li>
           </ul>
           
           <!-- div for Study Content, Lecture Details, and Admission Requirements (charts will go here) -->
           <div class="tab-content" id="myTabContent2">
-            <div class="tab-pane fade show active" id="exam" role="tabpanel" aria-labelledby="exam-tab">...</div>
-            <div class="tab-pane fade" id="aspects" role="tabpanel" aria-labelledby="aspects-tab">...</div>
-            <div class="tab-pane fade" id="nc" role="tabpanel" aria-labelledby="nc-tab">...</div>
+            <div class="tab-pane fade show active" id="studyContent" role="tabpanel" aria-labelledby="exam-tab">
+              <div id="chartStudyContentKomedia">
+                <script src="js/chartStudyContentKomedia.js"></script>
+              </div>
+
+              <div id="chartStudyContentAI">
+                <script src="js/chartStudyContentAI.js"></script>
+              </div>
+
+              <div id="chartStudyContentISEComm">
+                <script src="js/chartStudyContentISEComm.js"></script>
+              </div>
+
+              <div id="chartStudyContentISESoft">
+                <script src="js/chartStudyContentISESoft.js"></script>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="lectureDetails" role="tabpanel" aria-labelledby="aspects-tab">...</div>
+            <div class="tab-pane fade" id="admissionRequirements" role="tabpanel" aria-labelledby="nc-tab">
+              <div id="chartNCKomedia">
+                <script src="js/chartNCKomedia.js"></script>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -203,7 +223,6 @@
                   ....
                 </div>
                 <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
-                  ....
                 </div>
                 
                 <div class="tab-pane fade" id="generalHappiness" role="tabpanel" aria-labelledby="generalHappiness-tab">
@@ -233,6 +252,7 @@
   </div>
     
     <!-- /.container-fluid -->
+
     <!-- Sticky Footer -->
     <footer class="sticky-footer">
       <div class="container my-auto">
