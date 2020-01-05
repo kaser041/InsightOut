@@ -1,11 +1,10 @@
-d3.csv("static/data.csv", function (data) {
+d3.csv("static/data.csv", function(data) {
     return {
         // Required attributes
         studyProgram: data.studyProgram,
         upToDateness: data.upToDateness
     };
-}).then(function (data) {
-
+}).then(function(data) {
     // Generate chart
     var chart = c3.generate({
 
