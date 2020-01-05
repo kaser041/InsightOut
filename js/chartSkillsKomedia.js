@@ -6,8 +6,11 @@ d3.csv("static/datakomedia.csv", function(data1) {
         .attr("width", 600)
         .attr("height", 600);
 
+    svg.append("text").style("text-align", "center").text("Komedia").attr("x", 250).style("font-size", "22px")
+        .attr("y", 70);
+
     let radialScale = d3.scaleLinear()
-        .domain([0, 3])
+        .domain([0, 4])
         .range([0, 150]);
     let ticks = [0, 1, 2, 3, 4];
 
@@ -33,6 +36,8 @@ d3.csv("static/datakomedia.csv", function(data1) {
         return { "x": 300 + x, "y": 300 - y };
     }
 
+
+
     for (var i = 0; i < features.length; i++) {
         let ft_name = features[i];
         let angle = (Math.PI / 2) + (2 * Math.PI * i / features.length);
@@ -45,7 +50,7 @@ d3.csv("static/datakomedia.csv", function(data1) {
             .attr("y1", 300)
             .attr("x2", line_coordinate.x)
             .attr("y2", line_coordinate.y)
-            .attr("stroke", "black");
+            .attr("stroke", "black")
 
         //draw axis label
         svg.append("text")

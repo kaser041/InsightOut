@@ -6,8 +6,11 @@ d3.csv("static/DataAI.csv", function(data1) {
         .attr("width", 600)
         .attr("height", 600);
 
+    svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", 200).style("font-size", "22px")
+        .attr("y", 70);
+
     let radialScale = d3.scaleLinear()
-        .domain([0, 3])
+        .domain([0, 4])
         .range([0, 150]);
     let ticks = [0, 1, 2, 3, 4];
 
