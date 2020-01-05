@@ -1,1 +1,0 @@
-d3.csv("static/dataai.csv",(function(e){return{studyProgram:e.studyProgram,Male:e.male,Female:e.female}})).then((function(e){c3.generate({data:{json:e,keys:{x:"studyProgram",value:["Male","Female"]},type:"pie"},axis:{x:{type:"category"}},title:{text:"Applied Computer Science"},bindto:"#chartGenderAI"})}));
