@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "c3@0.7.11",
-      "C:\\Users\\admin\\Desktop\\InsightOut"
-    ]
-  ],
-  "_from": "c3@0.7.11",
+  "_from": "c3@^0.7.11",
   "_id": "c3@0.7.11",
   "_inBundle": false,
   "_integrity": "sha512-+051dE9Bqaz3NHJvl7sprWSofd2jE4TSHbSRBURTHXRhj0f/75Qj33XhmIW7JklSeM1T3dO0n00p4HPReRZ1qg==",
   "_location": "/c3",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "c3@0.7.11",
+    "raw": "c3@^0.7.11",
     "name": "c3",
     "escapedName": "c3",
-    "rawSpec": "0.7.11",
+    "rawSpec": "^0.7.11",
     "saveSpec": null,
-    "fetchSpec": "0.7.11"
+    "fetchSpec": "^0.7.11"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/c3/-/c3-0.7.11.tgz",
-  "_spec": "0.7.11",
-  "_where": "C:\\Users\\admin\\Desktop\\InsightOut",
+  "_shasum": "3efa9d98d40939a8774fd5b43c75d2857d6e1cdf",
+  "_spec": "c3@^0.7.11",
+  "_where": "C:\\Users\\Kaser\\Documents\\InsightOut",
   "authors": [
     "Masayuki Tanaka",
     "Ændrew Rininsland",
@@ -35,9 +31,11 @@
   "bugs": {
     "url": "https://github.com/c3js/c3/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "d3": "^5.8.0"
   },
+  "deprecated": false,
   "description": "D3-based reusable chart library",
   "devDependencies": {
     "@babel/core": "^7.5.4",

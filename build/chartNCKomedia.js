@@ -1,0 +1,1 @@
+d3.csv("static/nckomedia.csv",(function(e){return{date:e.date,nc:e.nc}})).then((function(e){c3.generate({data:{json:e,keys:{x:"date",value:["nc"]},type:"line"},axis:{x:{type:"category"},y:{label:{text:"NC Value",position:"outer-center"}}},title:{text:"NC Value over the last 6 winter semester"},legend:{show:!1},bindto:"#chartNCKomedia"})}));
