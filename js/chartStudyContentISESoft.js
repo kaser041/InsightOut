@@ -39,6 +39,10 @@ d3.csv("static/studyprograminformationisesoft.csv", function (data) {
           type: 'category'
         }
       },
+
+      legend: {
+        position: 'right'
+      },
       
       title: {
         text: 'Computer Engineering (Software Engineering)'

@@ -31,6 +31,10 @@ d3.csv("static/dataise.csv", function (data) {
           type: 'category'
         }
       },
+
+      legend: {
+        position: 'right'
+      },
       
       title: {
         text: 'Computer Engineering'

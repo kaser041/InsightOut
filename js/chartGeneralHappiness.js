@@ -15,7 +15,7 @@ d3.csv("static/data.csv", function (data) {
                 x: 'studyProgram',
                 value: ['generalHappiness']
             },
-            type: 'scatter'
+            type: 'bar'
         },
       
         axis: {

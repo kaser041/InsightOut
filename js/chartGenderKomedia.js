@@ -25,6 +25,10 @@ d3.csv("static/datakomedia.csv", function (data) {
       }
     },
 
+    legend: {
+      position: 'right'
+    },
+
     title: {
       text: 'Komedia'
     },
