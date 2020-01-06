@@ -1,0 +1,27 @@
+#chartSkillsKomedia {
+    float: left;
+}
+
+#chartSkillsISE {
+    float: right;
+}
+
+#chartSkillsAI {
+    float: left;
+}
+
+#chartGenderKomedia {
+    float: left;
+}
+
+#chartGenderISE {
+    float: left;
+}
+
+#chartGenderAI {
+    float: left;
+}
+
+#legendsGender {
+    float: left;
+}
