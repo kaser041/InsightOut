@@ -9,6 +9,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <style>
+        .c3-shape {
+            fill: none;
+        }
+        
+        .c3-axis path,
+        .c3-axis line {
+            fill: none;
+            stroke: black;
+        }
+        
+        #chartNCKomedia .c3-line {
+            stroke-width: 3px;
+        }
+    </style>
+
     <title>Overview</title>
 
     <!-- Custom fonts for this template-->
@@ -24,6 +40,12 @@
     <!-- D3.js library-->
     <script src="vendor/d3/js/d3.min.js"></script>
     <script src="vendor/c3/js/c3.min.js"></script>
+    <script>
+        var organizationGloabalCounter = 1;
+        var contentGloabalCounter = 1;
+    </script>
+    <script src="js/chartOrganization.js"></script>
+    <script src="js/chartContent.js"></script>
 
 </head>
 
@@ -154,6 +176,7 @@
                             <!-- div for Gender and Age (charts will go here) -->
                             <div class="tab-content" id="myTabContent4">
                                 <div class="tab-pane active" id="gender" role="tabpanel" aria-labelledby="gender-tab">
+                                    <h2>The Gender of graduated students in the study programs</h2>
                                     <div id="chartGenderKomedia">
                                         <script src="js/chartGenderKomedia.js"></script>
                                     </div>
@@ -172,6 +195,7 @@
                                 </div>
 
                                 <div class="tab-pane fade" id="age" role="tabpanel" aria-labelledby="age-tab">
+                                    <h2>The Age of graduated students in the study programs</h2>
                                     <div id="chartAgeKomedia">
                                         <script src="js/chartAgeKomedia.js"></script>
                                     </div>
@@ -182,6 +206,10 @@
 
                                     <div id="chartAgeAI">
                                         <script src="js/chartAgeAI.js"></script>
+                                    </div>
+
+                                    <div id="legendsAge">
+                                        <script src="js/legendsAge.js"></script>
                                     </div>
                                 </div>
                             </div>
@@ -210,84 +238,21 @@
                             <!-- div for Organization, Content, Skills, and General Happiness -->
                             <div class="tab-content" id="myTabContent5">
                                 <div class="tab-pane active" id="organization" role="tabpanel" aria-labelledby="organization-tab">
-
-                                    <!-- Sub Tabs of Organization -->
-                                    <ul class="nav nav-tabs" id="myTab4" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="timeCoordination-tab" data-toggle="tab" href="#timeCoordination" role="tab" aria-controls="timeCoordination" aria-selected="true">Time Coordination</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="comprehensibility-tab" data-toggle="tab" href="#comprehensibility" role="tab" aria-controls="comprehensibility" aria-selected="true">Comprehensibility</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="flexibelity-tab" data-toggle="tab" href="#flexibelity" role="tab" aria-controls="flexibelity" aria-selected="true">Flexibility</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="askingForHelp-tab" data-toggle="tab" href="#askingForHelp" role="tab" aria-controls="askingForHelp" aria-selected="true">Asking For Help</a>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent5">
-                                        <div class="tab-pane active" id="timeCoordination" role="tabpanel" aria-labelledby="timeCoordination-tab">
-                                            <div id="chartTimeCoordination">
-                                                <script src="js/chartTimeCoordination.js"></script>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="comprehensibility" role="tabpanel" aria-labelledby="comprehensibility-tab">
-                                            <div id="chartComprehensibility">
-                                                <script src="js/chartComprehensibility.js"></script>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="flexibelity" role="tabpanel" aria-labelledby="flexibelity-tab">
-                                            <div id="chartFlexibility">
-                                                <script src="js/chartFlexibility.js"></script>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="askingForHelp" role="tabpanel" aria-labelledby="askingForHelp-tab">
-                                            <div id="chartAskingForHelp">
-                                                <script src="js/chartAskingForHelp.js"></script>
-                                            </div>
-                                        </div>
+                                    <div id="chartOrganization">
+                                        <script src="js/chartTimeCoordination.js"></script>
                                     </div>
+                                    <button id="organizationAspectSwitch" href="#nextAspect" onclick="organizationAspectSwitch()">Next Aspect</button>
                                 </div>
                                 <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
 
-                                    <!-- Sub Tabs of Contents -->
-                                    <ul class="nav nav-tabs" id="myTab5" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="linkTheoryToPraxis-tab" data-toggle="tab" href="#linkTheoryToPraxis" role="tab" aria-controls="linkTheoryToPraxis" aria-selected="true">Linking Theory And Praxis</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="upToDateness-tab" data-toggle="tab" href="#upToDateness" role="tab" aria-controls="upToDateness" aria-selected="true">Up-to-dateness</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="studyFocus-tab" data-toggle="tab" href="#studyFocus" role="tab" aria-controls="studyFocus" aria-selected="true">Study
-                                                Focus</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="preperationForTheJob-tab" data-toggle="tab" href="#preperationForTheJob" role="tab" aria-controls="preperationForTheJob" aria-selected="true">Preperation
-                                                For The Job</a>
-                                        </li>
-                                    </ul>
+
                                     <div class="tab-content" id="myTabContent6">
-                                        <div class="tab-pane active" id="linkTheoryToPraxis" role="tabpanel" aria-labelledby="linkTheoryToPraxis-tab">
-                                            <div id="chartLinkTheoryToPraxis">
+
+                                        <div class="tab-pane active" id="organization" role="tabpanel" aria-labelledby="organization-tab">
+                                            <div id="chartContent">
                                                 <script src="js/chartLinkTheoryToPraxis.js"></script>
                                             </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="upToDateness" role="tabpanel" aria-labelledby="upToDateness-tab">
-                                            <div id="chartUpToDateness">
-                                                <script src="js/chartUpToDateness.js"></script>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="studyFocus" role="tabpanel" aria-labelledby="studyFocus-tab">
-                                            <div id="chartStudyFocus">
-                                                <script src="js/chartStudyFocus.js"></script>
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="preperationForTheJob" role="tabpanel" aria-labelledby="preperationForTheJob-tab">
-                                            <div id="chartPreperationForTheJob">
-                                                <script src="js/chartPreperationForTheJob.js"></script>
-                                            </div>
+                                            <button id="contentAspectSwitch" href="#nextoOntentAspect" onclick="contentAspectSwitch()">Next Aspect</button>
                                         </div>
                                     </div>
                                 </div>

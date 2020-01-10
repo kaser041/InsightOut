@@ -25,3 +25,23 @@
 #legendsGender {
     float: left;
 }
+
+#chartAgeKomedia {
+    float: left;
+}
+
+#chartAgeISE {
+    float: left;
+}
+
+#chartAgeAI {
+    float: left;
+}
+
+#organizationAspectSwitch {
+    float: right;
+}
+
+#contentAspectSwitch {
+    float: right;
+}

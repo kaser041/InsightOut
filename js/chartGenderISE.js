@@ -1,9 +1,48 @@
-d3.csv("static/dataise.csv", function(data1) {
-    // set the dimensions and margins of the graph
-    var width = 350
-    height = 350
-    margin = 40
+/*
+d3.csv("static/dataise.csv", function (data) {
+  return {
+    // Required attributes
+    studyProgram: data.studyProgram,
+    Male: data.male,
+    Female: data.female
+  };
+}).then(function (data) {
+  
+  // Generate chart
+  var chart = c3.generate({
+    data: {
+      json: data,
+      keys: {
+        x: 'studyProgram',
+        value: ['Male', 'Female']
+      },
+      type: 'pie'
+    },
+    
+    axis: {
+      x: {
+        type: 'category'
+      }
+    },
 
+    legend: {
+      position: 'right'
+    },
+
+    title: {
+      text: 'Computer Engineering'
+    },
+    
+    bindto: '#chartGenderISE'
+  });
+  */
+
+ d3.csv("static/dataise.csv", function(data1) {
+  // set the dimensions and margins of the graph
+  var width = 350
+  height = 350
+  margin = 40
+  
     // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
     var radius = Math.min(width, height) / 2 - margin
 
@@ -15,7 +54,7 @@ d3.csv("static/dataise.csv", function(data1) {
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    svg.append("text").style("text-align", "center").text("Compter Engineering").attr("x", -100).style("font-size", "20px")
+    svg.append("text").style("text-align", "center").text("Computer Engineering").attr("x", -100).style("font-size", "20px")
         .attr("y", 170);
 
     var data = { Male: data1.male, Female: data1.female }

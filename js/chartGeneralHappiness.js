@@ -1,43 +1,43 @@
-d3.csv("static/data.csv", function (data) {
+d3.csv("static/data.csv", function(data) {
     return {
-      // Required attributes
-      studyProgram: data.studyProgram,
-      generalHappiness: data.generalHappiness
+        // Required attributes
+        studyProgram: data.studyProgram,
+        generalHappiness: data.generalHappiness
     };
-  }).then(function (data) {
-    
+}).then(function(data) {
+
     // Generate chart
     var chart = c3.generate({
-      
+
         data: {
             json: data,
             keys: {
                 x: 'studyProgram',
                 value: ['generalHappiness']
             },
-            type: 'scatter'
+            type: 'bar'
         },
-      
+
         axis: {
             x: {
                 type: 'category'
             },
             y: {
                 max: 5,
-                label: {text: 'General Happiness', position: 'outer-center'}
+                label: { text: 'General Happiness', position: 'outer-center' }
             }
         },
-      
+
         title: {
             text: 'General Happiness in each Study Program'
         },
 
         bar: {
-            width: { ratio: 0.25}
+            width: { ratio: 0.25 }
         },
 
         legend: { show: false },
-      
+
         bindto: '#chartGeneralHappiness'
     });
-  });
+});

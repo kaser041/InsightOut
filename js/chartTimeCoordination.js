@@ -39,6 +39,6 @@ d3.csv("static/data.csv", function (data) {
 
         legend: { show: false },
 
-        bindto: '#chartTimeCoordination'
+        bindto: '#chartOrganization'
     });
 });

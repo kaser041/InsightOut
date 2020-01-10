@@ -1,10 +1,10 @@
-d3.csv("static/data.csv", function (data) {
+d3.csv("static/data.csv", function(data) {
     return {
         // Required attributes
         studyProgram: data.studyProgram,
         linkingTheoryPractice: data.linkingTheoryPractice
     };
-}).then(function (data) {
+}).then(function(data) {
 
     // Generate chart
     var chart = c3.generate({
@@ -39,6 +39,6 @@ d3.csv("static/data.csv", function (data) {
 
         legend: { show: false },
 
-        bindto: '#chartLinkTheoryToPraxis'
+        bindto: '#chartContent'
     });
 });
