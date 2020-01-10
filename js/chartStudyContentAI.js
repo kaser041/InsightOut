@@ -35,6 +35,10 @@ d3.csv("static/studyprograminformationai.csv", function (data) {
           type: 'category'
         }
       },
+
+      legend: {
+        position: 'right'
+      },
       
       title: {
         text: 'Applied Computer Science'

@@ -1,3 +1,43 @@
+/*
+d3.csv("static/dataai.csv", function (data) {
+    return {
+      // Required attributes
+      studyProgram: data.studyProgram,
+      Male: data.male,
+      Female: data.female
+    };
+  }).then(function (data) {
+    
+    // Generate chart
+    var chart = c3.generate({
+      data: {
+        json: data,
+        keys: {
+          x: 'studyProgram',
+          value: ['Male', 'Female']
+        },
+        type: 'pie'
+      },
+      
+      axis: {
+        x: {
+          type: 'category'
+        }
+      },
+
+      legend: {
+        position: 'right'
+      },
+  
+      title: {
+        text: 'Applied Computer Science'
+      },
+      
+      bindto: '#chartGenderAI'
+    });
+  });
+*/
+
 d3.csv("static/dataai.csv", function(data1) {
     // set the dimensions and margins of the graph
     var width = 350
@@ -58,5 +98,4 @@ d3.csv("static/dataai.csv", function(data1) {
         .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
         .style("text-anchor", "middle")
         .style("font-size", 17)
-
 });

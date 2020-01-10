@@ -37,6 +37,10 @@ d3.csv("static/studyprograminformationkomedia.csv", function (data) {
           type: 'category'
         }
       },
+
+      legend: {
+        position: 'right'
+      },
       
       title: {
         text: 'Komedia'
