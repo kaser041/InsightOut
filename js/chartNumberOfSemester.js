@@ -8,11 +8,7 @@ d3.csv("static/data.csv", function (data) {
     
     // Generate chart
     var chart = c3.generate({
-        size: {
-            height: 240,
-            width: 700,
-        },
-      
+
         data: {
             json: data,
             keys: {
@@ -27,13 +23,12 @@ d3.csv("static/data.csv", function (data) {
                 type: 'category'
             },
             y: {
-                min: 0,
                 label: {text: 'Semester', position: 'outer-center'}
             }
         },
       
         title: {
-            text: 'Average number of semester for graduation in each study program'
+            text: 'Average number of semester for graduation'
         },
 
         bar: {

@@ -26,12 +26,8 @@ function organizationAspectSwitch(aspect) {
                         },
                         y: {
                             max: 5,
-                            label: { text: 'Time Coordination', position: 'outer-center' }
+                            label: { text: 'Rating', position: 'outer-center' }
                         }
-                    },
-
-                    title: {
-                        text: 'Time Coordination in each Study Program'
                     },
 
                     bar: {
@@ -39,6 +35,10 @@ function organizationAspectSwitch(aspect) {
                     },
 
                     legend: { show: false },
+
+                    title: {
+                        text: 'Time coordination of the lectures (eg. overlaps)'
+                    },
 
                     bindto: '#chartOrganization'
                 });
@@ -71,12 +71,8 @@ function organizationAspectSwitch(aspect) {
                         },
                         y: {
                             max: 5,
-                            label: { text: 'Exam Comprehensibility', position: 'outer-center' }
+                            label: { text: 'Rating', position: 'outer-center' }
                         }
-                    },
-
-                    title: {
-                        text: 'Exam Comprehensibility in each Study Program'
                     },
 
                     bar: {
@@ -84,6 +80,10 @@ function organizationAspectSwitch(aspect) {
                     },
 
                     legend: { show: false },
+
+                    title: {
+                        text: 'Comprehensibility of the examination regulations and module manual'
+                    },
 
                     bindto: '#chartOrganization'
                 });
@@ -116,12 +116,8 @@ function organizationAspectSwitch(aspect) {
                         },
                         y: {
                             max: 5,
-                            label: { text: 'Flexibilty', position: 'outer-center' }
+                            label: { text: 'Rating', position: 'outer-center' }
                         }
-                    },
-
-                    title: {
-                        text: 'Flexibilty in each Study Program'
                     },
 
                     bar: {
@@ -129,6 +125,10 @@ function organizationAspectSwitch(aspect) {
                     },
 
                     legend: { show: false },
+
+                    title: {
+                        text: 'Flexibility of the study plan (eg. not sticking to the given study plan)'
+                    },
 
                     bindto: '#chartOrganization'
                 });
@@ -161,12 +161,8 @@ function organizationAspectSwitch(aspect) {
                         },
                         y: {
                             max: 5,
-                            label: { text: 'Asking For Help', position: 'outer-center' }
+                            label: { text: 'Rating', position: 'outer-center' }
                         }
-                    },
-
-                    title: {
-                        text: 'Asking For Help in each Study Program'
                     },
 
                     bar: {
@@ -174,6 +170,10 @@ function organizationAspectSwitch(aspect) {
                     },
 
                     legend: { show: false },
+
+                    title: {
+                        text: 'Options to ask for help or advice'
+                    },
 
                     bindto: '#chartOrganization'
                 });
