@@ -33,7 +33,7 @@ d3.csv("static/nckomedia.csv", function(data) {
         },
 
         title: {
-            text: 'NC Value over the last 6 winter semester'
+            text: 'Komedia'
         },
 
         legend: { show: false },

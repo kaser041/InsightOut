@@ -23,6 +23,10 @@ d3.csv("static/studyprograminformation.csv", function(data) {
             names: {
                 mandatoryLectures: 'Mandatory Lectures',
                 electiveLectures: 'Elective Lectures'
+            },
+            onclick: function() {
+                console.log("Testa");
+                
             }
         },
 
@@ -33,10 +37,6 @@ d3.csv("static/studyprograminformation.csv", function(data) {
             y: {
                 label: { text: 'Number of exams', position: 'outer-center' }
             }
-        },
-
-        title: {
-            text: 'Mandatory and Elective Lectures'
         },
 
         bar: {
