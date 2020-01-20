@@ -1,7 +1,11 @@
-d3.csv("static/datakomedia.csv", function(data1) {
+d3.csv("static/DataKomedia.csv", function(data1) {
+    d3.csv("static/DataISE.csv", function(data2) {
     features = ["programming", "math", "physics", "teamWork", "projectManagement", "givingPresentations", "analyticalSkills", "structuredWorkingMethods"];
-    data = [{ "programming": data1.programming, "math": data1.math, "physics": data1.physics, "teamWork": data1.teamWork, "projectManagement": data1.projectManagement, "givingPresentations": data1.givingPresentations, "analyticalSkills": data1.analyticalSkills, "structuredWorkingMethods": data1.structuredWorkingMethods }];
-
+    dataKo = { "programming": data1.programming, "math": data1.math, "physics": data1.physics, "teamWork": data1.teamWork, "projectManagement": data1.projectManagement, "givingPresentations": data1.givingPresentations, "analyticalSkills": data1.analyticalSkills, "structuredWorkingMethods": data1.structuredWorkingMethods };
+    dataISE ={ "programming": data2.programming, "math": data2.math, "physics": data2.physics, "teamWork": data2.teamWork, "projectManagement": data2.projectManagement, "givingPresentations": data2.givingPresentations, "analyticalSkills": data2.analyticalSkills, "structuredWorkingMethods": data2.structuredWorkingMethods };
+    let data = []
+    data.push(dataKo)
+    data.push(dataISE)
     let svg = d3.select("#chartSkillsKomedia").append("svg")
         .attr("width", 600)
         .attr("height", 600);
@@ -63,6 +67,8 @@ d3.csv("static/datakomedia.csv", function(data1) {
         .x(d => d.x)
         .y(d => d.y);
 
+        let colors = ["darkorange", "gray"];
+
     function getPathCoordinates(data_point) {
         let coordinates = [];
         for (var i = 0; i < features.length; i++) {
@@ -75,7 +81,7 @@ d3.csv("static/datakomedia.csv", function(data1) {
 
     for (var i = 0; i < data.length; i++) {
         let d = data[i];
-        let color = "darkorange";
+        let color = colors[i];
         let coordinates = getPathCoordinates(d);
 
         //draw the path element
@@ -88,4 +94,5 @@ d3.csv("static/datakomedia.csv", function(data1) {
             .attr("stroke-opacity", 1)
             .attr("opacity", 0.5);
     }
+});
 });

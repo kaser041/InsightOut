@@ -13,13 +13,13 @@
         .c3-shape {
             fill: none;
         }
-        
+
         .c3-axis path,
         .c3-axis line {
             fill: none;
             stroke: black;
         }
-        
+
         #chartNCKomedia .c3-line {
             stroke-width: 3px;
         }
@@ -40,13 +40,30 @@
     <!-- D3.js library-->
     <script src="vendor/d3/js/d3.min.js"></script>
     <script src="vendor/c3/js/c3.min.js"></script>
-    <script>
-        var organizationGloabalCounter = 1;
-        var contentGloabalCounter = 1;
-    </script>
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/chartOrganization.js"></script>
     <script src="js/chartContent.js"></script>
+    <script src="js/chartsGender.js"></script>
+    <script src="js/chartsAge.js"></script>
+    <script src="js/chartSkills.js"></script>
+    <script src="js/chartSoftSkills.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.single-checkbox').on('change', function (evt) {
+                if ($('.single-checkbox:checked').length >= 3) {
+                    this.checked = false;
+                }
+            });
+        });
 
+        $(document).ready(function () {
+            $('.single-checkbox2').on('change', function (evt) {
+                if ($('.single-checkbox2:checked').length >= 3) {
+                    this.checked = false;
+                }
+            });
+        });
+    </script>
 </head>
 
 <body id="page-top">
@@ -86,10 +103,12 @@
             <!-- Top Tabs -->
             <ul class="nav nav-tabs" id="parentTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="quantitative-tab" data-toggle="tab" href="#quantitative" role="tab" aria-controls="quantitative" aria-selected="true">Study Program Information</a>
+                    <a class="nav-link active" id="quantitative-tab" data-toggle="tab" href="#quantitative" role="tab"
+                        aria-controls="quantitative" aria-selected="true">Study Program Information</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="qualitative-tab" data-toggle="tab" href="#qualitative" role="tab" aria-controls="qualitative" aria-selected="false">Survey Data</a>
+                    <a class="nav-link" id="qualitative-tab" data-toggle="tab" href="#qualitative" role="tab"
+                        aria-controls="qualitative" aria-selected="false">Survey Data</a>
                 </li>
             </ul>
 
@@ -97,24 +116,29 @@
             <div class="tab-content" id="myTabContent">
 
                 <!-- div for Study Program Information -->
-                <div class="tab-pane fade show active" id="quantitative" role="tabpanel" aria-labelledby="quantitative-tab">
+                <div class="tab-pane fade show active" id="quantitative" role="tabpanel"
+                    aria-labelledby="quantitative-tab">
 
                     <!-- Sub Tabs of Study Program Information -->
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="exam-tab" data-toggle="tab" href="#studyContent" role="tab" aria-controls="exam" aria-selected="true">Study Content</a>
+                            <a class="nav-link active" id="exam-tab" data-toggle="tab" href="#studyContent" role="tab"
+                                aria-controls="exam" aria-selected="true">Study Content</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="aspects-tab" data-toggle="tab" href="#lectureDetails" role="tab" aria-controls="aspects" aria-selected="false">Lecture Details</a>
+                            <a class="nav-link" id="aspects-tab" data-toggle="tab" href="#lectureDetails" role="tab"
+                                aria-controls="aspects" aria-selected="false">Lecture Details</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="nc-tab" data-toggle="tab" href="#admissionRequirements" role="tab" aria-controls="nc" aria-selected="false">Admission Requirements</a>
+                            <a class="nav-link" id="nc-tab" data-toggle="tab" href="#admissionRequirements" role="tab"
+                                aria-controls="nc" aria-selected="false">Admission Requirements</a>
                         </li>
                     </ul>
 
                     <!-- div for Study Content, Lecture Details, and Admission Requirements (charts will go here) -->
                     <div class="tab-content" id="myTabContent2">
-                        <div class="tab-pane fade show active" id="studyContent" role="tabpanel" aria-labelledby="exam-tab">
+                        <div class="tab-pane fade show active" id="studyContent" role="tabpanel"
+                            aria-labelledby="exam-tab">
                             <div id="chartStudyContentKomedia">
                                 <script src="js/chartStudyContentKomedia.js"></script>
                             </div>
@@ -153,13 +177,16 @@
                     <!-- Sub Tabs of Survey Data -->
                     <ul class="nav nav-tabs" id="myTab2" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="demographic-tab" data-toggle="tab" href="#demographic" role="tab" aria-controls="demographic" aria-selected="true">Demographics</a>
+                            <a class="nav-link active" id="demographic-tab" data-toggle="tab" href="#demographic"
+                                role="tab" aria-controls="demographic" aria-selected="true">Demographics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="studyRating-tab" data-toggle="tab" href="#studyRating" role="tab" aria-controls="studyRating" aria-selected="false">Study rating</a>
+                            <a class="nav-link" id="studyRating-tab" data-toggle="tab" href="#studyRating" role="tab"
+                                aria-controls="studyRating" aria-selected="false">Study rating</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="graduation-tab" data-toggle="tab" href="#graduation" role="tab" aria-controls="graduation" aria-selected="false">Graduation</a>
+                            <a class="nav-link" id="graduation-tab" data-toggle="tab" href="#graduation" role="tab"
+                                aria-controls="graduation" aria-selected="false">Graduation</a>
                         </li>
                     </ul>
 
@@ -172,10 +199,12 @@
                             <!-- Sub Tabs of Demographics -->
                             <ul class="nav nav-tabs" id="myTab3" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="gender-tab" data-toggle="tab" href="#gender" role="tab" aria-controls="gender" aria-selected="true">Gender</a>
+                                    <a class="nav-link active" id="gender-tab" data-toggle="tab" href="#gender"
+                                        role="tab" aria-controls="gender" aria-selected="true">Gender</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="age-tab" data-toggle="tab" href="#age" role="tab" aria-controls="age" aria-selected="true">Age</a>
+                                    <a class="nav-link" id="age-tab" data-toggle="tab" href="#age" role="tab"
+                                        aria-controls="age" aria-selected="true">Age</a>
                                 </li>
                             </ul>
 
@@ -183,6 +212,22 @@
                             <div class="tab-content" id="myTabContent4">
                                 <div class="tab-pane active" id="gender" role="tabpanel" aria-labelledby="gender-tab">
                                     <h2>The Gender of graduated students in the study programs</h2>
+                                    <div class="checkBoxContainer1">
+                                        <div class="checkbox1">
+                                            <label><input type="checkbox" id="komediaChx"
+                                                    onchange="generateGnderChart('komediaChx')" checked> Komedia</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" id="iseChx"
+                                                    onchange="generateGnderChart('iseChx')" checked> Computer
+                                                Engineering</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" id="aiChx"
+                                                    onchange="generateGnderChart('aiChx')" checked> Applied Computer
+                                                Science</label>
+                                        </div>
+                                    </div>
                                     <div id="chartGenderKomedia">
                                         <script src="js/chartGenderKomedia.js"></script>
                                     </div>
@@ -194,14 +239,29 @@
                                     <div id="chartGenderAI">
                                         <script src="js/chartGenderAI.js"></script>
                                     </div>
-
                                     <div id="legendsGender">
                                         <script src="js/legendsGender.js"></script>
                                     </div>
                                 </div>
-
                                 <div class="tab-pane fade" id="age" role="tabpanel" aria-labelledby="age-tab">
                                     <h2>The Age of graduated students in the study programs</h2>
+                                    <div class="checkBoxContainer1">
+                                        <div class="checkbox1">
+                                            <label><input type="checkbox" id="ageKomediaChx"
+                                                    onchange="generateAgeChart('ageKomediaChx')" checked>
+                                                Komedia</label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label><input type="checkbox" id="ageIseChx"
+                                                    onchange="generateAgeChart('ageIseChx')" checked> Computer
+                                                Engineering</label>
+                                        </div>
+                                        <div class="checkbox disabled">
+                                            <label><input type="checkbox" id="ageAiChx"
+                                                    onchange="generateAgeChart('ageAiChx')" checked> Applied Computer
+                                                Science</label>
+                                        </div>
+                                    </div>
                                     <div id="chartAgeKomedia">
                                         <script src="js/chartAgeKomedia.js"></script>
                                     </div>
@@ -227,78 +287,174 @@
                             <!-- Sub Tabs of Study Rating -->
                             <ul class="nav nav-tabs" id="myTab4" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="organization-tab" data-toggle="tab" href="#organization" role="tab" aria-controls="organization" aria-selected="true">Organization</a>
+                                    <a class="nav-link active" id="organization-tab" data-toggle="tab"
+                                        href="#organization" role="tab" aria-controls="organization"
+                                        aria-selected="true">Organization</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="content-tab" data-toggle="tab" href="#content" role="tab" aria-controls="content" aria-selected="true">Content</a>
+                                    <a class="nav-link" id="content-tab" data-toggle="tab" href="#content" role="tab"
+                                        aria-controls="content" aria-selected="true">Content</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="skills-tab" data-toggle="tab" href="#skills" role="tab" aria-controls="skills" aria-selected="true">Skills</a>
+                                    <a class="nav-link" id="skills-tab" data-toggle="tab" href="#skills" role="tab"
+                                        aria-controls="skills" aria-selected="true">Skills</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="generalHappiness-tab" data-toggle="tab" href="#generalHappiness" role="tab" aria-controls="generalHappiness" aria-selected="true">General Happiness</a>
+                                    <a class="nav-link" id="generalHappiness-tab" data-toggle="tab"
+                                        href="#generalHappiness" role="tab" aria-controls="generalHappiness"
+                                        aria-selected="true">General
+                                        Happiness</a>
                                 </li>
                             </ul>
 
 
                             <!-- div for Organization, Content, Skills, and General Happiness -->
                             <div class="tab-content" id="myTabContent5">
-                                <div class="tab-pane active" id="organization" role="tabpanel" aria-labelledby="organization-tab">
+                                <div class="tab-pane active" id="organization" role="tabpanel"
+                                    aria-labelledby="organization-tab">
+                                    <div class="buttonContainer">
+                                        <button id="organizationAspectSwitch1" type="button"
+                                            class="btn btn-outline-primary" href="#timeCoordination"
+                                            onclick="organizationAspectSwitch('Time Coordination')">Time
+                                            Coordination</button>
+
+                                        <button id="organizationAspectSwitch2" type="button"
+                                            class="btn btn-outline-primary" href="#examComprehensibility"
+                                            onclick="organizationAspectSwitch('Exam Comprehensibility')">Exam
+                                            Comprehensibility</button>
+
+                                        <button id="organizationAspectSwitch3" type="button"
+                                            class="btn btn-outline-primary" href="#flexibilty"
+                                            onclick="organizationAspectSwitch('Flexibilty')">Flexibilty</button>
+
+                                        <button id="organizationAspectSwitch4" type="button"
+                                            class="btn btn-outline-primary" href="#askForHelp"
+                                            onclick="organizationAspectSwitch('Asking For Help')">Asking
+                                            For
+                                            Help</button>
+                                    </div>
                                     <div id="chartOrganization">
                                         <script src="js/chartTimeCoordination.js"></script>
                                     </div>
-                                    <button id="organizationAspectSwitch" href="#nextAspect" onclick="organizationAspectSwitch()">Next Aspect</button>
                                 </div>
                                 <div class="tab-pane fade" id="content" role="tabpanel" aria-labelledby="content-tab">
-
-
                                     <div class="tab-content" id="myTabContent6">
+                                        <div class="tab-pane active" id="organization" role="tabpanel"
+                                            aria-labelledby="organization-tab">
+                                            <div class="buttonContainer">
+                                                <button id="contentAspectSwitch1" type="button"
+                                                    class="btn btn-outline-primary" href="#linkingTheoryToPraxis"
+                                                    onclick="contentAspectSwitch('Linking Theory To Praxis')">Linking
+                                                    Theory To Praxis</button>
 
-                                        <div class="tab-pane active" id="organization" role="tabpanel" aria-labelledby="organization-tab">
+                                                <button id="contentAspectSwitch2" type="button"
+                                                    class="btn btn-outline-primary" href="#upToDateness"
+                                                    onclick="contentAspectSwitch('Up-to-dateness')">Up-to-dateness</button>
+
+                                                <button id="contentAspectSwitch3" type="button"
+                                                    class="btn btn-outline-primary" href="#studyFocus"
+                                                    onclick="contentAspectSwitch('Study Focus')">Study Focus</button>
+
+                                                <button id="contentAspectSwitch4" type="button"
+                                                    class="btn btn-outline-primary" href="#jobProperation"
+                                                    onclick="contentAspectSwitch('Job Preperation')">Job
+                                                    Preperation</button>
+                                            </div>
                                             <div id="chartContent">
                                                 <script src="js/chartLinkTheoryToPraxis.js"></script>
                                             </div>
-                                            <button id="contentAspectSwitch" href="#nextoOntentAspect" onclick="contentAspectSwitch()">Next Aspect</button>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="tab-pane fade" id="skills" role="tabpanel" aria-labelledby="skills-tab">
-                                    <div id="chartSkillsKomedia">
-                                        <script src="js/chartSkillsKomedia.js"></script>
-                                    </div>
-                                    <div id="chartSkillsISE">
-                                        <script src="js/chartSkillsISE.js"></script>
-                                    </div>
-                                    <div id="chartSkillsAI">
-                                        <script src="js/chartSkillsAI.js"></script>
+                                    <ul class="nav nav-tabs" id="myTab8" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="subjects-tab" data-toggle="tab"
+                                                href="#subjects" role="tab" aria-controls="subject"
+                                                aria-selected="true">Subjects</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="softSkills-tab" data-toggle="tab" href="#softSkills"
+                                                role="tab" aria-controls="softSkills" aria-selected="true">Soft
+                                                Skills</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content" id="myTabContent8">
+                                        <div class="tab-pane active" id="subjects" role="tabpanel"
+                                            aria-labelledby="subjects-tab">
+                                            <div class="checkBoxContainer">
+                                                <div class="checkbox">
+                                                    <label><input class="single-checkbox" type="checkbox"
+                                                            id="skillsKomediaChx" onchange="generateSkillsChart()">
+                                                        Komedia</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input class="single-checkbox" type="checkbox"
+                                                            id="skillsIseChx" onchange="generateSkillsChart()"> Computer
+                                                        Engineering</label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label><input class="single-checkbox" type="checkbox"
+                                                            id="skillsAiChx" onchange="generateSkillsChart()"> Applied
+                                                        Computer Science</label>
+                                                </div>
+                                            </div>
+                                            <div id="chartSkills"> </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="softSkills" role="tabpanel"
+                                            aria-labelledby="softSkills-tab">
+                                        <div class="checkBoxContainer2">
+                                            <div class="checkbox2">
+                                                <label><input class="single-checkbox2" type="checkbox"
+                                                        id="skillsKomediaChx2" onchange="generateSoftSkillsChart()">
+                                                    Komedia</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input class="single-checkbox2" type="checkbox"
+                                                        id="skillsIseChx2" onchange="generateSoftSkillsChart()">
+                                                    Computer
+                                                    Engineering</label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label><input class="single-checkbox2" type="checkbox" id="skillsAiChx2"
+                                                        onchange="generateSoftSkillsChart()"> Applied
+                                                    Computer Science</label>
+                                            </div>
+                                        </div>
+                                        <div id="chartSoftSkills"> </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="tab-pane fade" id="generalHappiness" role="tabpanel" aria-labelledby="generalHappiness-tab">
-                                    <div id="chartGeneralHappiness">
-                                        <script src="js/chartGeneralHappiness.js"></script>
-                                    </div>
+
+
+                            <div class="tab-pane fade" id="generalHappiness" role="tabpanel"
+                                aria-labelledby="generalHappiness-tab">
+                                <div id="chartGeneralHappiness">
+                                    <script src="js/chartGeneralHappiness.js"></script>
                                 </div>
-
                             </div>
+
                         </div>
-
-                        <!-- div for Graduation -->
-                        <div class="tab-pane fade" id="graduation" role="tabpanel" aria-labelledby="graduation-tab">
-                            <div id="chartDifficulty">
-                                <script src="js/chartDifficulty.js"></script>
-                            </div>
-
-                            <div id="chartNumberOfSemester">
-                                <script src="js/chartNumberOfSemester.js"></script>
-                            </div>
-                        </div>
-
                     </div>
+
+                    <!-- div for Graduation -->
+                    <div class="tab-pane fade" id="graduation" role="tabpanel" aria-labelledby="graduation-tab">
+                        <div id="chartDifficulty">
+                            <script src="js/chartDifficulty.js"></script>
+                        </div>
+
+                        <div id="chartNumberOfSemester">
+                            <script src="js/chartNumberOfSemester.js"></script>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->

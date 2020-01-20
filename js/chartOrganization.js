@@ -1,13 +1,13 @@
-function organizationAspectSwitch() {
-    switch (organizationGloabalCounter) {
-        case 0:
-            d3.csv("static/data.csv", function(data) {
+function organizationAspectSwitch(aspect) {
+    switch (aspect) {
+        case "Time Coordination":
+            d3.csv("static/data.csv", function (data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
                     timeCoordination: data.timeCoordination
                 };
-            }).then(function(data) {
+            }).then(function (data) {
 
                 // Generate chart
                 var chart = c3.generate({
@@ -20,8 +20,6 @@ function organizationAspectSwitch() {
                         },
                         type: 'bar'
                     },
-
-
                     axis: {
                         x: {
                             type: 'category'
@@ -45,16 +43,15 @@ function organizationAspectSwitch() {
                     bindto: '#chartOrganization'
                 });
             });
-            organizationGloabalCounter++;
             break;
-        case 1:
-            d3.csv("static/data.csv", function(data) {
+        case "Exam Comprehensibility":
+            d3.csv("static/data.csv", function (data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
                     comprehensibilityExamination: data.comprehensibilityExamination
                 };
-            }).then(function(data) {
+            }).then(function (data) {
 
                 // Generate chart
                 var chart = c3.generate({
@@ -91,16 +88,15 @@ function organizationAspectSwitch() {
                     bindto: '#chartOrganization'
                 });
             });
-            organizationGloabalCounter++;
             break;
-        case 2:
-            d3.csv("static/data.csv", function(data) {
+        case "Flexibilty":
+            d3.csv("static/data.csv", function (data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
                     flexibilty: data.flexibilty
                 };
-            }).then(function(data) {
+            }).then(function (data) {
 
                 // Generate chart
                 var chart = c3.generate({
@@ -137,16 +133,15 @@ function organizationAspectSwitch() {
                     bindto: '#chartOrganization'
                 });
             });
-            organizationGloabalCounter++;
             break;
-        case 3:
-            d3.csv("static/data.csv", function(data) {
+        case "Asking For Help":
+            d3.csv("static/data.csv", function (data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
                     help: data.help
                 };
-            }).then(function(data) {
+            }).then(function (data) {
 
                 // Generate chart
                 var chart = c3.generate({
@@ -183,8 +178,6 @@ function organizationAspectSwitch() {
                     bindto: '#chartOrganization'
                 });
             });
-            organizationGloabalCounter = 0;
             break;
-
     }
 }

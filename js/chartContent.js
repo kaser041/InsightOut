@@ -1,6 +1,6 @@
-function contentAspectSwitch() {
-    switch (contentGloabalCounter) {
-        case 0:
+function contentAspectSwitch(aspect) {
+    switch (aspect) {
+        case "Linking Theory To Praxis":
             d3.csv("static/data.csv", function(data) {
                 return {
                     // Required attributes
@@ -45,9 +45,8 @@ function contentAspectSwitch() {
                     bindto: '#chartContent'
                 });
             });
-            contentGloabalCounter++;
             break;
-        case 1:
+        case "Up-to-dateness":
             d3.csv("static/data.csv", function(data) {
                 return {
                     // Required attributes
@@ -91,10 +90,9 @@ function contentAspectSwitch() {
                     bindto: '#chartContent'
                 });
             });
-            contentGloabalCounter++;
             break;
 
-        case 2:
+        case "Study Focus":
             d3.csv("static/data.csv", function(data) {
                 return {
                     // Required attributes
@@ -139,10 +137,9 @@ function contentAspectSwitch() {
                     bindto: '#chartContent'
                 });
             });
-            contentGloabalCounter++;
             break;
 
-        case 3:
+        case "Job Preperation":
             d3.csv("static/data.csv", function(data) {
                 return {
                     // Required attributes
@@ -187,7 +184,6 @@ function contentAspectSwitch() {
                     bindto: '#chartContent'
                 });
             });
-            contentGloabalCounter = 0;
             break;
     }
 }
