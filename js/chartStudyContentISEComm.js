@@ -72,41 +72,41 @@ d3.csv("static/studyprograminformationisecomm.csv", function (data) {
       creditsInternship: data.creditsInternship,
       creditsBachelorThesis: data.creditsBachelorThesis
     };
-  }).then(function (data) {
-    
+}).then(function(data) {
+
     // Generate chart
     var chart = c3.generate({
-      data: {
-        json: data,
-        keys: {
-          x: 'studyProgram',
-          value: ['creditsLectures', 'creditsErgaenzungsbereich', 'creditsProjects', 'creditsInternship', 'creditsBachelorThesis']
+        data: {
+            json: data,
+            keys: {
+                x: 'studyProgram',
+                value: ['creditsLectures', 'creditsErgaenzungsbereich', 'creditsProjects', 'creditsInternship', 'creditsBachelorThesis']
+            },
+            type: 'pie',
+            names: {
+                creditsLectures: 'Lectures',
+                creditsErgaenzungsbereich: 'Ergänzungsbereich',
+                creditsProjects: 'Projects',
+                creditsInternship: 'Internship',
+                creditsBachelorThesis: 'Bachelor Thesis'
+            }
         },
-        type: 'pie',
-        names: {
-            creditsLectures: 'Lectures',
-            creditsErgaenzungsbereich: 'Ergänzungsbereich',
-            creditsProjects: 'Projects',
-            creditsInternship: 'Internship',
-            creditsBachelorThesis: 'Bachelor Thesis'
-        }
-      },
-      
-      axis: {
-        x: {
-          type: 'category'
-        }
-      },
 
-      legend: {
-        position: 'right'
-      },
-      
-      title: {
-        text: 'Computer Engineering (Communication)'
-      },
-      
-      bindto: '#chartStudyContentISEComm'
+        axis: {
+            x: {
+                type: 'category'
+            }
+        },
+
+        legend: {
+            show: false
+        },
+
+        title: {
+            text: 'Computer Engineering (Communication)'
+        },
+
+        bindto: '#chartStudyContentISEComm'
     });
   });
   */
