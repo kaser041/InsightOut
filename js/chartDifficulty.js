@@ -8,11 +8,7 @@ d3.csv("static/data.csv", function (data) {
     
     // Generate chart
     var chart = c3.generate({
-        size: {
-            height: 240,
-            width: 700,
-        },
-      
+  
         data: {
             json: data,
             keys: {
@@ -27,14 +23,13 @@ d3.csv("static/data.csv", function (data) {
                 type: 'category'
             },
             y: {
-                min: 0,
-                max: 5,
-                label: {text: 'Difficulty', position: 'outer-center'}
+                max: 4.9,
+                label: {text: 'Rating', position: 'outer-center'}
             }
         },
       
         title: {
-            text: 'Average perceived difficulty to graduate in the standard period of study in each Study Program'
+            text: 'Perceived difficulty to graduate in the standard period of study (1="very difficult", 5="very easy")'
         },
 
         bar: {

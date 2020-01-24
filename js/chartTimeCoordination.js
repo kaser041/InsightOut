@@ -25,12 +25,12 @@ d3.csv("static/data.csv", function (data) {
             },
             y: {
                 max: 5,
-                label: { text: 'Time Coordination', position: 'outer-center' }
+                label: { text: 'Rating', position: 'outer-center' }
             }
         },
 
         title: {
-            text: 'Time Coordination in each Study Program'
+            text: 'Time coordination of the lectures (eg. overlaps)'
         },
 
         bar: {

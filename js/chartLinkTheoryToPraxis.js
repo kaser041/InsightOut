@@ -25,12 +25,12 @@ d3.csv("static/data.csv", function(data) {
             },
             y: {
                 max: 5,
-                label: { text: 'Linking Theory To Praxis', position: 'outer-center' }
+                label: { text: 'Rating', position: 'outer-center' }
             }
         },
 
         title: {
-            text: 'Linking Theory To Praxis in each Study Program'
+            text: 'Linking theory and praxis'
         },
 
         bar: {

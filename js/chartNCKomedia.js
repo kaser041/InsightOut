@@ -28,12 +28,12 @@ d3.csv("static/nckomedia.csv", function(data) {
                 label: { text: 'Winter semester', position: 'outer-center' }
             },
             y: {
-                label: { text: 'NC Value', position: 'outer-middle' }
+                label: { text: 'NC Value', position: 'outer-center' }
             }
         },
 
         title: {
-            text: 'Komedia'
+            text: 'Komedia NC values of the last 3 years'
         },
 
         legend: { show: false },

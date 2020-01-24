@@ -28,12 +28,8 @@ function contentAspectSwitch(aspect) {
                         },
                         y: {
                             max: 5,
-                            label: { text: 'Linking Theory To Praxis', position: 'outer-center' }
+                            label: { text: 'Rating', position: 'outer-center' }
                         }
-                    },
-
-                    title: {
-                        text: 'Linking Theory To Praxis in each Study Program'
                     },
 
                     bar: {
@@ -41,6 +37,10 @@ function contentAspectSwitch(aspect) {
                     },
 
                     legend: { show: false },
+
+                    title: {
+                        text: 'Linking theory and practice'
+                    },
 
                     bindto: '#chartContent'
                 });
@@ -73,12 +73,8 @@ function contentAspectSwitch(aspect) {
                         },
                         y: {
                             max: 5,
-                            label: { text: 'Up-to-dateness', position: 'outer-center' }
+                            label: { text: 'Rating', position: 'outer-center' }
                         }
-                    },
-
-                    title: {
-                        text: 'Up-to-dateness in each Study Program'
                     },
 
                     bar: {
@@ -86,6 +82,10 @@ function contentAspectSwitch(aspect) {
                     },
 
                     legend: { show: false },
+
+                    title: {
+                        text: 'Up-to-dateness of the taught contents'
+                    },
 
                     bindto: '#chartContent'
                 });
@@ -120,12 +120,8 @@ function contentAspectSwitch(aspect) {
                         },
                         y: {
                             max: 5,
-                            label: { text: 'Study Focus', position: 'outer-center' }
+                            label: { text: 'Rating', position: 'outer-center' }
                         }
-                    },
-
-                    title: {
-                        text: 'Study Focus in each Study Program'
                     },
 
                     bar: {
@@ -133,6 +129,10 @@ function contentAspectSwitch(aspect) {
                     },
 
                     legend: { show: false },
+
+                    title: {
+                        text: 'Opportunities to select a study focus'
+                    },
 
                     bindto: '#chartContent'
                 });
@@ -167,12 +167,8 @@ function contentAspectSwitch(aspect) {
                         },
                         y: {
                             max: 5,
-                            label: { text: 'Job Preperation', position: 'outer-center' }
+                            label: { text: 'Rating', position: 'outer-center' }
                         }
-                    },
-
-                    title: {
-                        text: 'Job Preperation in each Study Program'
                     },
 
                     bar: {
@@ -180,6 +176,10 @@ function contentAspectSwitch(aspect) {
                     },
 
                     legend: { show: false },
+
+                    title: {
+                        text: 'Preparation for the job'
+                    },
 
                     bindto: '#chartContent'
                 });

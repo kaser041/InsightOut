@@ -24,12 +24,12 @@ d3.csv("static/data.csv", function(data) {
             },
             y: {
                 max: 5,
-                label: { text: 'General Happiness', position: 'outer-center' }
+                label: { text: 'Rating', position: 'outer-center' }
             }
         },
 
         title: {
-            text: 'General Happiness in each Study Program'
+            text: 'General Happiness'
         },
 
         bar: {
