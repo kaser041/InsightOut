@@ -59,13 +59,14 @@ d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
         .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
         .style("text-anchor", "middle")
         .style("font-size", 17)
-        .on("click", function(d) {
+        /* .on("click", function(d) {
             if (d.data.key == "creditsLectures") {
                 console.log(d.data.key);
                 handleMousehover(d)
             }
 
-        })
+        }) */
+        .on("click", handleMousehover);
 
 });
 
@@ -132,12 +133,7 @@ function handleMouseOut(d, i) {
             .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
             .style("text-anchor", "middle")
             .style("font-size", 17)
-            .on("click", function(d) {
-                if (d.data.key == "creditsLectures") {
-                    console.log(d.data.key);
-                    handleMousehover(d)
-                }
-            })
+            .on("click", handleMousehover);
     });
 }
 
