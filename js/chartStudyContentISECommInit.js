@@ -19,7 +19,7 @@ d3.csv("static/StudyProgramInformationISEComm.csv", function(data1) {
         .attr("y", 170);
 
     var data = { creditsLectures: data1.creditsLectures, creditsBachelorThesis: data1.creditsBachelorThesis, creditsInternship: data1.creditsInternship, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects }
-    var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsInternship ) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) 
+    var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsInternship) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects)
 
     // set the color scale
     var color = d3.scaleOrdinal()
@@ -64,7 +64,6 @@ d3.csv("static/StudyProgramInformationISEComm.csv", function(data1) {
                 console.log(d.data.key);
                 handleMousehover(d)
             }
-
         }) */
         .on("click", handleMousehoverISECom);
 
@@ -93,7 +92,7 @@ function handleMouseOutISECom(d, i) {
             .attr("y", 170);
 
         var data = { creditsLectures: data1.creditsLectures, creditsBachelorThesis: data1.creditsBachelorThesis, creditsInternship: data1.creditsInternship, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects }
-        var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsInternship) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects)  
+        var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsInternship) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects)
 
         // set the color scale
         var color = d3.scaleOrdinal()
@@ -159,7 +158,7 @@ function handleMousehoverISECom(d, i) {
             .attr("y", 170);
 
         var data = { creditsComputerScience: data1.creditsComputerScience, creditsMath: data1.creditsMath, creditsElectricalEngineering: data1.creditsElectricalEngineering, creditsFundamentals: data1.creditsFundamentals, creditsPhysics: data1.creditsPhysics, creditsBusinessEconomics: data1.creditsBusinessEconomics, creditsBachelorThesis: data1.creditsBachelorThesis, creditsInternship: data1.creditsInternship, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects }
-        var sum = parseInt(data1.creditsComputerScience) + parseInt(data1.creditsMath) + parseInt(data1.creditsElectricalEngineering) + parseInt(data1.creditsFundamentals) + parseInt(data1.creditsPhysics) + parseInt(data1.creditsBusinessEconomics) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsInternship) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) 
+        var sum = parseInt(data1.creditsComputerScience) + parseInt(data1.creditsMath) + parseInt(data1.creditsElectricalEngineering) + parseInt(data1.creditsFundamentals) + parseInt(data1.creditsPhysics) + parseInt(data1.creditsBusinessEconomics) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsInternship) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects)
 
         // set the color scale
         var color = d3.scaleOrdinal()
@@ -215,7 +214,6 @@ d3.csv("static/studyprograminformationkomedia.csv", function (data) {
       creditsBachelorThesis: data.creditsBachelorThesis
     };
 }).then(function(data) {
-
     // Generate chart
     var chart = c3.generate({
         data: {
@@ -232,21 +230,17 @@ d3.csv("static/studyprograminformationkomedia.csv", function (data) {
                 creditsBachelorThesis: 'Bachelor Thesis'
             }
         },
-
         axis: {
             x: {
                 type: 'category'
             }
         },
-
         legend: {
             show: false
         },
-
         title: {
             text: 'Komedia'
         },
-
         bindto: '#chartStudyContentKomedia'
     });
   });

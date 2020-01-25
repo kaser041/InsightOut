@@ -19,7 +19,7 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
         .attr("y", 170);
 
     var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsBachelorThesis: data1.creditsBachelorThesis, creditsProjects: data1.creditsProjects }
-    var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsProjects) 
+    var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsProjects)
 
     // set the color scale
     var color = d3.scaleOrdinal()
@@ -64,7 +64,6 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
                 console.log(d.data.key);
                 handleMousehover(d)
             }
-
         }) */
         .on("click", handleMousehoverAI);
 
@@ -203,51 +202,3 @@ function handleMousehoverAI(d, i) {
 
     });
 }
-
-/*
-d3.csv("static/studyprograminformationkomedia.csv", function (data) {
-    return {
-      // Required attributes
-      studyProgram: data.studyProgram,
-      creditsLectures: data.creditsLectures,
-      creditsErgaenzungsbereich: data.creditsErgaenzungsbereich,
-      creditsProjects: data.creditsProjects,
-      creditsBachelorThesis: data.creditsBachelorThesis
-    };
-}).then(function(data) {
-
-    // Generate chart
-    var chart = c3.generate({
-        data: {
-            json: data,
-            keys: {
-                x: 'studyProgram',
-                value: ['creditsLectures', 'creditsErgaenzungsbereich', 'creditsProjects', 'creditsBachelorThesis']
-            },
-            type: 'pie',
-            names: {
-                creditsLectures: 'Lectures',
-                creditsErgaenzungsbereich: 'Ergänzungsbereich',
-                creditsProjects: 'Projects',
-                creditsBachelorThesis: 'Bachelor Thesis'
-            }
-        },
-
-        axis: {
-            x: {
-                type: 'category'
-            }
-        },
-
-        legend: {
-            show: false
-        },
-
-        title: {
-            text: 'Komedia'
-        },
-
-        bindto: '#chartStudyContentKomedia'
-    });
-  });
-  */

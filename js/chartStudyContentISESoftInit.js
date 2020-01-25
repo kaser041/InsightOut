@@ -64,7 +64,6 @@ d3.csv("static/StudyProgramInformationISESoft.csv", function(data1) {
                 console.log(d.data.key);
                 handleMousehover(d)
             }
-
         }) */
         .on("click", handleMousehoverISESoft);
 
@@ -215,7 +214,6 @@ d3.csv("static/studyprograminformationkomedia.csv", function (data) {
       creditsBachelorThesis: data.creditsBachelorThesis
     };
 }).then(function(data) {
-
     // Generate chart
     var chart = c3.generate({
         data: {
@@ -232,21 +230,17 @@ d3.csv("static/studyprograminformationkomedia.csv", function (data) {
                 creditsBachelorThesis: 'Bachelor Thesis'
             }
         },
-
         axis: {
             x: {
                 type: 'category'
             }
         },
-
         legend: {
             show: false
         },
-
         title: {
             text: 'Komedia'
         },
-
         bindto: '#chartStudyContentKomedia'
     });
   });
