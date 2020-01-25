@@ -1,7 +1,4 @@
-function generateStudyContentChartISESoft(checkBoxId) {
-    var checkbox = document.getElementById(checkBoxId);
-    if (checkbox.checked) {
-        d3.csv("static/StudyProgramInformationISESoft.csv", function(data1) {
+        d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
             // set the dimensions and margins of the graph
             var width = 350
             height = 350
@@ -11,14 +8,14 @@ function generateStudyContentChartISESoft(checkBoxId) {
             var radius = Math.min(width, height) / 2 - margin
 
             // append the svg object to the div called 'my_dataviz'
-            var svg = d3.select("#chartStudyContentISESoft")
+            var svg = d3.select("#chartStudyContentKomedia")
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
                 .append("g")
                 .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-            svg.append("text").style("text-align", "center").text("Computer Engineering Software").attr("x", -120).style("font-size", "20px")
+            svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
                 .attr("y", 170);
 
             var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
@@ -69,13 +66,13 @@ function generateStudyContentChartISESoft(checkBoxId) {
                     }
 
                 }) */
-                .on("click", handleMousehoverISESoft);
+                .on("click", handleMousehover);
 
         });
 
 
-        function handleMouseOutISESoft(d, i) {
-            d3.csv("static/StudyProgramInformationISESoft.csv", function(data1) {
+        function handleMouseOut(d, i) {
+            d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
                 // set the dimensions and margins of the graph
                 var width = 350
                 height = 350
@@ -83,16 +80,16 @@ function generateStudyContentChartISESoft(checkBoxId) {
                 console.log("mouseOut")
                     // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
                 var radius = Math.min(width, height) / 2 - margin
-                d3.select("#chartStudyContentISESoft").selectAll("svg").remove();
+                d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
                 // append the svg object to the div called 'my_dataviz'
-                var svg = d3.select("#chartStudyContentISESoft")
+                var svg = d3.select("#chartStudyContentKomedia")
                     .append("svg")
                     .attr("width", width)
                     .attr("height", height)
                     .append("g")
                     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-                svg.append("text").style("text-align", "center").text("Computer Engineering Software").attr("x", -120).style("font-size", "20px")
+                svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
                     .attr("y", 170);
 
                 var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
@@ -136,12 +133,12 @@ function generateStudyContentChartISESoft(checkBoxId) {
                     .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
                     .style("text-anchor", "middle")
                     .style("font-size", 17)
-                    .on("click", handleMousehoverISESoft);
+                    .on("click", handleMousehover);
             });
         }
 
-        function handleMousehoverISESoft(d, i) {
-            d3.csv("static/StudyProgramInformationISESoft.csv", function(data1) {
+        function handleMousehover(d, i) {
+            d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
                 // set the dimensions and margins of the graph
                 var width = 350
                 height = 350
@@ -149,16 +146,16 @@ function generateStudyContentChartISESoft(checkBoxId) {
 
                 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
                 var radius = Math.min(width, height) / 2 - margin
-                d3.select("#chartStudyContentISESoft").selectAll("svg").remove();
+                d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
                 // append the svg object to the div called 'my_dataviz'
-                var svg = d3.select("#chartStudyContentISESoft")
+                var svg = d3.select("#chartStudyContentKomedia")
                     .append("svg")
                     .attr("width", width)
                     .attr("height", height)
                     .append("g")
                     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-                svg.append("text").style("text-align", "center").text("Computer Engineering Software").attr("x", -120).style("font-size", "20px")
+                svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
                     .attr("y", 170);
 
                 var data = { creditsPsychology: data1.creditsPsychology, creditsComputerScience: data1.creditsComputerScience, creditsBusinessEconomics: data1.creditsBusinessEconomics, creditsMath: data1.creditsMath, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
@@ -202,59 +199,55 @@ function generateStudyContentChartISESoft(checkBoxId) {
                     .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
                     .style("text-anchor", "middle")
                     .style("font-size", 17)
-                    .on("click", handleMouseOutISESoft)
+                    .on("click", handleMouseOut)
 
             });
         }
-    } else {
-        d3.select("#chartStudyContentISESoft").selectAll("svg").remove();
-    }
-}
 
-/*
-d3.csv("static/studyprograminformationkomedia.csv", function (data) {
-    return {
-      // Required attributes
-      studyProgram: data.studyProgram,
-      creditsLectures: data.creditsLectures,
-      creditsErgaenzungsbereich: data.creditsErgaenzungsbereich,
-      creditsProjects: data.creditsProjects,
-      creditsBachelorThesis: data.creditsBachelorThesis
-    };
-}).then(function(data) {
+        /*
+        d3.csv("static/studyprograminformationkomedia.csv", function (data) {
+            return {
+              // Required attributes
+              studyProgram: data.studyProgram,
+              creditsLectures: data.creditsLectures,
+              creditsErgaenzungsbereich: data.creditsErgaenzungsbereich,
+              creditsProjects: data.creditsProjects,
+              creditsBachelorThesis: data.creditsBachelorThesis
+            };
+        }).then(function(data) {
 
-    // Generate chart
-    var chart = c3.generate({
-        data: {
-            json: data,
-            keys: {
-                x: 'studyProgram',
-                value: ['creditsLectures', 'creditsErgaenzungsbereich', 'creditsProjects', 'creditsBachelorThesis']
-            },
-            type: 'pie',
-            names: {
-                creditsLectures: 'Lectures',
-                creditsErgaenzungsbereich: 'Ergänzungsbereich',
-                creditsProjects: 'Projects',
-                creditsBachelorThesis: 'Bachelor Thesis'
-            }
-        },
+            // Generate chart
+            var chart = c3.generate({
+                data: {
+                    json: data,
+                    keys: {
+                        x: 'studyProgram',
+                        value: ['creditsLectures', 'creditsErgaenzungsbereich', 'creditsProjects', 'creditsBachelorThesis']
+                    },
+                    type: 'pie',
+                    names: {
+                        creditsLectures: 'Lectures',
+                        creditsErgaenzungsbereich: 'Ergänzungsbereich',
+                        creditsProjects: 'Projects',
+                        creditsBachelorThesis: 'Bachelor Thesis'
+                    }
+                },
 
-        axis: {
-            x: {
-                type: 'category'
-            }
-        },
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                },
 
-        legend: {
-            show: false
-        },
+                legend: {
+                    show: false
+                },
 
-        title: {
-            text: 'Komedia'
-        },
+                title: {
+                    text: 'Komedia'
+                },
 
-        bindto: '#chartStudyContentKomedia'
-    });
-  });
-  */
+                bindto: '#chartStudyContentKomedia'
+            });
+          });
+          */

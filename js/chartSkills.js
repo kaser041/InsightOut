@@ -1,12 +1,12 @@
 function generateSkillsChart() {
-    d3.csv("static/DataKomedia.csv", function (data1) {
-        d3.csv("static/DataISE.csv", function (data2) {
-            d3.csv("static/DataAI.csv", function (data3) {
+    d3.csv("static/DataKomedia.csv", function(data1) {
+        d3.csv("static/DataISE.csv", function(data2) {
+            d3.csv("static/DataAI.csv", function(data3) {
                 d3.select("#chartSkills").selectAll("svg").remove();
-                features = ["Programming", "Math", "Physics", "Psychology", "Statistics","Business Economics"];
-                dataKo = { "Programming": data1.programming, "Math": data1.math, "Physics": data1.physics, "Psychology": data1.psychology, "Statistics": data1.statistics,"Business Economics":data1.businessEconomics };
-                dataISE = { "Programming": data2.programming, "Math": data2.math, "Physics": data2.physics, "Psychology": data2.psychology ,"Statistics": data2.statistics,"Business Economics":data2.businessEconomics};
-                dataAI = { "Programming": data3.programming, "Math": data3.math, "Physics": data3.physics, "Psychology": data3.psychology, "Statistics": data3.statistics,"Business Economics":data3.businessEconomics };
+                features = ["Programming", "Math", "Physics", "Psychology", "Statistics", "Business Economics"];
+                dataKo = { "Programming": data1.programming, "Math": data1.math, "Physics": data1.physics, "Psychology": data1.psychology, "Statistics": data1.statistics, "Business Economics": data1.businessEconomics };
+                dataISE = { "Programming": data2.programming, "Math": data2.math, "Physics": data2.physics, "Psychology": data2.psychology, "Statistics": data2.statistics, "Business Economics": data2.businessEconomics };
+                dataAI = { "Programming": data3.programming, "Math": data3.math, "Physics": data3.physics, "Psychology": data3.psychology, "Statistics": data3.statistics, "Business Economics": data3.businessEconomics };
                 let data = []
 
                 if (document.getElementById("skillsKomediaChx").checked) data.push(dataKo)
@@ -23,18 +23,18 @@ function generateSkillsChart() {
 
                 ticks.forEach(t =>
                     svg.append("circle")
-                        .attr("cx", 300)
-                        .attr("cy", 300)
-                        .attr("fill", "none")
-                        .attr("stroke", "gray")
-                        .attr("r", radialScale(t))
+                    .attr("cx", 300)
+                    .attr("cy", 300)
+                    .attr("fill", "none")
+                    .attr("stroke", "gray")
+                    .attr("r", radialScale(t))
                 );
 
                 ticks.forEach(t =>
                     svg.append("text")
-                        .attr("x", 305)
-                        .attr("y", 300 - radialScale(t))
-                        .text(t.toString())
+                    .attr("x", 305)
+                    .attr("y", 300 - radialScale(t))
+                    .text(t.toString())
                 );
 
                 function angleToCoordinate(angle, value) {
@@ -70,8 +70,6 @@ function generateSkillsChart() {
                     .x(d => d.x)
                     .y(d => d.y);
 
-                let colors = ["darkorange", "gray"];
-
                 function getPathCoordinates(data_point) {
                     let coordinates = [];
                     for (var i = 0; i < features.length; i++) {
@@ -84,7 +82,17 @@ function generateSkillsChart() {
 
                 for (var i = 0; i < data.length; i++) {
                     let d = data[i];
-                    let color = colors[i];
+                    switch (data[i]) {
+                        case dataKo:
+                            color = "darkorange"
+                            break;
+                        case dataISE:
+                            color = "gray"
+                            break;
+                        case dataAI:
+                            color = "navy"
+                            break;
+                    }
                     let coordinates = getPathCoordinates(d);
 
                     //draw the path element
