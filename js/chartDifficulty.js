@@ -15,7 +15,10 @@ d3.csv("static/data.csv", function (data) {
                 x: 'studyProgram',
                 value: ['sposDifficulty']
             },
-            type: 'bar'
+            type: 'bar',
+            names: {
+                sposDifficulty: 'Difficulty'
+            }
         },
       
         axis: {
@@ -29,7 +32,7 @@ d3.csv("static/data.csv", function (data) {
         },
       
         title: {
-            text: 'Perceived difficulty to graduate in the standard period of study (1="very difficult", 5="very easy")'
+            text: 'Average perceived difficulty to graduate in the standard period of study (1="very easy", 5="very difficult")'
         },
 
         bar: {

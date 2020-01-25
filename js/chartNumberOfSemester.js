@@ -15,7 +15,10 @@ d3.csv("static/data.csv", function (data) {
                 x: 'studyProgram',
                 value: ['numberOfSemesterAvg']
             },
-            type: 'bar'
+            type: 'bar',
+            names: {
+                numberOfSemesterAvg: 'Semesters'
+            }
         },
       
         axis: {
@@ -23,12 +26,12 @@ d3.csv("static/data.csv", function (data) {
                 type: 'category'
             },
             y: {
-                label: {text: 'Semester', position: 'outer-center'}
+                label: {text: 'Semesters', position: 'outer-center'}
             }
         },
       
         title: {
-            text: 'Average number of semester for graduation'
+            text: 'Average number of semesters for graduation'
         },
 
         bar: {
