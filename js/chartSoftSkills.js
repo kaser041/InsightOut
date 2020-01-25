@@ -1,7 +1,7 @@
 function generateSoftSkillsChart() {
-    d3.csv("static/DataKomedia.csv", function (data1) {
-        d3.csv("static/DataISE.csv", function (data2) {
-            d3.csv("static/DataAI.csv", function (data3) {
+    d3.csv("static/DataKomedia.csv", function(data1) {
+        d3.csv("static/DataISE.csv", function(data2) {
+            d3.csv("static/DataAI.csv", function(data3) {
                 d3.select("#chartSoftSkills").selectAll("svg").remove();
                 features = ["Teamwork", "Project Management", "Giving Presentations", "Analytical Skills", "Structured Working Methods"];
                 dataKo = { "Teamwork": data1.teamWork, "Project Management": data1.projectManagement, "Giving Presentations": data1.givingPresentations, "Analytical Skills": data1.analyticalSkills, "Structured Working Methods": data1.structuredWorkingMethods };
@@ -23,18 +23,18 @@ function generateSoftSkillsChart() {
 
                 ticks.forEach(t =>
                     svg.append("circle")
-                        .attr("cx", 300)
-                        .attr("cy", 300)
-                        .attr("fill", "none")
-                        .attr("stroke", "gray")
-                        .attr("r", radialScale(t))
+                    .attr("cx", 300)
+                    .attr("cy", 300)
+                    .attr("fill", "none")
+                    .attr("stroke", "gray")
+                    .attr("r", radialScale(t))
                 );
 
                 ticks.forEach(t =>
                     svg.append("text")
-                        .attr("x", 305)
-                        .attr("y", 300 - radialScale(t))
-                        .text(t.toString())
+                    .attr("x", 305)
+                    .attr("y", 300 - radialScale(t))
+                    .text(t.toString())
                 );
 
                 function angleToCoordinate(angle, value) {
@@ -62,15 +62,12 @@ function generateSoftSkillsChart() {
                             .attr("x", label_coordinate.x - 110)
                             .attr("y", label_coordinate.y)
                             .text(ft_name);
-                    }
-
-                    else if (ft_name == "Giving Presentations") {
+                    } else if (ft_name == "Giving Presentations") {
                         svg.append("text")
                             .attr("x", label_coordinate.x - 110)
                             .attr("y", label_coordinate.y)
                             .text(ft_name);
-                    }
-                    else {
+                    } else {
                         //draw axis label
                         svg.append("text")
                             .attr("x", label_coordinate.x - 30)
@@ -82,8 +79,6 @@ function generateSoftSkillsChart() {
                 let line = d3.line()
                     .x(d => d.x)
                     .y(d => d.y);
-
-                let colors = ["darkorange", "gray"];
 
                 function getPathCoordinates(data_point) {
                     let coordinates = [];
@@ -97,7 +92,17 @@ function generateSoftSkillsChart() {
 
                 for (var i = 0; i < data.length; i++) {
                     let d = data[i];
-                    let color = colors[i];
+                    switch (data[i]) {
+                        case dataKo:
+                            color = "darkorange"
+                            break;
+                        case dataISE:
+                            color = "gray"
+                            break;
+                        case dataAI:
+                            color = "navy"
+                            break;
+                    }
                     let coordinates = getPathCoordinates(d);
 
                     //draw the path element
