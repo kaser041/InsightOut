@@ -15,7 +15,10 @@ d3.csv("static/data.csv", function (data) {
                 x: 'studyProgram',
                 value: ['help']
             },
-            type: 'bar'
+            type: 'bar',
+            names: {
+                help: 'Rating'
+            }
         },
       
         axis: {

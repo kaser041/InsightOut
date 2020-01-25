@@ -18,7 +18,10 @@ function organizationAspectSwitch(aspect) {
                             x: 'studyProgram',
                             value: ['timeCoordination']
                         },
-                        type: 'bar'
+                        type: 'bar',
+                        names: {
+                            timeCoordination: 'Rating'
+                        }
                     },
                     axis: {
                         x: {
@@ -62,7 +65,10 @@ function organizationAspectSwitch(aspect) {
                             x: 'studyProgram',
                             value: ['comprehensibilityExamination']
                         },
-                        type: 'bar'
+                        type: 'bar',
+                        names: {
+                            comprehensibilityExamination: 'Rating'
+                        }
                     },
 
                     axis: {
@@ -107,7 +113,10 @@ function organizationAspectSwitch(aspect) {
                             x: 'studyProgram',
                             value: ['flexibilty']
                         },
-                        type: 'bar'
+                        type: 'bar',
+                        names: {
+                            flexibilty: 'Rating'
+                        }
                     },
 
                     axis: {
@@ -152,7 +161,10 @@ function organizationAspectSwitch(aspect) {
                             x: 'studyProgram',
                             value: ['help']
                         },
-                        type: 'bar'
+                        type: 'bar',
+                        names: {
+                            help: 'Rating'
+                        }
                     },
 
                     axis: {

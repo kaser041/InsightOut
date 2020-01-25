@@ -14,7 +14,10 @@ d3.csv("static/data.csv", function(data) {
                 x: 'studyProgram',
                 value: ['upToDateness']
             },
-            type: 'bar'
+            type: 'bar',
+            names: {
+                upToDateness: 'Rating'
+            }
         },
 
 

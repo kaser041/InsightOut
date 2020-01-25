@@ -18,7 +18,10 @@ function contentAspectSwitch(aspect) {
                             x: 'studyProgram',
                             value: ['linkingTheoryPractice']
                         },
-                        type: 'bar'
+                        type: 'bar',
+                        names: {
+                            linkingTheoryPractice: 'Rating'
+                        }
                     },
 
 
@@ -63,7 +66,10 @@ function contentAspectSwitch(aspect) {
                             x: 'studyProgram',
                             value: ['upToDateness']
                         },
-                        type: 'bar'
+                        type: 'bar',
+                        names: {
+                            upToDateness: 'Rating'
+                        }
                     },
 
 
@@ -110,7 +116,10 @@ function contentAspectSwitch(aspect) {
                             x: 'studyProgram',
                             value: ['studyFocus']
                         },
-                        type: 'bar'
+                        type: 'bar',
+                        names: {
+                            studyFocus: 'Rating'
+                        }
                     },
 
 
@@ -157,7 +166,10 @@ function contentAspectSwitch(aspect) {
                             x: 'studyProgram',
                             value: ['preparationJob']
                         },
-                        type: 'bar'
+                        type: 'bar',
+                        names: {
+                            preparationJob: 'Rating'
+                        }
                     },
 
 

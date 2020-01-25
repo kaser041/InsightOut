@@ -15,7 +15,10 @@ d3.csv("static/data.csv", function (data) {
                 x: 'studyProgram',
                 value: ['timeCoordination']
             },
-            type: 'bar'
+            type: 'bar',
+            names: {
+                timeCoordination: 'Rating'
+            }
         },
 
 
