@@ -18,8 +18,8 @@ d3.csv("static/StudyProgramInformationISESoft.csv", function(data1) {
     svg.append("text").style("text-align", "center").text("Computer Engineering Software").attr("x", -120).style("font-size", "20px")
         .attr("y", 170);
 
-    var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
-    var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) + parseInt(data1.creditsBachelorThesis)
+    var data = { creditsLectures: data1.creditsLectures, creditsBachelorThesis: data1.creditsBachelorThesis, creditsInternship: data1.creditsInternship, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich }
+    var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsInternship) + parseInt(data1.creditsErgaenzungsbereich)
 
     // set the color scale
     var color = d3.scaleOrdinal()
@@ -92,8 +92,8 @@ function handleMouseOutISESoft(d, i) {
         svg.append("text").style("text-align", "center").text("Computer Engineering Software").attr("x", -120).style("font-size", "20px")
             .attr("y", 170);
 
-        var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
-        var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) + parseInt(data1.creditsBachelorThesis)
+        var data = { creditsLectures: data1.creditsLectures, creditsBachelorThesis: data1.creditsBachelorThesis, creditsInternship: data1.creditsInternship, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich }
+        var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsInternship) + parseInt(data1.creditsErgaenzungsbereich)
 
         // set the color scale
         var color = d3.scaleOrdinal()
@@ -158,8 +158,8 @@ function handleMousehoverISESoft(d, i) {
         svg.append("text").style("text-align", "center").text("Computer Engineering Software").attr("x", -120).style("font-size", "20px")
             .attr("y", 170);
 
-        var data = { creditsPsychology: data1.creditsPsychology, creditsComputerScience: data1.creditsComputerScience, creditsBusinessEconomics: data1.creditsBusinessEconomics, creditsMath: data1.creditsMath, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
-        var sum = parseInt(data1.creditsPsychology) + parseInt(data1.creditsComputerScience) + parseInt(data1.creditsBusinessEconomics) + parseInt(data1.creditsMath) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) + parseInt(data1.creditsBachelorThesis)
+        var data = { creditsComputerScience: data1.creditsComputerScience, creditsMath: data1.creditsMath, creditsElectricalEngineering: data1.creditsElectricalEngineering, creditsFundamentals: data1.creditsFundamentals, creditsPhysics: data1.creditsPhysics, creditsBusinessEconomics: data1.creditsBusinessEconomics, creditsBachelorThesis: data1.creditsBachelorThesis, creditsInternship: data1.creditsInternship, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich }
+        var sum = parseInt(data1.creditsComputerScience) + parseInt(data1.creditsMath) + parseInt(data1.creditsElectricalEngineering) + parseInt(data1.creditsFundamentals) + parseInt(data1.creditsPhysics) + parseInt(data1.creditsBusinessEconomics) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsInternship) + parseInt(data1.creditsErgaenzungsbereich)
 
         // set the color scale
         var color = d3.scaleOrdinal()
