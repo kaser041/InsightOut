@@ -73,8 +73,6 @@ d3.csv("static/DataKomedia.csv", function(data1) {
         .x(d => d.x)
         .y(d => d.y);
 
-    let colors = ["darkorange", "gray"];
-
     function getPathCoordinates(data_point) {
         let coordinates = [];
         for (var i = 0; i < features.length; i++) {
@@ -87,7 +85,6 @@ d3.csv("static/DataKomedia.csv", function(data1) {
 
     for (var i = 0; i < data.length; i++) {
         let d = data[i];
-        let color = colors[i];
         let coordinates = getPathCoordinates(d);
 
         //draw the path element
@@ -95,8 +92,8 @@ d3.csv("static/DataKomedia.csv", function(data1) {
             .datum(coordinates)
             .attr("d", line)
             .attr("stroke-width", 3)
-            .attr("stroke", color)
-            .attr("fill", color)
+            .attr("stroke", "#95f5fd")
+            .attr("fill", "#95f5fd")
             .attr("stroke-opacity", 1)
             .attr("opacity", 0.5);
     }

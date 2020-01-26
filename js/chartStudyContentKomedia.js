@@ -21,13 +21,8 @@ function generateStudyContentChartKomedia(checkBoxId) {
             svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
                 .attr("y", 170);
 
-            var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
-            var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) + parseInt(data1.creditsBachelorThesis)
-
-            // set the color scale
-            var color = d3.scaleOrdinal()
-                .domain(data)
-                .range(d3.schemeSet2);
+            var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, Projects: data1.Projects, BachelorThesis: data1.BachelorThesis }
+            var sum = parseInt(data1.creditsLectures) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.Projects) + parseInt(data1.BachelorThesis)
 
             // Compute the position of each group on the pie:
             var pie = d3.pie()
@@ -47,7 +42,23 @@ function generateStudyContentChartKomedia(checkBoxId) {
                 .enter()
                 .append('path')
                 .attr('d', arcGenerator)
-                .attr('fill', function(d) { return (color(d.data.key)) })
+                .attr('fill', function(d) {
+                    switch (d.data.key) {
+                        case "creditsLectures":
+                            color = "#00ada9";
+                            break;
+                        case "Ergaenzungsbereich":
+                            color = "#fff753"
+                            break;
+                        case "Projects":
+                            color = "#9f4792"
+                            break;
+                        case "BachelorThesis":
+                            color = "#ff9173"
+                            break;
+                    }
+                    return color
+                })
                 .attr("stroke", "black")
                 .style("stroke-width", "2px")
                 .style("opacity", 0.7)
@@ -94,13 +105,8 @@ function generateStudyContentChartKomedia(checkBoxId) {
                 svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
                     .attr("y", 170);
 
-                var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
-                var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) + parseInt(data1.creditsBachelorThesis)
-
-                // set the color scale
-                var color = d3.scaleOrdinal()
-                    .domain(data)
-                    .range(d3.schemeSet2);
+                var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, Projects: data1.Projects, BachelorThesis: data1.BachelorThesis }
+                var sum = parseInt(data1.creditsLectures) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.Projects) + parseInt(data1.BachelorThesis)
 
                 // Compute the position of each group on the pie:
                 var pie = d3.pie()
@@ -120,7 +126,23 @@ function generateStudyContentChartKomedia(checkBoxId) {
                     .enter()
                     .append('path')
                     .attr('d', arcGenerator)
-                    .attr('fill', function(d) { return (color(d.data.key)) })
+                    .attr('fill', function(d) {
+                        switch (d.data.key) {
+                            case "creditsLectures":
+                                color = "#00ada9";
+                                break;
+                            case "Ergaenzungsbereich":
+                                color = "#fff753"
+                                break;
+                            case "Projects":
+                                color = "#9f4792"
+                                break;
+                            case "BachelorThesis":
+                                color = "#ff9173"
+                                break;
+                        }
+                        return color
+                    })
                     .attr("stroke", "black")
                     .style("stroke-width", "2px")
                     .style("opacity", 0.7)
@@ -146,6 +168,12 @@ function generateStudyContentChartKomedia(checkBoxId) {
                 height = 350
                 margin = 40
 
+                var tooltip = d3.select("body")
+                    .append("div")
+                    .style("position", "absolute")
+                    .style("z-index", "10")
+                    .style("visibility", "hidden")
+
                 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
                 var radius = Math.min(width, height) / 2 - margin
                 d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
@@ -160,8 +188,8 @@ function generateStudyContentChartKomedia(checkBoxId) {
                 svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
                     .attr("y", 170);
 
-                var data = { creditsPsychology: data1.creditsPsychology, creditsComputerScience: data1.creditsComputerScience, creditsBusinessEconomics: data1.creditsBusinessEconomics, creditsMath: data1.creditsMath, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
-                var sum = parseInt(data1.creditsPsychology) + parseInt(data1.creditsComputerScience) + parseInt(data1.creditsBusinessEconomics) + parseInt(data1.creditsMath) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) + parseInt(data1.creditsBachelorThesis)
+                var data = { Psychology: data1.Psychology, ComputerScience: data1.ComputerScience, BusinessEconomics: data1.BusinessEconomics, Math: data1.Math, Ergaenzungsbereich: data1.Ergaenzungsbereich, Projects: data1.Projects, BachelorThesis: data1.BachelorThesis }
+                var sum = parseInt(data1.Psychology) + parseInt(data1.ComputerScience) + parseInt(data1.BusinessEconomics) + parseInt(data1.Math) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.Projects) + parseInt(data1.BachelorThesis)
 
                 // set the color scale
                 var color = d3.scaleOrdinal()
@@ -201,7 +229,13 @@ function generateStudyContentChartKomedia(checkBoxId) {
                     .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
                     .style("text-anchor", "middle")
                     .style("font-size", 17)
-                    .on("click", handleMouseOut)
+                    .on("click", function() {
+                        tooltip.style("visibility", "hidden");
+                        handleMouseOut()
+                    })
+                    .on("mouseover", function(d) { return tooltip.style("visibility", "visible").text(d.data.key) })
+                    .on("mousemove", function() { return tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px"); })
+                    .on("mouseout", function() { return tooltip.style("visibility", "hidden"); });
 
             });
         }
@@ -216,9 +250,9 @@ d3.csv("static/studyprograminformationkomedia.csv", function (data) {
       // Required attributes
       studyProgram: data.studyProgram,
       creditsLectures: data.creditsLectures,
-      creditsErgaenzungsbereich: data.creditsErgaenzungsbereich,
-      creditsProjects: data.creditsProjects,
-      creditsBachelorThesis: data.creditsBachelorThesis
+      Ergaenzungsbereich: data.Ergaenzungsbereich,
+      Projects: data.Projects,
+      BachelorThesis: data.BachelorThesis
     };
 }).then(function(data) {
     // Generate chart
@@ -227,14 +261,14 @@ d3.csv("static/studyprograminformationkomedia.csv", function (data) {
             json: data,
             keys: {
                 x: 'studyProgram',
-                value: ['creditsLectures', 'creditsErgaenzungsbereich', 'creditsProjects', 'creditsBachelorThesis']
+                value: ['creditsLectures', 'Ergaenzungsbereich', 'Projects', 'BachelorThesis']
             },
             type: 'pie',
             names: {
                 creditsLectures: 'Lectures',
-                creditsErgaenzungsbereich: 'Ergänzungsbereich',
-                creditsProjects: 'Projects',
-                creditsBachelorThesis: 'Bachelor Thesis'
+                Ergaenzungsbereich: 'Ergänzungsbereich',
+                Projects: 'Projects',
+                BachelorThesis: 'Bachelor Thesis'
             }
         },
         axis: {

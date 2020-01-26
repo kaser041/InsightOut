@@ -37,12 +37,12 @@ d3.csv("static/dataise.csv", function (data) {
   });
   */
 
- d3.csv("static/dataise.csv", function(data1) {
-  // set the dimensions and margins of the graph
-  var width = 350
-  height = 350
-  margin = 40
-  
+d3.csv("static/dataise.csv", function(data1) {
+    // set the dimensions and margins of the graph
+    var width = 350
+    height = 350
+    margin = 40
+
     // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
     var radius = Math.min(width, height) / 2 - margin
 
@@ -82,7 +82,17 @@ d3.csv("static/dataise.csv", function (data) {
         .enter()
         .append('path')
         .attr('d', arcGenerator)
-        .attr('fill', function(d) { return (color(d.data.key)) })
+        .attr('fill', function(d) {
+            switch (d.data.key) {
+                case "Male":
+                    color = "#008ed4";
+                    break;
+                case "Female":
+                    color = "#cb568b"
+                    break;
+            }
+            return color
+        })
         .attr("stroke", "black")
         .style("stroke-width", "2px")
         .style("opacity", 0.7)
