@@ -18,6 +18,9 @@ d3.csv("static/data.csv", function (data) {
             type: 'bar',
             names: {
                 sposDifficulty: 'Difficulty'
+            },
+            colors: {
+                sposDifficulty: '#00cadc'
             }
         },
       

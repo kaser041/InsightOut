@@ -21,6 +21,9 @@ function organizationAspectSwitch(aspect) {
                         type: 'bar',
                         names: {
                             timeCoordination: 'Rating'
+                        },
+                        colors: {
+                            timeCoordination: '#00cadc'
                         }
                     },
                     axis: {
@@ -28,7 +31,7 @@ function organizationAspectSwitch(aspect) {
                             type: 'category'
                         },
                         y: {
-                            max: 5,
+                            max: 4.9,
                             label: { text: 'Rating', position: 'outer-center' }
                         }
                     },
@@ -68,6 +71,9 @@ function organizationAspectSwitch(aspect) {
                         type: 'bar',
                         names: {
                             comprehensibilityExamination: 'Rating'
+                        },
+                        colors: {
+                            comprehensibilityExamination: '#00cadc'
                         }
                     },
 
@@ -76,7 +82,7 @@ function organizationAspectSwitch(aspect) {
                             type: 'category'
                         },
                         y: {
-                            max: 5,
+                            max: 4.9,
                             label: { text: 'Rating', position: 'outer-center' }
                         }
                     },
@@ -116,6 +122,9 @@ function organizationAspectSwitch(aspect) {
                         type: 'bar',
                         names: {
                             flexibilty: 'Rating'
+                        },
+                        colors: {
+                            flexibilty: '#00cadc'
                         }
                     },
 
@@ -124,7 +133,7 @@ function organizationAspectSwitch(aspect) {
                             type: 'category'
                         },
                         y: {
-                            max: 5,
+                            max: 4.9,
                             label: { text: 'Rating', position: 'outer-center' }
                         }
                     },
@@ -164,6 +173,9 @@ function organizationAspectSwitch(aspect) {
                         type: 'bar',
                         names: {
                             help: 'Rating'
+                        },
+                        colors: {
+                            help: '#00cadc'
                         }
                     },
 
@@ -172,7 +184,7 @@ function organizationAspectSwitch(aspect) {
                             type: 'category'
                         },
                         y: {
-                            max: 5,
+                            max: 4.9,
                             label: { text: 'Rating', position: 'outer-center' }
                         }
                     },

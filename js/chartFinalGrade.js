@@ -21,6 +21,10 @@ d3.csv("static/data.csv", function(data) {
             }
         },
 
+        point: {
+            r: 200
+        },
+
         axis: {
             x: {
                 type: 'category'

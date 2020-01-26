@@ -18,6 +18,9 @@ d3.csv("static/data.csv", function (data) {
             type: 'bar',
             names: {
                 numberOfSemesterAvg: 'Semester'
+            },
+            colors: {
+                numberOfSemesterAvg: '#00cadc'
             }
         },
       

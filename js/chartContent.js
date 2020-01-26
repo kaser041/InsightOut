@@ -21,6 +21,9 @@ function contentAspectSwitch(aspect) {
                         type: 'bar',
                         names: {
                             linkingTheoryPractice: 'Rating'
+                        },
+                        colors: {
+                            linkingTheoryPractice: '#00cadc'
                         }
                     },
 
@@ -30,7 +33,7 @@ function contentAspectSwitch(aspect) {
                             type: 'category'
                         },
                         y: {
-                            max: 5,
+                            max: 4.9,
                             label: { text: 'Rating', position: 'outer-center' }
                         }
                     },
@@ -69,6 +72,9 @@ function contentAspectSwitch(aspect) {
                         type: 'bar',
                         names: {
                             upToDateness: 'Rating'
+                        },
+                        colors: {
+                            upToDateness: '#00cadc'
                         }
                     },
 
@@ -78,7 +84,7 @@ function contentAspectSwitch(aspect) {
                             type: 'category'
                         },
                         y: {
-                            max: 5,
+                            max: 4.9,
                             label: { text: 'Rating', position: 'outer-center' }
                         }
                     },
@@ -119,6 +125,9 @@ function contentAspectSwitch(aspect) {
                         type: 'bar',
                         names: {
                             studyFocus: 'Rating'
+                        },
+                        colors: {
+                            studyFocus: '#00cadc'
                         }
                     },
 
@@ -128,7 +137,7 @@ function contentAspectSwitch(aspect) {
                             type: 'category'
                         },
                         y: {
-                            max: 5,
+                            max: 4.9,
                             label: { text: 'Rating', position: 'outer-center' }
                         }
                     },
@@ -169,6 +178,9 @@ function contentAspectSwitch(aspect) {
                         type: 'bar',
                         names: {
                             preparationJob: 'Rating'
+                        },
+                        colors: {
+                            preparationJob: '#00cadc'
                         }
                     },
 
@@ -178,7 +190,7 @@ function contentAspectSwitch(aspect) {
                             type: 'category'
                         },
                         y: {
-                            max: 5,
+                            max: 4.9,
                             label: { text: 'Rating', position: 'outer-center' }
                         }
                     },

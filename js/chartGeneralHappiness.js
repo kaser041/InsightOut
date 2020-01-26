@@ -18,6 +18,9 @@ d3.csv("static/data.csv", function(data) {
             type: 'bar',
             names: {
                 generalHappiness: 'General Happiness'
+            },
+            colors: {
+                generalHappiness: '#00cadc'
             }
         },
 
@@ -26,7 +29,7 @@ d3.csv("static/data.csv", function(data) {
                 type: 'category'
             },
             y: {
-                max: 5,
+                max: 4.9,
                 label: { text: 'Rating', position: 'outer-center' }
             }
         },

@@ -19,6 +19,10 @@ d3.csv("static/studyprograminformation.csv", function(data) {
             groups: [
                 ['mandatoryLectures', 'electiveLectures']
             ],
+            colors: {
+                mandatoryLectures: '#cb568b',
+                electiveLectures: '#00cadc'
+            },
             type: 'bar',
             names: {
                 mandatoryLectures: 'Mandatory Lectures',
