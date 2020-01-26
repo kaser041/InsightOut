@@ -9,7 +9,7 @@ var svg = d3.select("#legendsStudyContent")
 
 // Handmade legend
 svg.append("circle").attr("cx", 550).attr("cy", 50).attr("r", 6).style("fill", "#fff753")
-svg.append("circle").attr("cx", 500).attr("cy", 50).attr("r", 6).style("fill", "#00ada9")
+svg.append("circle").attr("cx", 500).attr("cy", 50).attr("r", 6).style("fill", "#00cadc")
 svg.append("circle").attr("cx", 690).attr("cy", 50).attr("r", 6).style("fill", "#ff9173")
 svg.append("circle").attr("cx", 740).attr("cy", 50).attr("r", 6).style("fill", "#9f4792")
 svg.append("circle").attr("cx", 790).attr("cy", 50).attr("r", 6).style("fill", "#6bdc85 ")

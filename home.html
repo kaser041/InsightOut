@@ -10,11 +10,10 @@
     <meta name="author" content="">
 
     <style>
-        
         #chartNCKomedia .c3-shape {
             fill: none;
         }
-            
+        
         .c3-axis path,
         .c3-axis line {
             fill: none;
@@ -67,6 +66,14 @@
         $(document).ready(function() {
             $('.single-checkbox2').on('change', function(evt) {
                 if ($('.single-checkbox2:checked').length >= 3) {
+                    this.checked = false;
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            $('.single-checkbox3').on('change', function(evt) {
+                if ($('.single-checkbox3:checked').length >= 3) {
                     this.checked = false;
                 }
             });
@@ -186,6 +193,32 @@
                             <div id="chartMandElect">
                                 <script src="js/chartMandElect.js"></script>
                             </div>
+                            <!--  <div class="checkBoxContainer6">
+                                <div class="checkbox">
+                                    <label><input class="single-checkbox3" type="checkbox"
+                                            id="skillsKomediaChx3" onchange="generateSkillsChart()"
+                                            checked>
+                                        Komedia</label>
+                                </div>
+                                <div class="checkbox6">
+                                    <label><input class="single-checkbox3" type="checkbox"
+                                            id="skillsIseCommChx" onchange="generateSkillsChart()"> Computer
+                                        Engineering Communication</label>
+                                </div>
+                                <div class="checkbox6">
+                                    <label><input class="single-checkbox3" type="checkbox"
+                                            id="skillsIseSoftChx" onchange="generateSkillsChart()"> Computer
+                                        Engineering Software</label>
+                                </div>
+                                <div class="checkbox6">
+                                    <label><input class="single-checkbox3" type="checkbox"
+                                            id="skillsAiChx3" onchange="generateSkillsChart()"> Applied
+                                        Computer Science</label>
+                                </div>
+                            </div>
+                            <div id="lectureTable">
+                                <script src="js/lectureTable.js"></script>
+                            </div> -->
                         </div>
                         <div class="tab-pane fade" id="admissionRequirements" role="tabpanel" aria-labelledby="nc-tab">
                             <div id="chartNCKomedia">
@@ -480,7 +513,7 @@
                             <div id="chartBachelorAfterMasterKomedia">
                                 <script src="js/chartBachelorAfterMasterKomedia.js"></script>
                             </div>
-                            
+
                             <div id="chartFinalGrade">
                                 <script src="js/chartFinalGrade.js"></script>
                             </div>

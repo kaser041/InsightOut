@@ -45,7 +45,7 @@ function generateStudyContentChartISEComm(checkBoxId) {
                 .attr('fill', function(d) {
                     switch (d.data.key) {
                         case "creditsLectures":
-                            color = "#00ada9";
+                            color = "#00cadc";
                             break;
                         case "Ergaenzungsbereich":
                             color = "#fff753"
@@ -72,7 +72,7 @@ function generateStudyContentChartISEComm(checkBoxId) {
                 .data(data_ready)
                 .enter()
                 .append('text')
-                .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+                .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(0) + '%' })
                 .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
                 .style("text-anchor", "middle")
                 .style("font-size", 17)
@@ -132,7 +132,7 @@ function generateStudyContentChartISEComm(checkBoxId) {
                     .attr('fill', function(d) {
                         switch (d.data.key) {
                             case "creditsLectures":
-                                color = "#00ada9";
+                                color = "#00cadc";
                                 break;
                             case "Ergaenzungsbereich":
                                 color = "#fff753"
@@ -159,7 +159,7 @@ function generateStudyContentChartISEComm(checkBoxId) {
                     .data(data_ready)
                     .enter()
                     .append('text')
-                    .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+                    .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(0) + '%' })
                     .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
                     .style("text-anchor", "middle")
                     .style("font-size", 17)
@@ -220,7 +220,26 @@ function generateStudyContentChartISEComm(checkBoxId) {
                     .enter()
                     .append('path')
                     .attr('d', arcGenerator)
-                    .attr('fill', function(d) { return (color(d.data.key)) })
+                    .attr('fill', function(d) {
+                        switch (d.data.key) {
+                            case "Ergaenzungsbereich":
+                                color = "#fff753"
+                                break;
+                            case "BachelorThesis":
+                                color = "#ff9173"
+                                break;
+                            case "Projects":
+                                color = "#9f4792"
+                                break;
+                            case "Internship":
+                                color = "#6bdc85 "
+                                break;
+                            default:
+                                color = "#99f8ff"
+                                break;
+                        }
+                        return color
+                    })
                     .attr("stroke", "black")
                     .style("stroke-width", "2px")
                     .style("opacity", 0.7)
@@ -231,7 +250,7 @@ function generateStudyContentChartISEComm(checkBoxId) {
                     .data(data_ready)
                     .enter()
                     .append('text')
-                    .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+                    .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(0) + '%' })
                     .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
                     .style("text-anchor", "middle")
                     .style("font-size", 17)

@@ -65,7 +65,7 @@ d3.csv("static/datakomedia.csv", function(data1) {
         .data(data_ready)
         .enter()
         .append('text')
-        .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+        .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(0) + '%' })
         .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
         .style("text-anchor", "middle")
         .style("font-size", 17)
