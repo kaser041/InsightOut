@@ -18,13 +18,8 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
     svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
         .attr("y", 170);
 
-    var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsBachelorThesis: data1.creditsBachelorThesis, creditsProjects: data1.creditsProjects }
-    var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsProjects)
-
-    // set the color scale
-    var color = d3.scaleOrdinal()
-        .domain(data)
-        .range(d3.schemeSet2);
+    var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
+    var sum = parseInt(data1.creditsLectures) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.BachelorThesis) + parseInt(data1.Projects)
 
     // Compute the position of each group on the pie:
     var pie = d3.pie()
@@ -44,7 +39,23 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
         .enter()
         .append('path')
         .attr('d', arcGenerator)
-        .attr('fill', function(d) { return (color(d.data.key)) })
+        .attr('fill', function(d) {
+            switch (d.data.key) {
+                case "creditsLectures":
+                    color = "#00ada9";
+                    break;
+                case "Ergaenzungsbereich":
+                    color = "#fff753"
+                    break;
+                case "BachelorThesis":
+                    color = "#ff9173"
+                    break;
+                case "Projects":
+                    color = "#9f4792"
+                    break;
+            }
+            return color
+        })
         .attr("stroke", "black")
         .style("stroke-width", "2px")
         .style("opacity", 0.7)
@@ -91,13 +102,8 @@ function handleMouseOutAI(d, i) {
         svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
             .attr("y", 170);
 
-        var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsBachelorThesis: data1.creditsBachelorThesis, creditsProjects: data1.creditsProjects }
-        var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsProjects)
-
-        // set the color scale
-        var color = d3.scaleOrdinal()
-            .domain(data)
-            .range(d3.schemeSet2);
+        var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
+        var sum = parseInt(data1.creditsLectures) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.BachelorThesis) + parseInt(data1.Projects)
 
         // Compute the position of each group on the pie:
         var pie = d3.pie()
@@ -117,7 +123,23 @@ function handleMouseOutAI(d, i) {
             .enter()
             .append('path')
             .attr('d', arcGenerator)
-            .attr('fill', function(d) { return (color(d.data.key)) })
+            .attr('fill', function(d) {
+                switch (d.data.key) {
+                    case "creditsLectures":
+                        color = "#00ada9";
+                        break;
+                    case "Ergaenzungsbereich":
+                        color = "#fff753"
+                        break;
+                    case "BachelorThesis":
+                        color = "#ff9173"
+                        break;
+                    case "Projects":
+                        color = "#9f4792"
+                        break;
+                }
+                return color
+            })
             .attr("stroke", "black")
             .style("stroke-width", "2px")
             .style("opacity", 0.7)
@@ -143,6 +165,12 @@ function handleMousehoverAI(d, i) {
         height = 350
         margin = 40
 
+        var tooltip = d3.select("body")
+            .append("div")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden")
+
         // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
         var radius = Math.min(width, height) / 2 - margin
         d3.select("#chartStudyContentAI").selectAll("svg").remove();
@@ -157,8 +185,8 @@ function handleMousehoverAI(d, i) {
         svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
             .attr("y", 170);
 
-        var data = { creditsComputerScience: data1.creditsComputerScience, creditsMath: data1.creditsMath, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsBachelorThesis: data1.creditsBachelorThesis, creditsProjects: data1.creditsProjects }
-        var sum = parseInt(data1.creditsComputerScience) + parseInt(data1.creditsMath) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsBachelorThesis) + parseInt(data1.creditsProjects)
+        var data = { ComputerScience: data1.ComputerScience, Math: data1.Math, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
+        var sum = parseInt(data1.ComputerScience) + parseInt(data1.Math) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.BachelorThesis) + parseInt(data1.Projects)
 
         // set the color scale
         var color = d3.scaleOrdinal()
@@ -198,7 +226,14 @@ function handleMousehoverAI(d, i) {
             .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
             .style("text-anchor", "middle")
             .style("font-size", 17)
-            .on("click", handleMouseOutAI)
+            .on("click", function() {
+                tooltip.style("visibility", "hidden");
+                handleMouseOutAI()
+            })
+            .on("mouseover", function(d) { return tooltip.style("visibility", "visible").text(d.data.key) })
+            .on("mousemove", function() { return tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px"); })
+            .on("mouseout", function() { return tooltip.style("visibility", "hidden"); });
+
 
     });
 }

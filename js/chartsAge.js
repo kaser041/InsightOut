@@ -3,7 +3,7 @@ function generateAgeChart(checkBoxId) {
     switch (checkBoxId) {
         case "ageKomediaChx":
             if (checkbox.checked) {
-                d3.csv("static/datakomedia.csv", function (data1) {
+                d3.csv("static/datakomedia.csv", function(data1) {
                     // set the dimensions and margins of the graph
                     var width = 350
                     height = 350
@@ -33,9 +33,9 @@ function generateAgeChart(checkBoxId) {
 
                     // Compute the position of each group on the pie:
                     var pie = d3.pie()
-                        .value(function (d) { return d.value; })
+                        .value(function(d) { return d.value; })
                     var data_ready = pie(d3.entries(data))
-                    // Now I know that group A goes from 0 degrees to x degrees and so on.
+                        // Now I know that group A goes from 0 degrees to x degrees and so on.
 
                     // shape helper to build arcs:
                     var arcGenerator = d3.arc()
@@ -49,7 +49,23 @@ function generateAgeChart(checkBoxId) {
                         .enter()
                         .append('path')
                         .attr('d', arcGenerator)
-                        .attr('fill', function (d) { return (color(d.data.key)) })
+                        .attr('fill', function(d) {
+                            switch (d.data.key) {
+                                case "age18_20":
+                                    color = "#00cadc";
+                                    break;
+                                case "age21_25":
+                                    color = "#ff9173"
+                                    break;
+                                case "age26_30":
+                                    color = "#2ac69d"
+                                    break;
+                                case "age30":
+                                    color = "#fff753"
+                                    break;
+                            }
+                            return color
+                        })
                         .attr("stroke", "black")
                         .style("stroke-width", "2px")
                         .style("opacity", 0.7)
@@ -59,19 +75,18 @@ function generateAgeChart(checkBoxId) {
                         .data(data_ready)
                         .enter()
                         .append('text')
-                        .text(function (d) { if (d.data.value > 10) return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
-                        .attr("transform", function (d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
+                        .text(function(d) { if (d.data.value > 10) return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+                        .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
                         .style("text-anchor", "middle")
                         .style("font-size", 17)
                 });
-            }
-            else {
+            } else {
                 d3.select("#chartAgeKomedia").selectAll("svg").remove();
             }
             break;
         case "ageIseChx":
             if (checkbox.checked) {
-                d3.csv("static/dataISE.csv", function (data1) {
+                d3.csv("static/dataISE.csv", function(data1) {
                     // set the dimensions and margins of the graph
                     var width = 350
                     height = 350
@@ -94,16 +109,11 @@ function generateAgeChart(checkBoxId) {
                     var data = { age18_20: data1.age18_20, age21_25: data1.age21_25, age26_30: data1.age26_30, age30: data1.age30 }
                     var sum = parseInt(data1.age18_20) + parseInt(data1.age21_25) + parseInt(data1.age26_30) + parseInt(data1.age30)
 
-                    // set the color scale
-                    var color = d3.scaleOrdinal()
-                        .domain(data)
-                        .range(d3.schemeSet2);
-
                     // Compute the position of each group on the pie:
                     var pie = d3.pie()
-                        .value(function (d) { return d.value; })
+                        .value(function(d) { return d.value; })
                     var data_ready = pie(d3.entries(data))
-                    // Now I know that group A goes from 0 degrees to x degrees and so on.
+                        // Now I know that group A goes from 0 degrees to x degrees and so on.
 
                     // shape helper to build arcs:
                     var arcGenerator = d3.arc()
@@ -117,7 +127,23 @@ function generateAgeChart(checkBoxId) {
                         .enter()
                         .append('path')
                         .attr('d', arcGenerator)
-                        .attr('fill', function (d) { return (color(d.data.key)) })
+                        .attr('fill', function(d) {
+                            switch (d.data.key) {
+                                case "age18_20":
+                                    color = "#00cadc";
+                                    break;
+                                case "age21_25":
+                                    color = "#ff9173"
+                                    break;
+                                case "age26_30":
+                                    color = "#2ac69d"
+                                    break;
+                                case "age30":
+                                    color = "#fff753"
+                                    break;
+                            }
+                            return color
+                        })
                         .attr("stroke", "black")
                         .style("stroke-width", "2px")
                         .style("opacity", 0.7)
@@ -128,19 +154,18 @@ function generateAgeChart(checkBoxId) {
                         .data(data_ready)
                         .enter()
                         .append('text')
-                        .text(function (d) { if (d.data.value > 0) return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
-                        .attr("transform", function (d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
+                        .text(function(d) { if (d.data.value > 0) return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+                        .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
                         .style("text-anchor", "middle")
                         .style("font-size", 17)
                 });
-            }
-            else {
+            } else {
                 d3.select("#chartAgeISE").selectAll("svg").remove();
             }
             break;
         case "ageAiChx":
             if (checkbox.checked) {
-                d3.csv("static/dataAI.csv", function (data1) {
+                d3.csv("static/dataAI.csv", function(data1) {
                     // set the dimensions and margins of the graph
                     var width = 350
                     height = 350
@@ -170,9 +195,9 @@ function generateAgeChart(checkBoxId) {
 
                     // Compute the position of each group on the pie:
                     var pie = d3.pie()
-                        .value(function (d) { return d.value; })
+                        .value(function(d) { return d.value; })
                     var data_ready = pie(d3.entries(data))
-                    // Now I know that group A goes from 0 degrees to x degrees and so on.
+                        // Now I know that group A goes from 0 degrees to x degrees and so on.
 
                     // shape helper to build arcs:
                     var arcGenerator = d3.arc()
@@ -186,7 +211,23 @@ function generateAgeChart(checkBoxId) {
                         .enter()
                         .append('path')
                         .attr('d', arcGenerator)
-                        .attr('fill', function (d) { return (color(d.data.key)) })
+                        .attr('fill', function(d) {
+                            switch (d.data.key) {
+                                case "age18_20":
+                                    color = "#00cadc";
+                                    break;
+                                case "age21_25":
+                                    color = "#ff9173"
+                                    break;
+                                case "age26_30":
+                                    color = "#2ac69d"
+                                    break;
+                                case "age30":
+                                    color = "#fff753"
+                                    break;
+                            }
+                            return color
+                        })
                         .attr("stroke", "black")
                         .style("stroke-width", "2px")
                         .style("opacity", 0.7)
@@ -197,13 +238,12 @@ function generateAgeChart(checkBoxId) {
                         .data(data_ready)
                         .enter()
                         .append('text')
-                        .text(function (d) { if (d.data.value > 0) return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
-                        .attr("transform", function (d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
+                        .text(function(d) { if (d.data.value > 0) return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+                        .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
                         .style("text-anchor", "middle")
                         .style("font-size", 17)
                 });
-            }
-            else {
+            } else {
                 d3.select("#chartAgeAI").selectAll("svg").remove();
             }
             break;

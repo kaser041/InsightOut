@@ -73,7 +73,7 @@ d3.csv("static/DataAI.csv", function(data1) {
 
     for (var i = 0; i < data.length; i++) {
         let d = data[i];
-        let color = "darkorange";
+        let color = "#cfbce2";
         let coordinates = getPathCoordinates(d);
 
         //draw the path element

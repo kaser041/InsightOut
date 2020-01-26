@@ -1,253 +1,287 @@
-        d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
-            // set the dimensions and margins of the graph
-            var width = 350
-            height = 350
-            margin = 40
+d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
+    // set the dimensions and margins of the graph
+    var width = 350
+    height = 350
+    margin = 40
 
+    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+    var radius = Math.min(width, height) / 2 - margin
+
+    // append the svg object to the div called 'my_dataviz'
+    var svg = d3.select("#chartStudyContentKomedia")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
+        .attr("y", 170);
+
+    var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, Projects: data1.Projects, BachelorThesis: data1.BachelorThesis }
+    var sum = parseInt(data1.creditsLectures) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.Projects) + parseInt(data1.BachelorThesis)
+
+    // Compute the position of each group on the pie:
+    var pie = d3.pie()
+        .value(function(d) { return d.value; })
+    var data_ready = pie(d3.entries(data))
+        // Now I know that group A goes from 0 degrees to x degrees and so on.
+
+    // shape helper to build arcs:
+    var arcGenerator = d3.arc()
+        .innerRadius(0)
+        .outerRadius(radius)
+
+    // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+    svg
+        .selectAll('mySlices')
+        .data(data_ready)
+        .enter()
+        .append('path')
+        .attr('d', arcGenerator)
+        .attr('fill', function(d) {
+            switch (d.data.key) {
+                case "creditsLectures":
+                    color = "#00ada9";
+                    break;
+                case "Ergaenzungsbereich":
+                    color = "#fff753"
+                    break;
+                case "Projects":
+                    color = "#9f4792"
+                    break;
+                case "BachelorThesis":
+                    color = "#ff9173"
+                    break;
+            }
+            return color
+        })
+        .attr("stroke", "black")
+        .style("stroke-width", "2px")
+        .style("opacity", 0.7)
+
+    // Now add the annotation. Use the centroid method to get the best coordinates
+    svg
+        .selectAll('mySlices')
+        .data(data_ready)
+        .enter()
+        .append('text')
+        .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+        .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
+        .style("text-anchor", "middle")
+        .style("font-size", 17)
+        /* .on("click", function(d) {
+            if (d.data.key == "creditsLectures") {
+                console.log(d.data.key);
+                handleMousehover(d)
+            }
+
+        }) */
+        .on("click", handleMousehover);
+
+});
+
+
+function handleMouseOut(d, i) {
+    d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
+        // set the dimensions and margins of the graph
+        var width = 350
+        height = 350
+        margin = 40
+        console.log("mouseOut")
             // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-            var radius = Math.min(width, height) / 2 - margin
+        var radius = Math.min(width, height) / 2 - margin
+        d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
+        // append the svg object to the div called 'my_dataviz'
+        var svg = d3.select("#chartStudyContentKomedia")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-            // append the svg object to the div called 'my_dataviz'
-            var svg = d3.select("#chartStudyContentKomedia")
-                .append("svg")
-                .attr("width", width)
-                .attr("height", height)
-                .append("g")
-                .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
+            .attr("y", 170);
 
-            svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
-                .attr("y", 170);
+        var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, Projects: data1.Projects, BachelorThesis: data1.BachelorThesis }
+        var sum = parseInt(data1.creditsLectures) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.Projects) + parseInt(data1.BachelorThesis)
 
-            var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
-            var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) + parseInt(data1.creditsBachelorThesis)
+        // Compute the position of each group on the pie:
+        var pie = d3.pie()
+            .value(function(d) { return d.value; })
+        var data_ready = pie(d3.entries(data))
+            // Now I know that group A goes from 0 degrees to x degrees and so on.
 
-            // set the color scale
-            var color = d3.scaleOrdinal()
-                .domain(data)
-                .range(d3.schemeSet2);
+        // shape helper to build arcs:
+        var arcGenerator = d3.arc()
+            .innerRadius(0)
+            .outerRadius(radius)
 
-            // Compute the position of each group on the pie:
-            var pie = d3.pie()
-                .value(function(d) { return d.value; })
-            var data_ready = pie(d3.entries(data))
-                // Now I know that group A goes from 0 degrees to x degrees and so on.
+        // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+        svg
+            .selectAll('mySlices')
+            .data(data_ready)
+            .enter()
+            .append('path')
+            .attr('d', arcGenerator)
+            .attr('fill', function(d) {
+                switch (d.data.key) {
+                    case "creditsLectures":
+                        color = "#00ada9";
+                        break;
+                    case "Ergaenzungsbereich":
+                        color = "#fff753"
+                        break;
+                    case "Projects":
+                        color = "#9f4792"
+                        break;
+                    case "BachelorThesis":
+                        color = "#ff9173"
+                        break;
+                }
+                return color
+            })
+            .attr("stroke", "black")
+            .style("stroke-width", "2px")
+            .style("opacity", 0.7)
 
-            // shape helper to build arcs:
-            var arcGenerator = d3.arc()
-                .innerRadius(0)
-                .outerRadius(radius)
+        // Now add the annotation. Use the centroid method to get the best coordinates
+        svg
+            .selectAll('mySlices')
+            .data(data_ready)
+            .enter()
+            .append('text')
+            .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+            .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
+            .style("text-anchor", "middle")
+            .style("font-size", 17)
+            .on("click", handleMousehover);
+    });
+}
 
-            // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-            svg
-                .selectAll('mySlices')
-                .data(data_ready)
-                .enter()
-                .append('path')
-                .attr('d', arcGenerator)
-                .attr('fill', function(d) { return (color(d.data.key)) })
-                .attr("stroke", "black")
-                .style("stroke-width", "2px")
-                .style("opacity", 0.7)
+function handleMousehover(d, i) {
+    d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
+        // set the dimensions and margins of the graph
+        var width = 350
+        height = 350
+        margin = 40
 
-            // Now add the annotation. Use the centroid method to get the best coordinates
-            svg
-                .selectAll('mySlices')
-                .data(data_ready)
-                .enter()
-                .append('text')
-                .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
-                .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
-                .style("text-anchor", "middle")
-                .style("font-size", 17)
-                /* .on("click", function(d) {
-                    if (d.data.key == "creditsLectures") {
-                        console.log(d.data.key);
-                        handleMousehover(d)
-                    }
+        // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+        var radius = Math.min(width, height) / 2 - margin
+        d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
+        // append the svg object to the div called 'my_dataviz'
+        var svg = d3.select("#chartStudyContentKomedia")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-                }) */
-                .on("click", handleMousehover);
+        var tooltip = d3.select("body")
+            .append("div")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden")
 
-        });
+        svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
+            .attr("y", 170);
 
+        var data = { Psychology: data1.Psychology, ComputerScience: data1.ComputerScience, BusinessEconomics: data1.BusinessEconomics, Math: data1.Math, Ergaenzungsbereich: data1.Ergaenzungsbereich, Projects: data1.Projects, BachelorThesis: data1.BachelorThesis }
+        var sum = parseInt(data1.Psychology) + parseInt(data1.ComputerScience) + parseInt(data1.BusinessEconomics) + parseInt(data1.Math) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.Projects) + parseInt(data1.BachelorThesis)
 
-        function handleMouseOut(d, i) {
-            d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
-                // set the dimensions and margins of the graph
-                var width = 350
-                height = 350
-                margin = 40
-                console.log("mouseOut")
-                    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-                var radius = Math.min(width, height) / 2 - margin
-                d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
-                // append the svg object to the div called 'my_dataviz'
-                var svg = d3.select("#chartStudyContentKomedia")
-                    .append("svg")
-                    .attr("width", width)
-                    .attr("height", height)
-                    .append("g")
-                    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        // set the color scale
+        var color = d3.scaleOrdinal()
+            .domain(data)
+            .range(d3.schemeSet2);
 
-                svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
-                    .attr("y", 170);
+        // Compute the position of each group on the pie:
+        var pie = d3.pie()
+            .value(function(d) { return d.value; }).sort(null);
+        var data_ready = pie(d3.entries(data))
+            // Now I know that group A goes from 0 degrees to x degrees and so on.
 
-                var data = { creditsLectures: data1.creditsLectures, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
-                var sum = parseInt(data1.creditsLectures) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) + parseInt(data1.creditsBachelorThesis)
+        // shape helper to build arcs:
+        var arcGenerator = d3.arc()
+            .innerRadius(0)
+            .outerRadius(radius)
 
-                // set the color scale
-                var color = d3.scaleOrdinal()
-                    .domain(data)
-                    .range(d3.schemeSet2);
+        // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
+        svg
+            .selectAll('mySlices')
+            .data(data_ready)
+            .enter()
+            .append('path')
+            .attr('d', arcGenerator)
+            .attr('fill', function(d) { return (color(d.data.key)) })
+            .attr("stroke", "black")
+            .style("stroke-width", "2px")
+            .style("opacity", 0.7)
 
-                // Compute the position of each group on the pie:
-                var pie = d3.pie()
-                    .value(function(d) { return d.value; })
-                var data_ready = pie(d3.entries(data))
-                    // Now I know that group A goes from 0 degrees to x degrees and so on.
+        // Now add the annotation. Use the centroid method to get the best coordinates
+        svg
+            .selectAll('mySlices')
+            .data(data_ready)
+            .enter()
+            .append('text')
+            .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
+            .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
+            .style("text-anchor", "middle")
+            .style("font-size", 17)
+            .on("click", function() {
+                tooltip.style("visibility", "hidden");
+                handleMouseOut()
+            })
+            .on("mouseover", function(d) { return tooltip.style("visibility", "visible").text(d.data.key) })
+            .on("mousemove", function() { return tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px"); })
+            .on("mouseout", function() { return tooltip.style("visibility", "hidden"); });
 
-                // shape helper to build arcs:
-                var arcGenerator = d3.arc()
-                    .innerRadius(0)
-                    .outerRadius(radius)
+    });
+}
 
-                // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-                svg
-                    .selectAll('mySlices')
-                    .data(data_ready)
-                    .enter()
-                    .append('path')
-                    .attr('d', arcGenerator)
-                    .attr('fill', function(d) { return (color(d.data.key)) })
-                    .attr("stroke", "black")
-                    .style("stroke-width", "2px")
-                    .style("opacity", 0.7)
+/*
+d3.csv("static/studyprograminformationkomedia.csv", function (data) {
+    return {
+      // Required attributes
+      studyProgram: data.studyProgram,
+      creditsLectures: data.creditsLectures,
+      Ergaenzungsbereich: data.Ergaenzungsbereich,
+      Projects: data.Projects,
+      BachelorThesis: data.BachelorThesis
+    };
+}).then(function(data) {
 
-                // Now add the annotation. Use the centroid method to get the best coordinates
-                svg
-                    .selectAll('mySlices')
-                    .data(data_ready)
-                    .enter()
-                    .append('text')
-                    .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
-                    .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
-                    .style("text-anchor", "middle")
-                    .style("font-size", 17)
-                    .on("click", handleMousehover);
-            });
-        }
+    // Generate chart
+    var chart = c3.generate({
+        data: {
+            json: data,
+            keys: {
+                x: 'studyProgram',
+                value: ['creditsLectures', 'Ergaenzungsbereich', 'Projects', 'BachelorThesis']
+            },
+            type: 'pie',
+            names: {
+                creditsLectures: 'Lectures',
+                Ergaenzungsbereich: 'Ergänzungsbereich',
+                Projects: 'Projects',
+                BachelorThesis: 'Bachelor Thesis'
+            }
+        },
 
-        function handleMousehover(d, i) {
-            d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
-                // set the dimensions and margins of the graph
-                var width = 350
-                height = 350
-                margin = 40
+        axis: {
+            x: {
+                type: 'category'
+            }
+        },
 
-                // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-                var radius = Math.min(width, height) / 2 - margin
-                d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
-                // append the svg object to the div called 'my_dataviz'
-                var svg = d3.select("#chartStudyContentKomedia")
-                    .append("svg")
-                    .attr("width", width)
-                    .attr("height", height)
-                    .append("g")
-                    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+        legend: {
+            show: false
+        },
 
-                svg.append("text").style("text-align", "center").text("Komedia").attr("x", -40).style("font-size", "20px")
-                    .attr("y", 170);
+        title: {
+            text: 'Komedia'
+        },
 
-                var data = { creditsPsychology: data1.creditsPsychology, creditsComputerScience: data1.creditsComputerScience, creditsBusinessEconomics: data1.creditsBusinessEconomics, creditsMath: data1.creditsMath, creditsErgaenzungsbereich: data1.creditsErgaenzungsbereich, creditsProjects: data1.creditsProjects, creditsBachelorThesis: data1.creditsBachelorThesis }
-                var sum = parseInt(data1.creditsPsychology) + parseInt(data1.creditsComputerScience) + parseInt(data1.creditsBusinessEconomics) + parseInt(data1.creditsMath) + parseInt(data1.creditsErgaenzungsbereich) + parseInt(data1.creditsProjects) + parseInt(data1.creditsBachelorThesis)
-
-                // set the color scale
-                var color = d3.scaleOrdinal()
-                    .domain(data)
-                    .range(d3.schemeSet2);
-
-                // Compute the position of each group on the pie:
-                var pie = d3.pie()
-                    .value(function(d) { return d.value; }).sort(null);
-                var data_ready = pie(d3.entries(data))
-                    // Now I know that group A goes from 0 degrees to x degrees and so on.
-
-                // shape helper to build arcs:
-                var arcGenerator = d3.arc()
-                    .innerRadius(0)
-                    .outerRadius(radius)
-
-                // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
-                svg
-                    .selectAll('mySlices')
-                    .data(data_ready)
-                    .enter()
-                    .append('path')
-                    .attr('d', arcGenerator)
-                    .attr('fill', function(d) { return (color(d.data.key)) })
-                    .attr("stroke", "black")
-                    .style("stroke-width", "2px")
-                    .style("opacity", 0.7)
-
-                // Now add the annotation. Use the centroid method to get the best coordinates
-                svg
-                    .selectAll('mySlices')
-                    .data(data_ready)
-                    .enter()
-                    .append('text')
-                    .text(function(d) { return ((parseInt(d.data.value) * 100) / sum).toFixed(2) + '%' })
-                    .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
-                    .style("text-anchor", "middle")
-                    .style("font-size", 17)
-                    .on("click", handleMouseOut)
-
-            });
-        }
-
-        /*
-        d3.csv("static/studyprograminformationkomedia.csv", function (data) {
-            return {
-              // Required attributes
-              studyProgram: data.studyProgram,
-              creditsLectures: data.creditsLectures,
-              creditsErgaenzungsbereich: data.creditsErgaenzungsbereich,
-              creditsProjects: data.creditsProjects,
-              creditsBachelorThesis: data.creditsBachelorThesis
-            };
-        }).then(function(data) {
-
-            // Generate chart
-            var chart = c3.generate({
-                data: {
-                    json: data,
-                    keys: {
-                        x: 'studyProgram',
-                        value: ['creditsLectures', 'creditsErgaenzungsbereich', 'creditsProjects', 'creditsBachelorThesis']
-                    },
-                    type: 'pie',
-                    names: {
-                        creditsLectures: 'Lectures',
-                        creditsErgaenzungsbereich: 'Ergänzungsbereich',
-                        creditsProjects: 'Projects',
-                        creditsBachelorThesis: 'Bachelor Thesis'
-                    }
-                },
-
-                axis: {
-                    x: {
-                        type: 'category'
-                    }
-                },
-
-                legend: {
-                    show: false
-                },
-
-                title: {
-                    text: 'Komedia'
-                },
-
-                bindto: '#chartStudyContentKomedia'
-            });
-          });
-          */
+        bindto: '#chartStudyContentKomedia'
+    });
+  });
+  */

@@ -44,7 +44,23 @@ d3.csv("static/datakomedia.csv", function(data1) {
         .enter()
         .append('path')
         .attr('d', arcGenerator)
-        .attr('fill', function(d) { return (color(d.data.key)) })
+        .attr('fill', function(d) {
+            switch (d.data.key) {
+                case "age18_20":
+                    color = "#00cadc";
+                    break;
+                case "age21_25":
+                    color = "#ff9173"
+                    break;
+                case "age26_30":
+                    color = "#2ac69d"
+                    break;
+                case "age30":
+                    color = "#fff753"
+                    break;
+            }
+            return color
+        })
         .attr("stroke", "black")
         .style("stroke-width", "2px")
         .style("opacity", 0.7)

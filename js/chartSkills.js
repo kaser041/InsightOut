@@ -84,13 +84,13 @@ function generateSkillsChart() {
                     let d = data[i];
                     switch (data[i]) {
                         case dataKo:
-                            color = "darkorange"
+                            color = "#95f5fd"
                             break;
                         case dataISE:
-                            color = "gray"
+                            color = "orange"
                             break;
                         case dataAI:
-                            color = "navy"
+                            color = "#cfbce2"
                             break;
                     }
                     let coordinates = getPathCoordinates(d);
