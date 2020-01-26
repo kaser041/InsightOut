@@ -17,7 +17,7 @@ d3.csv("static/data.csv", function(data) {
             },
             type: 'bar',
             names: {
-                generalHappiness: 'General Happiness'
+                generalHappiness: 'Rating'
             },
             colors: {
                 generalHappiness: '#00cadc'
