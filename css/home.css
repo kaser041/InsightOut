@@ -112,3 +112,38 @@
 #logo {
     margin: 100px;
 }
+
+#exploreby {
+    text-align: center;
+}
+
+#chartOrganization {
+    margin-bottom: 20px;
+}
+
+#chartContent {
+    margin-bottom: 20px;
+}
+
+.scalerating {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buttonContainer {
+    margin-top: 10px;
+}
+
+#scalehappiness {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.title1 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#admissionreq {
+    margin-top: 50px;
+}

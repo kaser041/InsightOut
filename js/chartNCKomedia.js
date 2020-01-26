@@ -32,10 +32,6 @@ d3.csv("static/nckomedia.csv", function(data) {
             }
         },
 
-        title: {
-            text: 'Komedia NC values of the last 3 years'
-        },
-
         legend: { show: false },
 
         bindto: '#chartNCKomedia'
