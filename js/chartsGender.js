@@ -50,7 +50,7 @@ function generateGnderChart(checkBoxId) {
                                     color = "#008ed4";
                                     break;
                                 case "Female":
-                                    color = "# cb568b"
+                                    color = "#cb568b"
                                     break;
                             }
                             return color
@@ -128,7 +128,7 @@ function generateGnderChart(checkBoxId) {
                                     color = "#008ed4";
                                     break;
                                 case "Female":
-                                    color = "# cb568b"
+                                    color = "#cb568b"
                                     break;
                             }
                             return color
@@ -201,7 +201,7 @@ function generateGnderChart(checkBoxId) {
                                     color = "#008ed4";
                                     break;
                                 case "Female":
-                                    color = "# cb568b"
+                                    color = "#cb568b"
                                     break;
                             }
                             return color

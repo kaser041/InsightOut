@@ -7,6 +7,12 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
     // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
     var radius = Math.min(width, height) / 2 - margin
 
+    var tooltip = d3.select("body")
+        .append("div")
+        .style("position", "absolute")
+        .style("z-index", "10")
+        .style("visibility", "hidden")
+
     // append the svg object to the div called 'my_dataviz'
     var svg = d3.select("#chartStudyContentAI")
         .append("svg")
@@ -76,7 +82,13 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
                 handleMousehover(d)
             }
         }) */
-        .on("click", handleMousehoverAI);
+        .on("click", function() {
+            tooltip.style("visibility", "hidden");
+            handleMousehoverAI()
+        })
+        .on("mouseover", function(d) { return tooltip.style("visibility", "visible").text(d.data.key) })
+        .on("mousemove", function() { return tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px"); })
+        .on("mouseout", function() { return tooltip.style("visibility", "hidden"); });
 
 });
 
@@ -87,7 +99,12 @@ function handleMouseOutAI(d, i) {
         var width = 350
         height = 350
         margin = 40
-        console.log("mouseOut")
+
+        var tooltip = d3.select("body")
+            .append("div")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("visibility", "hidden")
             // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
         var radius = Math.min(width, height) / 2 - margin
         d3.select("#chartStudyContentAI").selectAll("svg").remove();
@@ -154,7 +171,13 @@ function handleMouseOutAI(d, i) {
             .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")"; })
             .style("text-anchor", "middle")
             .style("font-size", 17)
-            .on("click", handleMousehoverAI);
+            .on("click", function() {
+                tooltip.style("visibility", "hidden");
+                handleMousehoverAI()
+            })
+            .on("mouseover", function(d) { return tooltip.style("visibility", "visible").text(d.data.key) })
+            .on("mousemove", function() { return tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px"); })
+            .on("mouseout", function() { return tooltip.style("visibility", "hidden"); });
     });
 }
 
