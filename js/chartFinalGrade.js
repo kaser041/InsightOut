@@ -22,7 +22,7 @@ d3.csv("static/data.csv", function(data) {
         },
 
         point: {
-            r: 200
+            r: 5
         },
 
         axis: {
