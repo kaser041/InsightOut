@@ -8,7 +8,6 @@ function generateSkillsChart() {
                 dataISE = { "Programming": data2.programming, "Math": data2.math, "Physics": data2.physics, "Psychology": data2.psychology, "Statistics": data2.statistics, "Business Economics": data2.businessEconomics };
                 dataAI = { "Programming": data3.programming, "Math": data3.math, "Physics": data3.physics, "Psychology": data3.psychology, "Statistics": data3.statistics, "Business Economics": data3.businessEconomics };
                 let data = []
-
                 if (document.getElementById("skillsKomediaChx").checked) data.push(dataKo)
                 if (document.getElementById("skillsIseChx").checked) data.push(dataISE)
                 if (document.getElementById("skillsAiChx").checked) data.push(dataAI)

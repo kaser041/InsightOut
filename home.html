@@ -72,20 +72,22 @@
         });
 
         $(document).ready(function() {
-            $('.single-checkbox3').on('change', function(evt) {
-                if ($('.single-checkbox3:checked').length >= 3) {
+            $('.single-checkbox4').on('change', function(evt) {
+                if ($('.single-checkbox4:checked').length >= 4) {
                     this.checked = false;
+                    console.log(this.id + this.checked)
                 }
             });
         });
-
-        $(document).ready(function() {
-            $('.singleCheckBox3').on('change', function(evt) {
-                if ($('.singleCheckBox3:checked').length >= 3) {
-                    this.checked = false;
-                }
-            });
-        });
+        /*
+                $(document).ready(function() {
+                    $('.single-checkbox3').on('change', function(evt) {
+                        if ($('.single-checkbox3:checked').length >= 3) {
+                            this.checked = false;
+                        }
+                    });
+                });
+         */
     </script>
 </head>
 
@@ -163,23 +165,23 @@
 
                             <div class="checkBoxContainer3">
                                 <div class="checkbox3">
-                                    <label><input type="checkbox" class="singleCheckBox3" id="komediaContentChx"
+                                    <label><input type="checkbox" class="single-checkbox4" id="komediaContentChx"
                                             onchange="generateStudyContentChartKomedia('komediaContentChx')" checked>
                                         Komedia</label>
                                 </div>
                                 <div class="checkbox3">
-                                    <label><input type="checkbox" class="singleCheckBox3" id="iseCommChx"
+                                    <label><input type="checkbox" class="single-checkbox4" id="iseCommChx"
                                             onchange="generateStudyContentChartISEComm('iseCommChx')" checked> Computer
                                         Engineering (Communication)</label>
                                 </div>
                                 <div class="checkbox3">
-                                    <label><input type="checkbox" class="singleCheckBox3" id="iseSoftChx"
+                                    <label><input type="checkbox" class="single-checkbox4" id="iseSoftChx"
                                             onchange="generateStudyContentChartISESoft('iseSoftChx')" checked> Computer
                                         Engineering (Software)</label>
                                 </div>
                                 <div class="checkbox3">
-                                    <label><input type="checkbox" class="singleCheckBox3" id="aiContentChx"
-                                            onchange="generateStudyContentChartAI('aiContentChx')" > Applied Computer
+                                    <label><input type="checkbox" class="single-checkbox4" id="aiContentChx"
+                                            onchange="generateStudyContentChartAI('aiContentChx')"> Applied Computer
                                         Science</label>
                                 </div>
                             </div>
@@ -188,7 +190,6 @@
                             </div>
 
                             <div id="chartStudyContentAI">
-                                <script src="js/chartStudyContentAIInit.js"></script>
                             </div>
 
                             <div id="chartStudyContentISEComm">
@@ -203,7 +204,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="lectureDetails" role="tabpanel" aria-labelledby="aspects-tab">
-                            
+
                             <div class="titles">
                                 <h4 class="title1">Number of Exams</h4>
                                 <p>Number of mandatory and elective lectures</p>
@@ -240,7 +241,7 @@
                             </div> -->
                         </div>
                         <div class="tab-pane fade" id="admissionRequirements" role="tabpanel" aria-labelledby="nc-tab">
-                            
+
                             <div class="titles">
                                 <h4 class="title1">Admission Requirements</h4>
                                 <p>NC values of the last 6 years for Komedia</p>
@@ -255,7 +256,8 @@
                                 </p>
                                 <p>Computer Engineering: <a target="_blank" rel="noopener noreferrer" href="https://www.uni-due.de/ise/admission.shtml">Click here for the admission
                                         requirements.</a></p>
-                                <p>Applied Computer Science: <a target="_blank" rel="noopener noreferrer" href="https://www.uni-due.de/studienangebote/studiengang.php?id=1#Zugang">Click here
+                                <p>Applied Computer Science: <a target="_blank" rel="noopener noreferrer" href="https://www.uni-due.de/studienangebote/studiengang.php?id=1#Zugang">Click
+                                        here
                                         for the admission requirements.</a></p>
                             </div>
                         </div>
@@ -297,7 +299,7 @@
                             <!-- div for Gender and Age (charts will go here) -->
                             <div class="tab-content" id="myTabContent4">
                                 <div class="tab-pane active" id="gender" role="tabpanel" aria-labelledby="gender-tab">
-                                    
+
                                     <div class="titles">
                                         <h4 class="title1">Gender</h4>
                                         <p>Proportion of male and female students in each study program</p>
@@ -335,7 +337,7 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="age" role="tabpanel" aria-labelledby="age-tab">
-                                    
+
                                     <div class="titles">
                                         <h4 class="title1">Age</h4>
                                         <p>Age at study begin in each study program</p>
@@ -347,12 +349,12 @@
                                                     onchange="generateAgeChart('ageKomediaChx')" checked>
                                                 Komedia</label>
                                         </div>
-                                        <div class="checkbox">
+                                        <div class="checkbox1">
                                             <label><input type="checkbox" id="ageIseChx"
                                                     onchange="generateAgeChart('ageIseChx')" checked> Computer
                                                 Engineering</label>
                                         </div>
-                                        <div class="checkbox disabled">
+                                        <div class="checkbox1">
                                             <label><input type="checkbox" id="ageAiChx"
                                                     onchange="generateAgeChart('ageAiChx')" checked> Applied Computer
                                                 Science</label>
@@ -472,7 +474,7 @@
 
                                     <div class="tab-content" id="myTabContent8">
                                         <div class="tab-pane active" id="subjects" role="tabpanel" aria-labelledby="subjects-tab">
-                                            
+
                                             <div class="titles">
                                                 <h4 class="title1">Subjects</h4>
                                                 <p>Evaluation of the acquisition of different subject-related skills in each study program (1 = "nothing at all", 5 = "very much")</p>
@@ -500,7 +502,7 @@
                                             <script src="js/chartSkillsKomedia.js"></script>
                                         </div>
                                         <div class="tab-pane fade" id="softSkills" role="tabpanel" aria-labelledby="softSkills-tab">
-                                            
+
                                             <div class="titles">
                                                 <h4 class="title1">Soft Skills</h4>
                                                 <p>Evaluation of the acquisition of different soft skills in each study program (1 = "nothing at all", 5 = "very much")</p>
@@ -538,10 +540,11 @@
 
 
                                 <div class="tab-pane fade" id="generalHappiness" role="tabpanel" aria-labelledby="generalHappiness-tab">
-                                    
+
                                     <div class="titles">
                                         <h4 class="title1">General Happiness</h4>
-                                        <p>General Happiness in each study program (1 = "very unhappy", 5 = "very happy")</p>
+                                        <p>General Happiness in each study program (1 = "very unhappy", 5 = "very happy")
+                                        </p>
                                     </div>
 
                                     <div id="chartGeneralHappiness">
@@ -586,4 +589,4 @@
 
 </body>
 
-</html>
+</html>[]

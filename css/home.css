@@ -12,14 +12,14 @@
 
 #legendsGender {
     position: fixed;
-    top: 130%;
+    top: 135%;
     left: 35%;
     transform: translate(-50%, -50%);
 }
 
 #legendsStudyContent {
     position: fixed;
-    top: 130%;
+    top: 140%;
     left: 35%;
     transform: translate(-50%, -50%);
 }
@@ -33,7 +33,7 @@
 
 #legendsAge {
     position: fixed;
-    top: 130%;
+    top: 135%;
     left: 35%;
     transform: translate(-50%, -50%);
 }
