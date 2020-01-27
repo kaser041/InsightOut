@@ -30,7 +30,7 @@ function generateStudyContentChartAI(checkBoxId) {
                     .append("g")
                     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-                svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
+                svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", -100).style("font-size", "20px")
                     .attr("y", 170);
 
                 var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
@@ -127,7 +127,7 @@ function generateStudyContentChartAI(checkBoxId) {
                         .append("g")
                         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-                    svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
+                    svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", -100).style("font-size", "20px")
                         .attr("y", 170);
 
                     var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
@@ -217,7 +217,7 @@ function generateStudyContentChartAI(checkBoxId) {
                         .append("g")
                         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-                    svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
+                    svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", -100).style("font-size", "20px")
                         .attr("y", 170);
 
                     var data = { ComputerScience: data1.ComputerScience, Math: data1.Math, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }

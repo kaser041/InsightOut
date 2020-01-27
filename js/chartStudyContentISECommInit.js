@@ -120,8 +120,9 @@ function handleMouseOutISECom(d, i) {
             .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-        svg.append("text").style("text-align", "center").text("Computer Engineering Communication").attr("x", -40).style("font-size", "20px")
+        svg.append("text").style("text-align", "center").text("Computer Engineering Communication").attr("x", -170).style("font-size", "20px")
             .attr("y", 170);
+
 
         var data = { creditsLectures: data1.creditsLectures, BachelorThesis: data1.BachelorThesis, Internship: data1.Internship, Ergaenzungsbereich: data1.Ergaenzungsbereich, Projects: data1.Projects }
         var sum = parseInt(data1.creditsLectures) + parseInt(data1.BachelorThesis) + parseInt(data1.Internship) + parseInt(data1.Ergaenzungsbereich) + parseInt(data1.Projects)
@@ -212,7 +213,7 @@ function handleMousehoverISECom(d, i) {
             .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-        svg.append("text").style("text-align", "center").text("Computer Engineering Communication").attr("x", -40).style("font-size", "20px")
+        svg.append("text").style("text-align", "center").text("Computer Engineering Communication").attr("x", -170).style("font-size", "20px")
             .attr("y", 170);
 
         var data = { ComputerScience: data1.ComputerScience, Math: data1.Math, ElectricalEngineering: data1.ElectricalEngineering, Fundamentals: data1.Fundamentals, Physics: data1.Physics, BusinessEconomics: data1.BusinessEconomics, BachelorThesis: data1.BachelorThesis, Internship: data1.Internship, Ergaenzungsbereich: data1.Ergaenzungsbereich, Projects: data1.Projects }
