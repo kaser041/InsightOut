@@ -36,7 +36,7 @@ d3.csv("static/data.csv", function(data) {
         },
 
         title: {
-            text: 'Linking theory and praxis'
+            text: 'Linking theory and practice'
         },
 
         bar: {

@@ -34,10 +34,6 @@ d3.csv("static/data.csv", function(data) {
             }
         },
 
-        title: {
-            text: 'General Happiness'
-        },
-
         bar: {
             width: { ratio: 0.25 }
         },

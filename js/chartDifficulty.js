@@ -35,7 +35,7 @@ d3.csv("static/data.csv", function (data) {
         },
       
         title: {
-            text: 'Average perceived difficulty to graduate in the standard period of study (1="very easy", 5="very difficult")'
+            text: 'Average perceived difficulty to graduate in the standard period of study (1 = "very easy", 5 = "very difficult")'
         },
 
         bar: {

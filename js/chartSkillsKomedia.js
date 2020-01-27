@@ -8,9 +8,6 @@ d3.csv("static/DataKomedia.csv", function(data1) {
             .attr("width", 600)
             .attr("height", 600);
 
-        svg.append("text").style("text-align", "center").text("Komedia").attr("x", 250).style("font-size", "22px")
-            .attr("y", 70);
-
         let radialScale = d3.scaleLinear()
             .domain([0, 4])
             .range([0, 150]);

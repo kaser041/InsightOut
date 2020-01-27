@@ -78,6 +78,14 @@
                 }
             });
         });
+
+        $(document).ready(function() {
+            $('.singleCheckBox3').on('change', function(evt) {
+                if ($('.singleCheckBox3:checked').length >= 3) {
+                    this.checked = false;
+                }
+            });
+        });
     </script>
 </head>
 
@@ -97,18 +105,18 @@
             <li class="nav-item active">
                 <a class="nav-link" href="home.html">
                     <i class="fa fa-home"></i>
-                    <span> Compare</span>
+                    <span>Compare</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="about.html">
                     <i class="fa fa-info-circle"></i>
-                    <span> About</span></a>
+                    <span>About</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="help.html">
                     <i class="fa fa-question-circle"></i>
-                    <span> Help</span></a>
+                    <span>Help</span></a>
             </li>
         </ul>
 
@@ -134,10 +142,10 @@
                     <!-- Sub Tabs of Study Program Information -->
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="exam-tab" data-toggle="tab" href="#studyContent" role="tab" aria-controls="exam" aria-selected="true">Study Content</a>
+                            <a class="nav-link active" id="exam-tab" data-toggle="tab" href="#studyContent" role="tab" aria-controls="exam" aria-selected="true">Study Contents</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="aspects-tab" data-toggle="tab" href="#lectureDetails" role="tab" aria-controls="aspects" aria-selected="false">Lecture Details</a>
+                            <a class="nav-link" id="aspects-tab" data-toggle="tab" href="#lectureDetails" role="tab" aria-controls="aspects" aria-selected="false">Number of Exams</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="nc-tab" data-toggle="tab" href="#admissionRequirements" role="tab" aria-controls="nc" aria-selected="false">Admission Requirements</a>
@@ -148,29 +156,30 @@
                     <div class="tab-content" id="myTabContent2">
                         <div class="tab-pane fade show active" id="studyContent" role="tabpanel" aria-labelledby="exam-tab">
 
-                            <div class="title1">
-                                <p>Distribution of credit points</p>
+                            <div class="titles">
+                                <h4 class="title1">Study Contents</h4>
+                                <p>Distribution of credit points in each study program</p>
                             </div>
 
                             <div class="checkBoxContainer3">
                                 <div class="checkbox3">
-                                    <label><input type="checkbox" id="komediaContentChx"
+                                    <label><input type="checkbox" class="singleCheckBox3" id="komediaContentChx"
                                             onchange="generateStudyContentChartKomedia('komediaContentChx')" checked>
                                         Komedia</label>
                                 </div>
                                 <div class="checkbox3">
-                                    <label><input type="checkbox" id="iseCommChx"
+                                    <label><input type="checkbox" class="singleCheckBox3" id="iseCommChx"
                                             onchange="generateStudyContentChartISEComm('iseCommChx')" checked> Computer
-                                        Engineering Communication</label>
+                                        Engineering (Communication)</label>
                                 </div>
                                 <div class="checkbox3">
-                                    <label><input type="checkbox" id="iseSoftChx"
+                                    <label><input type="checkbox" class="singleCheckBox3" id="iseSoftChx"
                                             onchange="generateStudyContentChartISESoft('iseSoftChx')" checked> Computer
-                                        Engineering Software</label>
+                                        Engineering (Software)</label>
                                 </div>
                                 <div class="checkbox3">
-                                    <label><input type="checkbox" id="aiContentChx"
-                                            onchange="generateStudyContentChartAI('aiContentChx')" checked> Applied Computer
+                                    <label><input type="checkbox" class="singleCheckBox3" id="aiContentChx"
+                                            onchange="generateStudyContentChartAI('aiContentChx')" > Applied Computer
                                         Science</label>
                                 </div>
                             </div>
@@ -194,7 +203,9 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="lectureDetails" role="tabpanel" aria-labelledby="aspects-tab">
-                            <div class="title1">
+                            
+                            <div class="titles">
+                                <h4 class="title1">Number of Exams</h4>
                                 <p>Number of mandatory and elective lectures</p>
                             </div>
 
@@ -229,8 +240,10 @@
                             </div> -->
                         </div>
                         <div class="tab-pane fade" id="admissionRequirements" role="tabpanel" aria-labelledby="nc-tab">
-                            <div class="title1">
-                                <p>Komedia NC values over the last 6 years</p>
+                            
+                            <div class="titles">
+                                <h4 class="title1">Admission Requirements</h4>
+                                <p>NC values of the last 6 years for Komedia</p>
                             </div>
 
                             <div id="chartNCKomedia">
@@ -258,7 +271,7 @@
                             <a class="nav-link active" id="demographic-tab" data-toggle="tab" href="#demographic" role="tab" aria-controls="demographic" aria-selected="true">Demographics</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="studyRating-tab" data-toggle="tab" href="#studyRating" role="tab" aria-controls="studyRating" aria-selected="false">Study rating</a>
+                            <a class="nav-link" id="studyRating-tab" data-toggle="tab" href="#studyRating" role="tab" aria-controls="studyRating" aria-selected="false">Study Evaluation</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="graduation-tab" data-toggle="tab" href="#graduation" role="tab" aria-controls="graduation" aria-selected="false">Graduation</a>
@@ -284,8 +297,10 @@
                             <!-- div for Gender and Age (charts will go here) -->
                             <div class="tab-content" id="myTabContent4">
                                 <div class="tab-pane active" id="gender" role="tabpanel" aria-labelledby="gender-tab">
-                                    <div class="title1">
-                                        <p>Gender</p>
+                                    
+                                    <div class="titles">
+                                        <h4 class="title1">Gender</h4>
+                                        <p>Proportion of male and female students in each study program</p>
                                     </div>
 
                                     <div class="checkBoxContainer1">
@@ -320,8 +335,10 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="age" role="tabpanel" aria-labelledby="age-tab">
-                                    <div class="title1">
-                                        <p>Age at study begin</p>
+                                    
+                                    <div class="titles">
+                                        <h4 class="title1">Age</h4>
+                                        <p>Age at study begin in each study program</p>
                                     </div>
 
                                     <div class="checkBoxContainer1">
@@ -369,7 +386,7 @@
                                     <a class="nav-link active" id="organization-tab" data-toggle="tab" href="#organization" role="tab" aria-controls="organization" aria-selected="true">Organization</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="content-tab" data-toggle="tab" href="#content" role="tab" aria-controls="content" aria-selected="true">Content</a>
+                                    <a class="nav-link" id="content-tab" data-toggle="tab" href="#content" role="tab" aria-controls="content" aria-selected="true">Contents</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" id="skills-tab" data-toggle="tab" href="#skills" role="tab" aria-controls="skills" aria-selected="true">Skills</a>
@@ -385,8 +402,9 @@
                             <div class="tab-content" id="myTabContent5">
                                 <div class="tab-pane active" id="organization" role="tabpanel" aria-labelledby="organization-tab">
 
-                                    <div class="scalerating">
-                                        <p>Scale: 1 = "very bad", 5 = "very good"</p>
+                                    <div class="titles">
+                                        <h4 class="title1">Organization</h4>
+                                        <p>Evaluation of organizational aspects of each study program (1 = "very bad", 5 = "very good")</p>
                                     </div>
 
                                     <div id="chartOrganization">
@@ -413,8 +431,9 @@
                                     <div class="tab-content" id="myTabContent6">
                                         <div class="tab-pane active" id="organization" role="tabpanel" aria-labelledby="organization-tab">
 
-                                            <div class="scalerating">
-                                                <p>Scale: 1 = "very bad", 5 = "very good"</p>
+                                            <div class="titles">
+                                                <h4 class="title1">Contents</h4>
+                                                <p>Evaluation of content-related aspects of each study program (1 = "very bad", 5 = "very good")</p>
                                             </div>
 
                                             <div id="chartContent">
@@ -453,6 +472,12 @@
 
                                     <div class="tab-content" id="myTabContent8">
                                         <div class="tab-pane active" id="subjects" role="tabpanel" aria-labelledby="subjects-tab">
+                                            
+                                            <div class="titles">
+                                                <h4 class="title1">Subjects</h4>
+                                                <p>Evaluation of the acquisition of different subject-related skills in each study program (1 = "nothing at all", 5 = "very much")</p>
+                                            </div>
+
                                             <div class="checkBoxContainer">
                                                 <div class="checkbox">
                                                     <label><input class="single-checkbox" type="checkbox"
@@ -475,6 +500,12 @@
                                             <script src="js/chartSkillsKomedia.js"></script>
                                         </div>
                                         <div class="tab-pane fade" id="softSkills" role="tabpanel" aria-labelledby="softSkills-tab">
+                                            
+                                            <div class="titles">
+                                                <h4 class="title1">Soft Skills</h4>
+                                                <p>Evaluation of the acquisition of different soft skills in each study program (1 = "nothing at all", 5 = "very much")</p>
+                                            </div>
+
                                             <div class="checkBoxContainer2">
                                                 <div class="checkbox2">
                                                     <label><input class="single-checkbox2" type="checkbox"
@@ -507,8 +538,10 @@
 
 
                                 <div class="tab-pane fade" id="generalHappiness" role="tabpanel" aria-labelledby="generalHappiness-tab">
-                                    <div id="scalehappiness">
-                                        <p>Scale: 1 = "very unhappy", 5 = "very happy"</p>
+                                    
+                                    <div class="titles">
+                                        <h4 class="title1">General Happiness</h4>
+                                        <p>General Happiness in each study program (1 = "very unhappy", 5 = "very happy")</p>
                                     </div>
 
                                     <div id="chartGeneralHappiness">
