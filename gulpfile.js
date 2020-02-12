@@ -32,7 +32,7 @@ function browserSync(done) {
         server: {
             baseDir: "./"
         },
-        port: 5000
+        port: process.env.PORT || 8080
     });
     done();
 }
