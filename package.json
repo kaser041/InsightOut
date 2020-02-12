@@ -3,7 +3,8 @@
     "name": "startbootstrap-sb-admin",
     "version": "5.1.1",
     "scripts": {
-        "start": "node_modules/.bin/gulp watch"
+        "start": "node_modules/.bin/gulp watch",
+        "postinstall": "npm build"
     },
     "description": "A one page app landing page HTML theme for Bootstrap.",
     "keywords": [
