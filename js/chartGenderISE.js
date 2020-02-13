@@ -37,7 +37,7 @@ d3.csv("static/dataise.csv", function (data) {
   });
   */
 
-d3.csv("static/dataise.csv", function(data1) {
+d3.csv("static/DataISE.csv", function(data1) {
     // set the dimensions and margins of the graph
     var width = 350
     height = 350

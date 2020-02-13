@@ -296,7 +296,7 @@ function generateStudyContentChartISESoft(checkBoxId) {
 }
 
 /*
-d3.csv("static/studyprograminformationkomedia.csv", function (data) {
+d3.csv("static/StudyProgramInformationKomedia.csv", function (data) {
     return {
       // Required attributes
       studyProgram: data.studyProgram,

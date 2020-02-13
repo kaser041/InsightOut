@@ -1,7 +1,7 @@
 function contentAspectSwitch(aspect) {
     switch (aspect) {
         case "Linking Theory To Praxis":
-            d3.csv("static/data.csv", function(data) {
+            d3.csv("static/Data.csv", function(data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
@@ -53,7 +53,7 @@ function contentAspectSwitch(aspect) {
             });
             break;
         case "Up-to-dateness":
-            d3.csv("static/data.csv", function(data) {
+            d3.csv("static/Data.csv", function(data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
@@ -105,7 +105,7 @@ function contentAspectSwitch(aspect) {
             break;
 
         case "Study Focus":
-            d3.csv("static/data.csv", function(data) {
+            d3.csv("static/Data.csv", function(data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
@@ -158,7 +158,7 @@ function contentAspectSwitch(aspect) {
             break;
 
         case "Job Preperation":
-            d3.csv("static/data.csv", function(data) {
+            d3.csv("static/Data.csv", function(data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,

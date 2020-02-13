@@ -1,7 +1,7 @@
 function organizationAspectSwitch(aspect) {
     switch (aspect) {
         case "Time Coordination":
-            d3.csv("static/data.csv", function (data) {
+            d3.csv("static/Data.csv", function (data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
@@ -51,7 +51,7 @@ function organizationAspectSwitch(aspect) {
             });
             break;
         case "Exam Comprehensibility":
-            d3.csv("static/data.csv", function (data) {
+            d3.csv("static/Data.csv", function (data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
@@ -102,7 +102,7 @@ function organizationAspectSwitch(aspect) {
             });
             break;
         case "Flexibilty":
-            d3.csv("static/data.csv", function (data) {
+            d3.csv("static/Data.csv", function (data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,
@@ -153,7 +153,7 @@ function organizationAspectSwitch(aspect) {
             });
             break;
         case "Asking For Help":
-            d3.csv("static/data.csv", function (data) {
+            d3.csv("static/Data.csv", function (data) {
                 return {
                     // Required attributes
                     studyProgram: data.studyProgram,

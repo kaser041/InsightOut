@@ -1,4 +1,4 @@
-d3.csv("static/studyprograminformation.csv", function(data) {
+d3.csv("static/StudyProgramInformation.csv", function(data) {
     return {
         // Required attributes
         studyProgram: data.studyProgram,

@@ -1,4 +1,4 @@
-d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
+d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
     // set the dimensions and margins of the graph
     var width = 350
     height = 350
@@ -95,7 +95,7 @@ d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
 
 
 function handleMouseOut(d, i) {
-    d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
+    d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
         // set the dimensions and margins of the graph
         var width = 350
         height = 350
@@ -184,7 +184,7 @@ function handleMouseOut(d, i) {
 }
 
 function handleMousehover(d, i) {
-    d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
+    d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
         // set the dimensions and margins of the graph
         var width = 350
         height = 350
@@ -279,7 +279,7 @@ function handleMousehover(d, i) {
 }
 
 /*
-d3.csv("static/studyprograminformationkomedia.csv", function (data) {
+d3.csv("static/StudyProgramInformationKomedia.csv", function (data) {
     return {
       // Required attributes
       studyProgram: data.studyProgram,
