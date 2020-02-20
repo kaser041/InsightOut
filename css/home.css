@@ -62,6 +62,11 @@
     height: 100%;
 }
 
+.btn-outline-primary
+{
+    margin-right: 5px;
+}
+
 .checkBoxContainer {
     float: right;
    position: relative;
