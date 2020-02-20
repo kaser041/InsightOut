@@ -12,16 +12,14 @@
 
 #legendsGender {
     position: fixed;
-    top: 135%;
-    left: 35%;
-    transform: translate(-50%, -50%);
+    margin-top: 100px;
+    transform: translate(-10%, 30%);
 }
 
 #legendsStudyContent {
     position: fixed;
-    top: 140%;
-    left: 35%;
-    transform: translate(-50%, -50%);
+    margin-top: 100px;
+    transform: translate(-10%, 30%);
 }
 
 #legendsSkills {
@@ -33,9 +31,8 @@
 
 #legendsAge {
     position: fixed;
-    top: 135%;
-    left: 35%;
-    transform: translate(-50%, -50%);
+    margin-top: 100px;
+    transform: translate(-10%, 30%);
 }
 
 #chartAgeKomedia {
@@ -66,31 +63,23 @@
 }
 
 .checkBoxContainer {
-    position: fixed;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
+    float: right;
+   position: relative;
 }
 
 .checkBoxContainer1 {
-    position: fixed;
-    top: 40%;
-    left: 90%;
-    transform: translate(-50%, -50%);
+    float: right;
+   position: relative;
 }
 
 .checkBoxContainer2 {
-    position: fixed;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
+    float: right;
+   position: relative;
 }
 
 .checkBoxContainer3 {
-    position: fixed;
-    top: 40%;
-    left: 90%;
-    transform: translate(-50%, -50%);
+   float: right;
+   position: relative;
 }
 
 #chartStudyContentAI {
