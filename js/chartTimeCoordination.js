@@ -24,7 +24,6 @@ d3.csv("static/Data.csv", function (data) {
             }
         },
 
-
         axis: {
             x: {
                 type: 'category'

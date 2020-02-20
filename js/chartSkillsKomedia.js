@@ -1,18 +1,24 @@
+// generate Komedia radar chart as default start
 d3.csv("static/DataKomedia.csv", function(data1) {
     d3.csv("static/DataISE.csv", function(data2) {
+        // Define the data used in the radar chart
         features = ["Programming", "Math", "Physics", "Psychology", "Statistics", "Business Economics"];
         dataKo = { "Programming": data1.programming, "Math": data1.math, "Physics": data1.physics, "Psychology": data1.psychology, "Statistics": data1.statistics, "Business Economics": data1.businessEconomics };
         let data = []
         data.push(dataKo)
+
+        // Create the svg for the radar chart
         let svg = d3.select("#chartSkills").append("svg")
             .attr("width", 600)
             .attr("height", 600);
 
+        // Define the range and domain
         let radialScale = d3.scaleLinear()
             .domain([0, 4])
             .range([0, 150]);
         let ticks = [0, 1, 2, 3, 4];
-
+        
+        // Append chart elements (circle and ticks)
         ticks.forEach(t =>
             svg.append("circle")
             .attr("cx", 300)
@@ -29,13 +35,12 @@ d3.csv("static/DataKomedia.csv", function(data1) {
             .text(t.toString())
         );
 
+        // Helper functions to define fixed coordinates
         function angleToCoordinate(angle, value) {
             let x = Math.cos(angle) * radialScale(value);
             let y = Math.sin(angle) * radialScale(value);
             return { "x": 300 + x, "y": 300 - y };
         }
-
-
 
         for (var i = 0; i < features.length; i++) {
             let ft_name = features[i];

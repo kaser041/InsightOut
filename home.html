@@ -53,7 +53,7 @@
     <script src="js/chartStudyContentISESoft.js"></script>
 
 
-
+    <!-- Checkbox limit functions-->
     <script>
         $(document).ready(function() {
             $('.single-checkbox').on('change', function(evt) {
@@ -79,15 +79,7 @@
                 }
             });
         });
-        /*
-                $(document).ready(function() {
-                    $('.single-checkbox3').on('change', function(evt) {
-                        if ($('.single-checkbox3:checked').length >= 3) {
-                            this.checked = false;
-                        }
-                    });
-                });
-         */
+
     </script>
 </head>
 
@@ -128,10 +120,10 @@
             <!-- Top Tabs -->
             <ul class="nav nav-tabs" id="parentTab" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" id="quantitative-tab" data-toggle="tab" href="#quantitative" role="tab" aria-controls="quantitative" aria-selected="true">Study Program Information</a>
+                    <a class="nav-link active" id="studyProgramInformation-tab" data-toggle="tab" href="#studyProgramInformation" role="tab" aria-controls="studyProgramInformation" aria-selected="true">Study Program Information</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="qualitative-tab" data-toggle="tab" href="#qualitative" role="tab" aria-controls="qualitative" aria-selected="false">Survey Data</a>
+                    <a class="nav-link" id="surveyData-tab" data-toggle="tab" href="#surveyData" role="tab" aria-controls="surveyData" aria-selected="false">Survey Data</a>
                 </li>
             </ul>
 
@@ -139,7 +131,7 @@
             <div class="tab-content" id="myTabContent">
 
                 <!-- div for Study Program Information -->
-                <div class="tab-pane fade show active" id="quantitative" role="tabpanel" aria-labelledby="quantitative-tab">
+                <div class="tab-pane fade show active" id="studyProgramInformation" role="tabpanel" aria-labelledby="studyProgramInformation-tab">
 
                     <!-- Sub Tabs of Study Program Information -->
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -213,32 +205,7 @@
                             <div id="chartMandElect">
                                 <script src="js/chartMandElect.js"></script>
                             </div>
-                            <!--  <div class="checkBoxContainer6">
-                                <div class="checkbox">
-                                    <label><input class="single-checkbox3" type="checkbox"
-                                            id="skillsKomediaChx3" onchange="generateSkillsChart()"
-                                            checked>
-                                        Komedia</label>
-                                </div>
-                                <div class="checkbox6">
-                                    <label><input class="single-checkbox3" type="checkbox"
-                                            id="skillsIseCommChx" onchange="generateSkillsChart()"> Computer
-                                        Engineering Communication</label>
-                                </div>
-                                <div class="checkbox6">
-                                    <label><input class="single-checkbox3" type="checkbox"
-                                            id="skillsIseSoftChx" onchange="generateSkillsChart()"> Computer
-                                        Engineering Software</label>
-                                </div>
-                                <div class="checkbox6">
-                                    <label><input class="single-checkbox3" type="checkbox"
-                                            id="skillsAiChx3" onchange="generateSkillsChart()"> Applied
-                                        Computer Science</label>
-                                </div>
-                            </div>
-                            <div id="lectureTable">
-                                <script src="js/lectureTable.js"></script>
-                            </div> -->
+                            
                         </div>
                         <div class="tab-pane fade" id="admissionRequirements" role="tabpanel" aria-labelledby="nc-tab">
 
@@ -265,7 +232,7 @@
                 </div>
 
                 <!-- div for Survey Data -->
-                <div class="tab-pane fade" id="qualitative" role="tabpanel" aria-labelledby="qualitative-tab">
+                <div class="tab-pane fade" id="surveyData" role="tabpanel" aria-labelledby="surveyData-tab">
 
                     <!-- Sub Tabs of Survey Data -->
                     <ul class="nav nav-tabs" id="myTab2" role="tablist">
@@ -425,7 +392,7 @@
 
                                         <button id="organizationAspectSwitch3" type="button" class="btn btn-outline-primary" href="#flexibilty" onclick="organizationAspectSwitch('Flexibilty')">Flexibilty</button>
 
-                                        <button id="organizationAspectSwitch4" type="button" class="btn btn-outline-primary" href="#askForHelp" onclick="organizationAspectSwitch('Asking For Help')">Advice</button>
+                                        <button id="organizationAspectSwitch4" type="button" class="btn btn-outline-primary" href="#advice" onclick="organizationAspectSwitch('Asking For Help')">Advice</button>
                                     </div>
 
                                 </div>
@@ -537,10 +504,7 @@
                                     </div>
                                 </div>
 
-
-
                                 <div class="tab-pane fade" id="generalHappiness" role="tabpanel" aria-labelledby="generalHappiness-tab">
-
                                     <div class="titles">
                                         <h4 class="title1">General Happiness</h4>
                                         <p>General Happiness in each study program (1 = "very unhappy", 5 = "very happy")
@@ -551,7 +515,6 @@
                                         <script src="js/chartGeneralHappiness.js"></script>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
 
@@ -588,5 +551,4 @@
     <script src="js/sb-admin.min.js"></script>
 
 </body>
-
 </html>

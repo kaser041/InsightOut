@@ -10,7 +10,7 @@ d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
         .style("z-index", "10")
         .style("visibility", "hidden")
 
-    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+    // The radius of the pieplot is half the width or half the height (smallest one). 
     var radius = Math.min(width, height) / 2 - margin
 
     // append the svg object to the div called 'my_dataviz'
@@ -31,7 +31,6 @@ d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
     var pie = d3.pie()
         .value(function(d) { return d.value; })
     var data_ready = pie(d3.entries(data))
-        // Now I know that group A goes from 0 degrees to x degrees and so on.
 
     // shape helper to build arcs:
     var arcGenerator = d3.arc()
@@ -93,7 +92,6 @@ d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
 
 });
 
-
 function handleMouseOut(d, i) {
     d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
         // set the dimensions and margins of the graph
@@ -107,7 +105,7 @@ function handleMouseOut(d, i) {
             .style("z-index", "10")
             .style("visibility", "hidden")
 
-        // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+        // The radius of the pieplot is half the width or half the height (smallest one). 
         var radius = Math.min(width, height) / 2 - margin
         d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
         // append the svg object to the div called 'my_dataviz'
@@ -128,7 +126,7 @@ function handleMouseOut(d, i) {
         var pie = d3.pie()
             .value(function(d) { return d.value; })
         var data_ready = pie(d3.entries(data))
-            // Now I know that group A goes from 0 degrees to x degrees and so on.
+            
 
         // shape helper to build arcs:
         var arcGenerator = d3.arc()
@@ -190,7 +188,7 @@ function handleMousehover(d, i) {
         height = 350
         margin = 40
 
-        // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+        // The radius of the pieplot is half the width or half the height (smallest one). 
         var radius = Math.min(width, height) / 2 - margin
         d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
         // append the svg object to the div called 'my_dataviz'
@@ -222,7 +220,7 @@ function handleMousehover(d, i) {
         var pie = d3.pie()
             .value(function(d) { return d.value; }).sort(null);
         var data_ready = pie(d3.entries(data))
-            // Now I know that group A goes from 0 degrees to x degrees and so on.
+            
 
         // shape helper to build arcs:
         var arcGenerator = d3.arc()
@@ -277,51 +275,3 @@ function handleMousehover(d, i) {
 
     });
 }
-
-/*
-d3.csv("static/StudyProgramInformationKomedia.csv", function (data) {
-    return {
-      // Required attributes
-      studyProgram: data.studyProgram,
-      creditsLectures: data.creditsLectures,
-      Ergaenzungsbereich: data.Ergaenzungsbereich,
-      Projects: data.Projects,
-      BachelorThesis: data.BachelorThesis
-    };
-}).then(function(data) {
-
-    // Generate chart
-    var chart = c3.generate({
-        data: {
-            json: data,
-            keys: {
-                x: 'studyProgram',
-                value: ['creditsLectures', 'Ergaenzungsbereich', 'Projects', 'BachelorThesis']
-            },
-            type: 'pie',
-            names: {
-                creditsLectures: 'Lectures',
-                Ergaenzungsbereich: 'Ergänzungsbereich',
-                Projects: 'Projects',
-                BachelorThesis: 'Bachelor Thesis'
-            }
-        },
-
-        axis: {
-            x: {
-                type: 'category'
-            }
-        },
-
-        legend: {
-            show: false
-        },
-
-        title: {
-            text: 'Komedia'
-        },
-
-        bindto: '#chartStudyContentKomedia'
-    });
-  });
-  */

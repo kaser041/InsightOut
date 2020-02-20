@@ -4,7 +4,7 @@ d3.csv("static/DataKomedia.csv", function(data1) {
     height = 350
     margin = 40
 
-    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+    // The radius of the pieplot is half the width or half the height (smallest one). 
     var radius = Math.min(width, height) / 2 - margin
 
     // append the svg object to the div called 'my_dataviz'
@@ -30,7 +30,6 @@ d3.csv("static/DataKomedia.csv", function(data1) {
     var pie = d3.pie()
         .value(function(d) { return d.value; })
     var data_ready = pie(d3.entries(data))
-        // Now I know that group A goes from 0 degrees to x degrees and so on.
 
     // shape helper to build arcs:
     var arcGenerator = d3.arc()

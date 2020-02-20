@@ -1,4 +1,5 @@
 function contentAspectSwitch(aspect) {
+    // Generate barchart according to the selected aspect
     switch (aspect) {
         case "Linking Theory To Praxis":
             d3.csv("static/Data.csv", function(data) {
@@ -52,6 +53,7 @@ function contentAspectSwitch(aspect) {
                 });
             });
             break;
+
         case "Up-to-dateness":
             d3.csv("static/Data.csv", function(data) {
                 return {
