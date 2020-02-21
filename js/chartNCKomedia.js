@@ -1,4 +1,4 @@
-d3.csv("static/nckomedia.csv", function(data) {
+d3.csv("static/NCKomedia.csv", function(data) {
     return {
         // Required attributes
         date: data.date,

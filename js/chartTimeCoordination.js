@@ -1,4 +1,4 @@
-d3.csv("static/data.csv", function (data) {
+d3.csv("static/Data.csv", function (data) {
     return {
         // Required attributes
         studyProgram: data.studyProgram,
@@ -23,7 +23,6 @@ d3.csv("static/data.csv", function (data) {
                 timeCoordination: '#00cadc'
             }
         },
-
 
         axis: {
             x: {

@@ -7,7 +7,7 @@ function generateStudyContentChartKomedia(checkBoxId) {
         });
         var checkbox = document.getElementById(checkBoxId);
         if (checkbox.checked) {
-            d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
+            d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
                 // set the dimensions and margins of the graph
                 var width = 350
                 height = 350
@@ -19,7 +19,7 @@ function generateStudyContentChartKomedia(checkBoxId) {
                     .style("z-index", "10")
                     .style("visibility", "hidden")
 
-                // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+                // The radius of the pieplot is half the width or half the height (smallest one). 
                 var radius = Math.min(width, height) / 2 - margin
 
                 // append the svg object to the div called 'my_dataviz'
@@ -40,7 +40,7 @@ function generateStudyContentChartKomedia(checkBoxId) {
                 var pie = d3.pie()
                     .value(function(d) { return d.value; })
                 var data_ready = pie(d3.entries(data))
-                    // Now I know that group A goes from 0 degrees to x degrees and so on.
+                    
 
                 // shape helper to build arcs:
                 var arcGenerator = d3.arc()
@@ -101,9 +101,8 @@ function generateStudyContentChartKomedia(checkBoxId) {
 
             });
 
-
             function handleMouseOut(d, i) {
-                d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
+                d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
                     // set the dimensions and margins of the graph
                     var width = 350
                     height = 350
@@ -115,7 +114,7 @@ function generateStudyContentChartKomedia(checkBoxId) {
                         .style("z-index", "10")
                         .style("visibility", "hidden")
 
-                    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+                    // The radius of the pieplot is half the width or half the height (smallest one). 
                     var radius = Math.min(width, height) / 2 - margin
                     d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
                     // append the svg object to the div called 'my_dataviz'
@@ -136,7 +135,7 @@ function generateStudyContentChartKomedia(checkBoxId) {
                     var pie = d3.pie()
                         .value(function(d) { return d.value; })
                     var data_ready = pie(d3.entries(data))
-                        // Now I know that group A goes from 0 degrees to x degrees and so on.
+                        
 
                     // shape helper to build arcs:
                     var arcGenerator = d3.arc()
@@ -192,7 +191,7 @@ function generateStudyContentChartKomedia(checkBoxId) {
             }
 
             function handleMousehover(d, i) {
-                d3.csv("static/studyprograminformationkomedia.csv", function(data1) {
+                d3.csv("static/StudyProgramInformationKomedia.csv", function(data1) {
                     // set the dimensions and margins of the graph
                     var width = 350
                     height = 350
@@ -204,7 +203,7 @@ function generateStudyContentChartKomedia(checkBoxId) {
                         .style("z-index", "10")
                         .style("visibility", "hidden")
 
-                    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+                    // The radius of the pieplot is half the width or half the height (smallest one). 
                     var radius = Math.min(width, height) / 2 - margin
                     d3.select("#chartStudyContentKomedia").selectAll("svg").remove();
                     // append the svg object to the div called 'my_dataviz'
@@ -230,7 +229,7 @@ function generateStudyContentChartKomedia(checkBoxId) {
                     var pie = d3.pie()
                         .value(function(d) { return d.value; }).sort(null);
                     var data_ready = pie(d3.entries(data))
-                        // Now I know that group A goes from 0 degrees to x degrees and so on.
+                        
 
                     // shape helper to build arcs:
                     var arcGenerator = d3.arc()
@@ -290,46 +289,3 @@ function generateStudyContentChartKomedia(checkBoxId) {
         }
     });
 }
-
-/*
-d3.csv("static/studyprograminformationkomedia.csv", function (data) {
-    return {
-      // Required attributes
-      studyProgram: data.studyProgram,
-      creditsLectures: data.creditsLectures,
-      Ergaenzungsbereich: data.Ergaenzungsbereich,
-      Projects: data.Projects,
-      BachelorThesis: data.BachelorThesis
-    };
-}).then(function(data) {
-    // Generate chart
-    var chart = c3.generate({
-        data: {
-            json: data,
-            keys: {
-                x: 'studyProgram',
-                value: ['creditsLectures', 'Ergaenzungsbereich', 'Projects', 'BachelorThesis']
-            },
-            type: 'pie',
-            names: {
-                creditsLectures: 'Lectures',
-                Ergaenzungsbereich: 'Ergänzungsbereich',
-                Projects: 'Projects',
-                BachelorThesis: 'Bachelor Thesis'
-            }
-        },
-        axis: {
-            x: {
-                type: 'category'
-            }
-        },
-        legend: {
-            show: false
-        },
-        title: {
-            text: 'Komedia'
-        },
-        bindto: '#chartStudyContentKomedia'
-    });
-  });
-  */

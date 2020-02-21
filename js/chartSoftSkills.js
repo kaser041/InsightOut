@@ -1,26 +1,35 @@
+// generate the selected study program radar chart
 function generateSoftSkillsChart() {
     d3.csv("static/DataKomedia.csv", function(data1) {
         d3.csv("static/DataISE.csv", function(data2) {
             d3.csv("static/DataAI.csv", function(data3) {
+                // Remove the previous chart
                 d3.select("#chartSoftSkills").selectAll("svg").remove();
+
+                // Define the data used in the new skills radar chart
                 features = ["Teamwork", "Project Management", "Giving Presentations", "Analytical Skills", "Structured Working Methods"];
                 dataKo = { "Teamwork": data1.teamWork, "Project Management": data1.projectManagement, "Giving Presentations": data1.givingPresentations, "Analytical Skills": data1.analyticalSkills, "Structured Working Methods": data1.structuredWorkingMethods };
                 dataISE = { "Teamwork": data2.teamWork, "Project Management": data2.projectManagement, "Giving Presentations": data2.givingPresentations, "Analytical Skills": data2.analyticalSkills, "Structured Working Methods": data2.structuredWorkingMethods };
                 dataAI = { "Teamwork": data3.teamWork, "Project Management": data3.projectManagement, "Giving Presentations": data3.givingPresentations, "Analytical Skills": data3.analyticalSkills, "Structured Working Methods": data3.structuredWorkingMethods };
                 let data = []
 
+                // Check which study program is selected
                 if (document.getElementById("skillsKomediaChx2").checked) data.push(dataKo)
                 if (document.getElementById("skillsIseChx2").checked) data.push(dataISE)
                 if (document.getElementById("skillsAiChx2").checked) data.push(dataAI)
+               
+                // Create the svg for the radar chart
                 let svg = d3.select("#chartSoftSkills").append("svg")
                     .attr("width", 800)
                     .attr("height", 800);
 
+                // Define the range and domain
                 let radialScale = d3.scaleLinear()
                     .domain([0, 4])
                     .range([0, 150]);
                 let ticks = [0, 1, 2, 3, 4];
 
+                // Append chart elements (circle and ticks)
                 ticks.forEach(t =>
                     svg.append("circle")
                     .attr("cx", 300)
@@ -37,6 +46,7 @@ function generateSoftSkillsChart() {
                     .text(t.toString())
                 );
 
+                // Helper functions to define fixed coordinates
                 function angleToCoordinate(angle, value) {
                     let x = Math.cos(angle) * radialScale(value);
                     let y = Math.sin(angle) * radialScale(value);

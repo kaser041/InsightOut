@@ -19,7 +19,7 @@ function generateStudyContentChartAI(checkBoxId) {
                     .style("visibility", "hidden")
                     .style("color", "#000000")
 
-                // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+                // The radius of the pieplot is half the width or half the height (smallest one). 
                 var radius = Math.min(width, height) / 2 - margin
 
                 // append the svg object to the div called 'my_dataviz'
@@ -30,7 +30,7 @@ function generateStudyContentChartAI(checkBoxId) {
                     .append("g")
                     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-                svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
+                svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", -100).style("font-size", "20px")
                     .attr("y", 170);
 
                 var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
@@ -40,7 +40,7 @@ function generateStudyContentChartAI(checkBoxId) {
                 var pie = d3.pie()
                     .value(function(d) { return d.value; })
                 var data_ready = pie(d3.entries(data))
-                    // Now I know that group A goes from 0 degrees to x degrees and so on.
+                    
 
                 // shape helper to build arcs:
                 var arcGenerator = d3.arc()
@@ -101,7 +101,6 @@ function generateStudyContentChartAI(checkBoxId) {
 
             });
 
-
             function handleMouseOutAI(d, i) {
                 d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
                     // set the dimensions and margins of the graph
@@ -116,7 +115,7 @@ function generateStudyContentChartAI(checkBoxId) {
                         .style("visibility", "hidden")
                         .style("color", "#000000")
 
-                    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+                    // The radius of the pieplot is half the width or half the height (smallest one). 
                     var radius = Math.min(width, height) / 2 - margin
                     d3.select("#chartStudyContentAI").selectAll("svg").remove();
                     // append the svg object to the div called 'my_dataviz'
@@ -127,7 +126,7 @@ function generateStudyContentChartAI(checkBoxId) {
                         .append("g")
                         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-                    svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
+                    svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", -100).style("font-size", "20px")
                         .attr("y", 170);
 
                     var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
@@ -137,7 +136,7 @@ function generateStudyContentChartAI(checkBoxId) {
                     var pie = d3.pie()
                         .value(function(d) { return d.value; })
                     var data_ready = pie(d3.entries(data))
-                        // Now I know that group A goes from 0 degrees to x degrees and so on.
+                        
 
                     // shape helper to build arcs:
                     var arcGenerator = d3.arc()
@@ -206,7 +205,7 @@ function generateStudyContentChartAI(checkBoxId) {
                         .style("visibility", "hidden")
                         .style("color", "#000000")
 
-                    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+                    // The radius of the pieplot is half the width or half the height (smallest one). 
                     var radius = Math.min(width, height) / 2 - margin
                     d3.select("#chartStudyContentAI").selectAll("svg").remove();
                     // append the svg object to the div called 'my_dataviz'
@@ -217,7 +216,7 @@ function generateStudyContentChartAI(checkBoxId) {
                         .append("g")
                         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-                    svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
+                    svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", -100).style("font-size", "20px")
                         .attr("y", 170);
 
                     var data = { ComputerScience: data1.ComputerScience, Math: data1.Math, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
@@ -232,7 +231,7 @@ function generateStudyContentChartAI(checkBoxId) {
                     var pie = d3.pie()
                         .value(function(d) { return d.value; }).sort(null);
                     var data_ready = pie(d3.entries(data))
-                        // Now I know that group A goes from 0 degrees to x degrees and so on.
+                        
 
                     // shape helper to build arcs:
                     var arcGenerator = d3.arc()
@@ -293,46 +292,3 @@ function generateStudyContentChartAI(checkBoxId) {
     });
 
 }
-
-/*
-d3.csv("static/studyprograminformationkomedia.csv", function (data) {
-    return {
-      // Required attributes
-      studyProgram: data.studyProgram,
-      creditsLectures: data.creditsLectures,
-      Ergaenzungsbereich: data.Ergaenzungsbereich,
-      Projects: data.Projects,
-      BachelorThesis: data.BachelorThesis
-    };
-}).then(function(data) {
-    // Generate chart
-    var chart = c3.generate({
-        data: {
-            json: data,
-            keys: {
-                x: 'studyProgram',
-                value: ['creditsLectures', 'Ergaenzungsbereich', 'Projects', 'BachelorThesis']
-            },
-            type: 'pie',
-            names: {
-                creditsLectures: 'Lectures',
-                Ergaenzungsbereich: 'Ergänzungsbereich',
-                Projects: 'Projects',
-                BachelorThesis: 'Bachelor Thesis'
-            }
-        },
-        axis: {
-            x: {
-                type: 'category'
-            }
-        },
-        legend: {
-            show: false
-        },
-        title: {
-            text: 'Komedia'
-        },
-        bindto: '#chartStudyContentKomedia'
-    });
-  });
-  */

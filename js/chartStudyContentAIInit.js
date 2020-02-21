@@ -4,7 +4,7 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
     height = 350
     margin = 40
 
-    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+    // The radius of the pieplot is half the width or half the height (smallest one). 
     var radius = Math.min(width, height) / 2 - margin
 
     var tooltip = d3.select("body")
@@ -21,7 +21,7 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
+    svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", -100).style("font-size", "20px")
         .attr("y", 170);
 
     var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
@@ -31,7 +31,7 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
     var pie = d3.pie()
         .value(function(d) { return d.value; })
     var data_ready = pie(d3.entries(data))
-        // Now I know that group A goes from 0 degrees to x degrees and so on.
+        
 
     // shape helper to build arcs:
     var arcGenerator = d3.arc()
@@ -92,7 +92,6 @@ d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
 
 });
 
-
 function handleMouseOutAI(d, i) {
     d3.csv("static/StudyProgramInformationAI.csv", function(data1) {
         // set the dimensions and margins of the graph
@@ -105,7 +104,7 @@ function handleMouseOutAI(d, i) {
             .style("position", "absolute")
             .style("z-index", "10")
             .style("visibility", "hidden")
-            // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+            // The radius of the pieplot is half the width or half the height (smallest one). 
         var radius = Math.min(width, height) / 2 - margin
         d3.select("#chartStudyContentAI").selectAll("svg").remove();
         // append the svg object to the div called 'my_dataviz'
@@ -116,7 +115,7 @@ function handleMouseOutAI(d, i) {
             .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-        svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
+        svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", -100).style("font-size", "20px")
             .attr("y", 170);
 
         var data = { creditsLectures: data1.creditsLectures, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
@@ -126,7 +125,7 @@ function handleMouseOutAI(d, i) {
         var pie = d3.pie()
             .value(function(d) { return d.value; })
         var data_ready = pie(d3.entries(data))
-            // Now I know that group A goes from 0 degrees to x degrees and so on.
+            
 
         // shape helper to build arcs:
         var arcGenerator = d3.arc()
@@ -194,7 +193,7 @@ function handleMousehoverAI(d, i) {
             .style("z-index", "10")
             .style("visibility", "hidden")
 
-        // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+        // The radius of the pieplot is half the width or half the height (smallest one). 
         var radius = Math.min(width, height) / 2 - margin
         d3.select("#chartStudyContentAI").selectAll("svg").remove();
         // append the svg object to the div called 'my_dataviz'
@@ -205,7 +204,7 @@ function handleMousehoverAI(d, i) {
             .append("g")
             .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-        svg.append("text").style("text-align", "center").text("Angewandte Informatik").attr("x", -100).style("font-size", "20px")
+        svg.append("text").style("text-align", "center").text("Applied Computer Science").attr("x", -100).style("font-size", "20px")
             .attr("y", 170);
 
         var data = { ComputerScience: data1.ComputerScience, Math: data1.Math, Ergaenzungsbereich: data1.Ergaenzungsbereich, BachelorThesis: data1.BachelorThesis, Projects: data1.Projects }
@@ -220,7 +219,7 @@ function handleMousehoverAI(d, i) {
         var pie = d3.pie()
             .value(function(d) { return d.value; }).sort(null);
         var data_ready = pie(d3.entries(data))
-            // Now I know that group A goes from 0 degrees to x degrees and so on.
+            
 
         // shape helper to build arcs:
         var arcGenerator = d3.arc()
@@ -272,7 +271,5 @@ function handleMousehoverAI(d, i) {
             .on("mouseover", function(d) { return tooltip.style("visibility", "visible").text(d.data.key) })
             .on("mousemove", function() { return tooltip.style("top", (event.pageY - 10) + "px").style("left", (event.pageX + 10) + "px"); })
             .on("mouseout", function() { return tooltip.style("visibility", "hidden"); });
-
-
     });
 }
