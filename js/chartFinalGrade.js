@@ -15,14 +15,13 @@ d3.csv("static/data.csv", function(data) {
                 x: 'studyProgram',
                 value: ['finalGrade_avg']
             },
-            type: 'scatter',
+            type: 'bar',
             names: {
                 finalGrade_avg: 'Grade'
+            },
+            colors: {
+                finalGrade_avg: '#00cadc'
             }
-        },
-
-        point: {
-            r: 5
         },
 
         axis: {
@@ -30,12 +29,17 @@ d3.csv("static/data.csv", function(data) {
                 type: 'category'
             },
             y: {
-                label: { text: 'Grade', position: 'outer-center' }
+                label: { text: 'Grade', position: 'outer-center' },
+                max: 2.9,
             }
         },
 
         title: {
             text: 'Average final grade of graduated bachelor students'
+        },
+
+        bar: {
+            width: { ratio: 0.25}
         },
 
         legend: { show: false },
