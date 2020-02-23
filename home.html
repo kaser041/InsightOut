@@ -80,6 +80,9 @@
             });
         });
 
+        $(document).ready(function() {
+            $("#wrapper").toggleClass("toggle");
+        });
     </script>
 </head>
 
@@ -87,15 +90,12 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
         <a class="navbar-brand mr-1" href="index.html">Home</a>
-        <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-            <i class="fas fa-bars"></i>
-        </button>
     </nav>
 
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="sidebar navbar-nav">
+        <ul class="sidebar navbar-nav toggled">
             <li class="nav-item active">
                 <a class="nav-link" href="home.html">
                     <i class="fa fa-home"></i>
@@ -205,7 +205,7 @@
                             <div id="chartMandElect">
                                 <script src="js/chartMandElect.js"></script>
                             </div>
-                            
+
                         </div>
                         <div class="tab-pane fade" id="admissionRequirements" role="tabpanel" aria-labelledby="nc-tab">
 
@@ -551,4 +551,5 @@
     <script src="js/sb-admin.min.js"></script>
 
 </body>
+
 </html>

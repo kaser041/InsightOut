@@ -62,29 +62,28 @@
     height: 100%;
 }
 
-.btn-outline-primary
-{
+.btn-outline-primary {
     margin-right: 5px;
 }
 
 .checkBoxContainer {
     float: right;
-   position: relative;
+    position: relative;
 }
 
 .checkBoxContainer1 {
     float: right;
-   position: relative;
+    position: relative;
 }
 
 .checkBoxContainer2 {
     float: right;
-   position: relative;
+    position: relative;
 }
 
 .checkBoxContainer3 {
-   float: right;
-   position: relative;
+    float: right;
+    position: relative;
 }
 
 #chartStudyContentAI {
