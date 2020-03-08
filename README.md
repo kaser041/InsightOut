@@ -12,4 +12,14 @@ In "Study Program Information" users can get insight into the study contents as 
 
 In "Survey Data" the results of an online survey by InsightOut are displayed. In the section "Demographics" users can view the demographics of our sample (age and gender). In the section "Study Evaluation" users can see the evaluation of different organizational and content-related aspects of the study programs, the rating of the acquisition of skills, as well as the general happiness. In the section "Graduation" users can see the average final grade of graduated students, the perceived dificulty to graduate in the standard period of study (6 semester), as well as the average number of semester for graduation in each study program.
 
+
+![ScreenShot](PA.png)
+
 Deployed Version: https://studysoon.herokuapp.com/
+
+How to deploy the project locally:
+1. clone the repository
+2. install node.js from https://nodejs.org/en/
+2. run ```npm install``` in the terminal from the project directory
+4. run ```npm start``` in the terminal from the project directory
+5. got to http://localhost:8080/
