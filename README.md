@@ -18,6 +18,8 @@ Project Architecture:
 
 Deployed Version: https://studysoon.herokuapp.com/
 
+Youtube Video: https://youtu.be/wU1TWjeui88
+
 Used Libraries:
 1. https://jquery.com/
 2. https://c3js.org/
