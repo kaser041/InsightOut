@@ -18,9 +18,31 @@ Project Architecture:
 
 Deployed Version: https://studysoon.herokuapp.com/
 
+Used Libraries:
+1. https://jquery.com/
+2. https://c3js.org/
+3. https://d3js.org/
+4. https://getbootstrap.com/
+5. https://nodejs.org/en/
+6. https://gulpjs.com/
+
 How to deploy the project locally:
 1. clone the repository
 2. install node.js from https://nodejs.org/en/
 2. run ```npm install``` in the terminal from the project directory
 4. run ```npm start``` in the terminal from the project directory
 5. got to http://localhost:8080/
+
+Project Screenshots:
+
+![ScreenShot](screenshot1.png)
+![ScreenShot](screenshot2.png)
+![ScreenShot](screenshot3.png)
+![ScreenShot](screenshot4.png)
+
+Authors:
+
+•	Kaser Mahmoud: a master student of Computer Engineering (Intelligent Networked Systems) at the University of Duisburg-Essen. E-mail: kaser.mahmoud@stud.uni-due.de.
+
+•	Laura Vorgerd: a master student of Applied Cognitive and Media Science at the University of Duisburg-Essen. E-mail: laura.vorgerd@stud.uni-due.de..
+
